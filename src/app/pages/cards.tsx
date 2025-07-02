@@ -5,7 +5,7 @@ import CustomerServiceLogo from '../../../public/assets/logos/Group 109.svg'
 import Image from 'next/image'
 const CardsSection = () => {
   return (
-    <section className='min-h-screen bg-black p-10 lg:p-20'>
+    <section className='min-h-screen bg-black lg:p-20'>
         <div className='grid lg:grid-cols-3 gap-10 lg:gap-20 h-full w-full lg:p-20'>
         <div className='grid-cols-1 h-full bg-[#707070] flex justify-center items-center p-10'>
           <Image src={LionLogo} alt='Lion Logo' className=''/>

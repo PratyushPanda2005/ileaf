@@ -13,9 +13,11 @@ export default function Home() {
     <div>
      <Hero/>
      <Parallax
+     title="Live safe and sound"
      bgImage="https://www.ileafdoors.com/wp-content/uploads/2024/12/live-safe-and-sound.webp"
      />
-     <TextReveal/>
+     <TextReveal
+     />
      <ProductCategory/>
      <ProductRange/>
      <CardsSection/>

@@ -7,7 +7,7 @@ const WhyUs = () => {
   return (
     <section className="min-h-screen bg-black lg:px-20 md:pb-20">
       <div className="flex flex-col gap-6 justify-center items-center p-10 md:p-20 bg-black md:bg-[#707070] ">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif italic text-white tracking-wide uppercase">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-blafhyglibs tracking-[3px] lg:tracking-[7px] italic text-white uppercase">
           Why us
         </h1>
         <div className="w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />

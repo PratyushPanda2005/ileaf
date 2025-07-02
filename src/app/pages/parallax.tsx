@@ -8,7 +8,7 @@ const Parallax = ({title,bgImage} : {title?:string;bgImage:string}) => {
           backgroundImage: `url(${bgImage})`
         }}>
             <div className='w-full h-full flex items-center justify-center'>
-            <h1 className='text-white text-3xl md:text-4xl font-serif italic'>
+            <h1 className='text-white text-xl md:text-2xl lg:text-3xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic'>
                 {title}
             </h1>
             </div>
