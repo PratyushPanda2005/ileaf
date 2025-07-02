@@ -6,6 +6,7 @@ const ProductsPage = () => {
    <>
    <ProductHero
    bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/01/hero-03.webp'
+   headingOne=''
    />
    </>
   )

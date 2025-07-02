@@ -12,7 +12,9 @@ export default function Home() {
     <>
     <div>
      <Hero/>
-     <Parallax/>
+     <Parallax
+     bgImage="https://www.ileafdoors.com/wp-content/uploads/2024/12/live-safe-and-sound.webp"
+     />
      <TextReveal/>
      <ProductCategory/>
      <ProductRange/>
