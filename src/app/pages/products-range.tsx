@@ -6,7 +6,7 @@ const ProductRange = () => {
   return (
     <div>
       <SectionHeading />
-      <div className="px-10 lg:px-20">
+      <div className="lg:px-20">
         <div className="sticky top-0">
           <ProductCard 
           heading1="Luxury"

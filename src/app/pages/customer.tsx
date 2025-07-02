@@ -3,7 +3,7 @@ import React from "react";
 import MaskImage from "../../../public/assets/bg/mask-image.png";
 const Customer = () => {
   return (
-    <section className="min-h-screen px-10 lg:px-20">
+    <section className="min-h-screen lg:px-20">
       <div
         style={{
           backgroundImage:
