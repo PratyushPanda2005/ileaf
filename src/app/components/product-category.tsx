@@ -4,7 +4,7 @@ import React from "react";
 const ProductCategory = () => {
   return (
     <div className="hidden lg:flex items-center justify-center bg-black">
-      <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row p-[120px] justify-evenly items-center w-full">
+      <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row px-[120px] pb-20 pt-[120px] justify-evenly items-center w-full">
         <Link
           href="/product-category/luxury"
           className="group text-[#707070] text-lg font-blafhyglibs tracking-[4px]"
