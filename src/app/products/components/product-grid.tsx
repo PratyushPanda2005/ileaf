@@ -34,7 +34,9 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
       <h2 className="category-subheading text-md text-center max-w-[50%] italic  font-thin">
         {subheading}
       </h2>
-      <Button />
+      <Button 
+      title=""
+      />
     </div>
   );
 };

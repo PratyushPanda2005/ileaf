@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const Button = () => {
-  return (
-    <button className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base text-amber-400 bg-black">
-    Explore
-  </button>
-  )
+interface BtnProps {
+  title: string;
+  bgColor: string;
+  textColor: string
 }
 
-export default Button
+const Button = ({ title,bgColor,textColor }: BtnProps) => {
+  return (
+    <button style={{backgroundColor: bgColor, color: textColor}} className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base">
+      {title}
+    </button>
+  );
+};
+
+export default Button;

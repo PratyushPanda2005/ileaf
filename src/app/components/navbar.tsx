@@ -61,7 +61,7 @@ const Navbar = () => {
           <Image src={Logo} alt="i-LEAF Logo" className="h-[3em] w-fit" />
         </div>
         <div>
-          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-sm italic">
+          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-sm font-raleway font-bold">
             <li>
               <Link href="/gallery">Gallery</Link>
             </li>
