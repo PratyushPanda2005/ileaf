@@ -10,6 +10,7 @@ import {
   most_asked_doubts_4,
 } from "../config";
 import Play_Button from "../../../public/play_button.svg";
+import Button from "../components/button";
 const VideoPlayer = ({ src, poster }: { src: string; poster: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -30,7 +31,7 @@ const VideoPlayer = ({ src, poster }: { src: string; poster: string }) => {
     <div className="w-auto mx-auto relative group h-[40vw] md:h-[20vw]">
       <video
         ref={videoRef}
-        className="w-full h-full rounded-lg shadow-lg"
+        className="w-full h-full"
         poster={poster}
         onClick={togglePlay}
         loop
@@ -90,7 +91,7 @@ const Customer = () => {
   ];
 
   return (
-    <section className="min-h-screen lg:px-20">
+    <section className="min-h-screen bg-[#e4e4e4] lg:px-20">
       <div
         style={{
           backgroundImage:
@@ -102,34 +103,36 @@ const Customer = () => {
         }}
         className="relative"
       >
-        <div className="absolute top-0 z-10 w-full lg:w-1/2 h-full flex items-end lg:items-center justify-center  py-12">
+        <div className="absolute top-0 z-10 w-full md:w-1/2 h-full flex items-end md:items-center justify-center  py-12">
           <div className="text-center">
-            <div className="mb-10 text-white">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
+            <div className="mb-20 text-white">
+              <h1 className="text-3xl md:text-4xl  italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
                 Our
               </h1>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
+              <h1 className="text-3xl md:text-4xl  italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
                 {" "}
                 Customer&apos;s{" "}
               </h1>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px]">
+              <h1 className="text-3xl md:text-4xl  italic font-blafhyglibs tracking-[3px] lg:tracking-[7px]">
                 Say
               </h1>
             </div>
-            <button className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base bg-amber-400 text-black font-raleway">
-              Explore now
-            </button>
+            <Button
+            title="Explore now"
+            bgColor="#FFC600"
+            textColor="black"
+            />
           </div>
         </div>
         <Image
           src={MaskImage}
           alt="Mask Image"
-          className="w-full relative hidden lg:flex"
+          className="w-full relative hidden md:flex"
         />
         <Image
           src={MaskImageMob}
           alt="Mask Image"
-          className="w-full relative flex lg:hidden"
+          className="w-full relative flex md:hidden"
         />
       </div>
       <section className="bg-black min-h-screen gallery p-20">
@@ -139,15 +142,17 @@ const Customer = () => {
           </h1>
           <div className="w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
         </div>
-        <div className="w-full h-full grid md:grid-cols-2 md:grid-rows-2 gap-y-10">
+        <div className="w-full h-full grid md:grid-cols-2 md:grid-rows-2 gap-y-10 mt-10 lg:mt-20">
           {videos.map((video, index) => (
             <VideoPlayer key={index} src={video.src} poster={video.poster} />
           ))}
         </div>
         <div className="pt-20 flex justify-center items-center pb-20 ">
-          <button className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base bg-amber-400 text-black font-raleway">
-            Explore Now
-          </button>
+          <Button
+          title="Explore Now"
+          bgColor="#FFC600"
+          textColor="black"
+          />
         </div>
       </section>
     </section>

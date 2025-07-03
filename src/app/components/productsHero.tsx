@@ -31,10 +31,10 @@ const ProductHero = ({
           <div className="flex-1 flex items-center justify-end px-6 md:px-8 lg:px-12 w-[80%]">
             <div className="max-w-2xl text-right ">
               <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic text-amber-400 leading-tight font-serif font-thin">
-                <h1 className="">{headingOne}</h1>
-                <h1 className="">{headingTwo}</h1>
-                <h1 className="">{headingThree}</h1>
-                <h1 className="">{headingFour}</h1>
+                <h1 className="font-style">{headingOne}</h1>
+                <h1 className="font-style">{headingTwo}</h1>
+                <h1 className="font-style">{headingThree}</h1>
+                <h1 className="font-style">{headingFour}</h1>
               </div>
             </div>
           </div>
