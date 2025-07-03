@@ -19,7 +19,6 @@ const Hero = () => {
               'url("https://www.ileafdoors.com/wp-content/uploads/2024/12/hero-01.webp")',
           }}
         >
-          <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
         <button
