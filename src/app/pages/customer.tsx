@@ -106,14 +106,14 @@ const Customer = () => {
         <div className="absolute top-0 z-10 w-full md:w-1/2 h-full flex items-end md:items-center justify-center  py-12">
           <div className="text-center">
             <div className="mb-20 text-white">
-              <h1 className="text-3xl md:text-4xl  italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
+              <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
                 Our
               </h1>
-              <h1 className="text-3xl md:text-4xl  italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
+              <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
                 {" "}
                 Customer&apos;s{" "}
               </h1>
-              <h1 className="text-3xl md:text-4xl  italic font-blafhyglibs tracking-[3px] lg:tracking-[7px]">
+              <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px]">
                 Say
               </h1>
             </div>

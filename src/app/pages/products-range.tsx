@@ -22,7 +22,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3  flex md:hidden justify-center items-center mt-6 mb-6">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/04/IL-GL-SG121.webp"
+                src="https://www.ileafdoors.com/wp-content/uploads/2025/01/ILZ-D-21.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -43,7 +43,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/04/IL-GL-SG121.webp"
+                src="https://www.ileafdoors.com/wp-content/uploads/2025/01/ILZ-D-21.webp"
                 alt=""
                 width={500}
                 height={500}
