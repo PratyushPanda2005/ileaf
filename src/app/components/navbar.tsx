@@ -42,18 +42,18 @@ const Navbar = () => {
         }`}
       >
         <div>
-          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-sm font-raleway font-bold">
+          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-sm font-raleway">
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/" className="hover:text-amber-300 transition-all duration-300">Home</Link>
             </li>
             <li>
-              <Link href="/aboutus">About Us</Link>
+              <Link href="/aboutus" className="hover:text-amber-300 transition-all duration-300">About Us</Link>
             </li>
             <li>
-              <Link href="/products">Products</Link>
+              <Link href="/products" className="hover:text-amber-300 transition-all duration-300">Products</Link>
             </li>
             <li>
-              <Link href="/features">Features</Link>
+              <Link href="/features" className="hover:text-amber-300 transition-all duration-300">Features</Link>
             </li>
           </ul>
         </div>
@@ -61,18 +61,18 @@ const Navbar = () => {
           <Image src={Logo} alt="i-LEAF Logo" className="h-[3em] w-fit" />
         </div>
         <div>
-          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-sm font-raleway font-bold">
+          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-sm font-raleway">
             <li>
-              <Link href="/gallery">Gallery</Link>
+              <Link href="/gallery" className="hover:text-amber-300 transition-all duration-300">Gallery</Link>
             </li>
             <li>
-              <Link href="/testimonial">Testimonial</Link>
+              <Link href="/testimonial" className="hover:text-amber-300 transition-all duration-300">Testimonial</Link>
             </li>
             <li>
-              <Link href="/enquiry">Enquiry</Link>
+              <Link href="/enquiry" className="hover:text-amber-300 transition-all duration-300">Enquiry</Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link href="/contact" className="hover:text-amber-300 transition-all duration-300">Contact</Link>
             </li>
           </ul>
         </div>
