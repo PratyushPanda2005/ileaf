@@ -2,8 +2,8 @@ import React from "react";
 
 interface BtnProps {
   title: string;
-  bgColor: string;
-  textColor: string
+  bgColor?: string;
+  textColor?: string
 }
 
 const Button = ({ title,bgColor,textColor }: BtnProps) => {
