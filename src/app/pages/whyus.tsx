@@ -26,7 +26,7 @@ const WhyUs = () => {
             />
 
             <div className="absolute top-1/2 -translate-y-[50%] right-[15vw] flex flex-col items-center justify-center">
-              <h1 className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-center leading-[150%">
+              <h1 className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-center leading-[150%]">
                 Our doors
               </h1>
               <h1 className="font-style  md:text-2xl lg:text-4xl xl:text-5xl text-center leading-[150%]">Ensure your <br/> security.</h1>
@@ -36,20 +36,52 @@ const WhyUs = () => {
         <div className="w-full bg-amber-400 sticky top-0 z-[2]">
         <div className="relative h-full w-full">
             <Image
+              src={SoundProof}
+              className="h-full w-full object-cover"
+              alt="Security"
+            />
+
+            <div className="absolute top-1/2 -translate-y-[50%]  left-[15%] flex flex-col items-center justify-center">
+              <div className="text-black  font-style italic  flex flex-col">
+                <h1 className="md:text-xl lg:text-2xl text-center xl:text-3xl">Our Doors Are</h1>
+                <h1 className="md:text-3xl lg:text-4xl xl:text-5xl md:mt-4 lg:mt-8">Soundproof</h1> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full bg-amber-400 sticky top-0 z-[3]">
+        <div className="relative h-full w-full">
+            <Image
+              src={EcoFriendly}
+              className="h-full w-full object-cover"
+              alt="Security"
+            />
+
+            <div className="absolute top-1/2 -translate-y-[50%] right-[15%] flex flex-col items-center justify-center">
+              <div className="text-black md:text-2xl lg:text-3xl xl:text-4xl font-style italic text-left flex flex-col lg:gap-3">
+                <h1 className="md:text-xl lg:text-2xl text-center xl:text-3xl">Our Doors Are</h1>
+                <h1 className="md:text-3xl lg:text-4xl xl:text-5xl md:mt-4">Eco-friendly</h1> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full bg-amber-400 sticky top-0 z-[4]">
+        <div className="relative h-full w-full">
+            <Image
               src={EasyToInstall}
               className="h-full w-full object-cover"
               alt="Security"
             />
 
             <div className="absolute top-1/2 -translate-y-[50%] left-[20vw] flex flex-col items-center justify-center">
-              <h1 className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-center mb-4">
+              <h1 className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-center md:mb-4">
                 Our Doors Are
               </h1>
               <h1 className="font-style  md:text-2xl lg:text-4xl xl:text-5xl text-center">Easy To Install.</h1>
             </div>
           </div>
         </div>
-        <div className="w-full bg-amber-400 sticky top-0 z-[3]">
+        <div className="w-full bg-amber-400 sticky top-0 z-[5]">
         <div className="relative h-full w-full">
             <Image
               src={Fireproof}
@@ -69,38 +101,8 @@ const WhyUs = () => {
             </div>
           </div>
         </div>
-        <div className="w-full bg-amber-400 sticky top-0 z-[3]">
-        <div className="relative h-full w-full">
-            <Image
-              src={SoundProof}
-              className="h-full w-full object-cover"
-              alt="Security"
-            />
-
-            <div className="absolute top-1/2 -translate-y-[50%]  left-[15%] flex flex-col items-center justify-center">
-              <div className="text-black  font-style italic  flex flex-col gap-3">
-                <h1 className="md:text-xl lg:text-2xl text-center xl:text-3xl">Our Doors Are</h1>
-                <h1 className="md:text-3xl lg:text-4xl xl:text-5xl mt-4">Soundproof</h1> 
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-full bg-amber-400 sticky top-0 z-[3]">
-        <div className="relative h-full w-full">
-            <Image
-              src={EcoFriendly}
-              className="h-full w-full object-cover"
-              alt="Security"
-            />
-
-            <div className="absolute top-1/2 -translate-y-[50%] right-[15%] flex flex-col items-center justify-center">
-              <div className="text-black md:text-2xl lg:text-3xl xl:text-4xl font-style italic text-left flex flex-col gap-3">
-                <h1 className="md:text-xl lg:text-2xl text-center xl:text-3xl">Our Doors Are</h1>
-                <h1 className="md:text-3xl lg:text-4xl xl:text-5xl mt-4">Eco-friendly</h1> 
-              </div>
-            </div>
-          </div>
-        </div>
+        
+   
       </div>
       <div className="w-full hidden md:flex justify-center items-center">
         <Button
