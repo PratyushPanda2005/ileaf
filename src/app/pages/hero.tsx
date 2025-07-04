@@ -99,7 +99,7 @@ const Hero = () => {
 
               <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl italic text-amber-400 leading-tight">
                 <span className="inline-block md:mr-6 font-blafhyglibs tracking-[4px] lg:tracking-[7px]">
-                  Sa&#x305;fety and Security
+                  Safety and Security
                 </span>
               </h2>
             </div>

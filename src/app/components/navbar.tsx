@@ -41,7 +41,7 @@ const Navbar = () => {
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="mt-4">
+        <div className="mt-7">
           <ul className="flex lg:gap-6 xl:gap-10 uppercase text-[13px] font-raleway font-[500]">
             <li>
               <Link href="/" className="hover:text-amber-300 transition-all duration-300">Home</Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
         <div>
           <Image src={Logo} alt="i-LEAF Logo" className="h-[3em] w-fit" />
         </div>
-        <div className="mt-4">
+        <div className="mt-7">
           <ul className="flex lg:gap-6 xl:gap-10 uppercase text-[13px] font-raleway font-[500]">
             <li>
               <Link href="/gallery" className="hover:text-amber-300 transition-all duration-300">Gallery</Link>

@@ -10,8 +10,8 @@ const ProductCategory = () => {
           className="group text-[#707070] text-lg font-blafhyglibs tracking-[4px]"
         >
           <h1>Luxury Doors</h1>
-          <div className="w-full flex justify-center items-center mt-4">
-            <div className="hidden lg:flex w-4 h-2 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg] transition-all duration-300" />
+          <div className="flex w-full justify-center items-center mt-6">
+            <div className="w-3.5 h-1.5 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg]" />
           </div>
         </Link>
         <Link
@@ -19,8 +19,8 @@ const ProductCategory = () => {
           className="group text-[#707070] text-lg font-blafhyglibs tracking-[4px] "
         >
           <h1>GL Doors</h1>
-          <div className="w-full flex justify-center items-center mt-4">
-            <div className="hidden lg:flex w-4 h-2 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg] transition-all duration-300" />
+          <div className="flex w-full justify-center items-center mt-6">
+            <div className="w-3.5 h-1.5 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg]" />
           </div>
         </Link>
         <Link
@@ -28,8 +28,8 @@ const ProductCategory = () => {
           className="group text-[#707070] text-lg font-blafhyglibs tracking-[4px]"
         >
           <h1>Gi Doors</h1>
-          <div className="w-full flex justify-center items-center mt-4">
-            <div className="hidden lg:flex w-4 h-2 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg] transition-all duration-300" />
+          <div className="flex w-full justify-center items-center mt-6">
+            <div className="w-3.5 h-1.5 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg]" />
           </div>
         </Link>
         <Link
@@ -37,8 +37,8 @@ const ProductCategory = () => {
           className="group text-[#707070] text-lg font-blafhyglibs tracking-[4px]"
         >
           <h1>Windows</h1>
-          <div className="w-full flex justify-center items-center mt-4">
-            <div className="hidden lg:flex w-4 h-2 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg] transition-all duration-300" />
+          <div className="flex w-full justify-center items-center mt-6">
+            <div className="w-3.5 h-1.5 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg]" />
           </div>
         </Link>
         <Link
@@ -46,8 +46,8 @@ const ProductCategory = () => {
           className="group text-[#707070] text-lg font-blafhyglibs tracking-[4px]"
         >
           <h1>Fibre Doors</h1>
-          <div className="w-full flex justify-center items-center mt-4">
-            <div className="hidden lg:flex w-4 h-2 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg] transition-all duration-300" />
+          <div className="flex w-full justify-center items-center mt-6">
+            <div className="w-3.5 h-1.5 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg]" />
           </div>
         </Link>
         <Link
@@ -55,8 +55,8 @@ const ProductCategory = () => {
           className="group text-[#707070] text-lg font-blafhyglibs tracking-[4px]"
         >
           <h1>WPC Doors</h1>
-          <div className="w-full flex justify-center items-center mt-4">
-            <div className="hidden lg:flex w-4 h-2 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg] transition-all duration-300" />
+          <div className="flex w-full justify-center items-center mt-6">
+            <div className="w-3.5 h-1.5 bg-[#707070] group-hover:bg-amber-300 transform skew-x-[-200deg]" />
           </div>
         </Link>
       </div>

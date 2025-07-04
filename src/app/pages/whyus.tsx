@@ -6,15 +6,16 @@ import Fireproof from "../../../public/assets/whyus/fireproof.webp";
 import EcoFriendly from "../../../public/assets/whyus/eco-friendly.webp";
 import SoundProof from "../../../public/assets/whyus/soundproof.webp";
 import Button from "../components/button";
+import Parallelogram from "../components/parallelogram";
 
 const WhyUs = () => {
   return (
     <section className="min-h-screen bg-black lg:px-20 md:pb-20">
-      <div className="flex flex-col gap-6 justify-center items-center p-10 md:p-20 bg-black md:bg-[#707070] ">
+      <div className="flex flex-col justify-center items-center p-10 md:p-20 bg-black md:bg-[#707070] ">
         <h1 className="text-2xl md:text-3xl  font-blafhyglibs tracking-[3px] lg:tracking-[7px] italic text-white ">
           Why us
         </h1>
-        <div className="w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
+        <Parallelogram/>
       </div>
       <div className="flex flex-col md:gap-10 md:mb-10 lg:mb-16">
         <div className="w-full bg-amber-400 sticky top-0">

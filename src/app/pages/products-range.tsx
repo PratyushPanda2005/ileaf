@@ -20,17 +20,17 @@ const ProductRange = () => {
                 <div className="w-4 h-1.5 bg-[#FFC600] transform skew-x-[-200deg]" />
               </div>
             </div>
-            <div className="md:w-1/3  flex md:hidden justify-center items-center mt-6 mb-6">
+            <div className="md:w-1/3 flex md:hidden justify-center items-center mt-6 mb-6">
               <img
                 src="https://www.ileafdoors.com/wp-content/uploads/2025/01/ILZ-D-21.webp"
                 alt=""
-                width={500}
-                height={500}
-                className="h-[320px] md:h-[30vw] w-auto"
+                width={100}
+                height={100}
+                className="h-[240px] md:h-[30vw] w-auto"
               />
             </div>
 
-            <div className="flex-1 flex flex-col gap-10 justify-center items-center md:w-1/3 ">
+            <div className="flex-1 flex flex-col gap-10 justify-center items-center md:w-1/3">
               <p className="text-center text-sm italic text-black max-w-[80%] font-[300] tracking-widest font-raleway leading-[180%]">
                 Made of{" "}
                 <span className="text-black font-[600]">
@@ -68,7 +68,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[320px] md:h-[30vw] w-auto"
+                className="h-[240px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -113,7 +113,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[320px] md:h-[30vw] w-auto"
+                className="h-[240px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -160,7 +160,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[320px] md:h-[30vw] w-auto"
+                className="h-[240px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -204,7 +204,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[320px] md:h-[30vw] w-auto"
+                className="h-[240px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -244,13 +244,13 @@ const ProductRange = () => {
                 <div className="w-4 h-1.5 bg-[#FFC600] transform skew-x-[-200deg]" />
               </div>
             </div>
-            <div className="md:w-1/3  flex md:hidden justify-center items-center mt-6 mb-6">
+            <div className="md:w-1/3  flex md:hidden justify-center items-center mt-8 mb-6">
               <img
                 src="https://www.ileafdoors.com/wp-content/uploads/2024/12/WPC-Doors.webp"
                 alt=""
                 width={500}
                 height={500}
-                className="h-[320px] md:h-[30vw] w-auto"
+                className="h-[240px] md:h-[30vw] w-auto"
               />
             </div>
 
