@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import ProductHero from '../components/productsHero'
 import Parallax from '../pages/parallax'
