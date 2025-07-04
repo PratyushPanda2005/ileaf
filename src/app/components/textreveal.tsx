@@ -6,7 +6,7 @@ const TextReveal = () => {
     <section className="p-20 w-full relative bg-[#707070] ">
       <div className=" bg-cover bg-center bg-no-repeat flex justify-center items-center">
         <div className="w-full h-full flex items-center justify-center">
-          <p className="text-black font-[300] italic text-base leading-7 tracking-[1px] text-center font-raleway max-w-[60%]">
+          <p className="text-black font-[300] italic text-base leading-7 tracking-[1px] text-center font-raleway md:max-w-[60%]">
             In today’s fast-paced world, homes are often left unattended due to
             hectic work schedules and constant travel. This has led to a growing
             need for heightened security at home. At i-Leaf, we bring you the
