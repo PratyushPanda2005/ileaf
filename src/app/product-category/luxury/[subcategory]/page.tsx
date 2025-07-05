@@ -2,21 +2,19 @@ import { luxuryDoorsData } from "@/app/config/products/luxury/luxury";
 import Image from "next/image";
 
 
+type Params = Promise<{subcategory : string}>
 
-interface DoorDetailsPageProps {
-    params: {
-      subcategory: string;
-    };
-  }
- function DoorDetailsPage({ params } : DoorDetailsPageProps) {
-    
+async function DoorDetailsPage({ params } : {params : Params}) {
+
+    const {subcategory} = await params;
+
   const doorDetails = luxuryDoorsData["Luxury Doors"].series[0].variants.find(
-    variant => variant.number === params.subcategory
+    variant => variant.number === subcategory
   );
 
   if (!doorDetails) {
     return <div>Door not found</div>;
-  }
+}
 
   return (
     <div className="door-details">
