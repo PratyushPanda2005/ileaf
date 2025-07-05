@@ -52,7 +52,7 @@ const CardGrid = () => {
             heading={variant.id}
             routeLink={`/products/luxury/${variant.id}`} // Example dynamic route
             imageSrc={variant.image}
-            imageAlt={`${variant.name} luxury door`}
+            imageAlt={`${variant.id} luxury door`}
           />
         ))}
       </div>

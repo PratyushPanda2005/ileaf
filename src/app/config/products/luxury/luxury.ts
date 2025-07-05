@@ -6,7 +6,7 @@ export const luxuryDoorsData = {
         "variants": [
           {
             "id": "ILZ W598",
-            "name": "Regal Mahogany",
+            "number": "1",
             "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663573/1-ILZ-W508_zbaavy.webp",
             "cta": "VIEW DETAILS",
             "details": {
@@ -30,7 +30,7 @@ export const luxuryDoorsData = {
           },
           {
             "id": "ILZ 001",
-            "name": "Heritage Oak",
+            "number": "2",
             "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663571/2-ILZ-001_ghuegv.webp",
             "cta": "VIEW DETAILS",
             "details": {
@@ -55,7 +55,7 @@ export const luxuryDoorsData = {
 
           {
             "id": "ILZ D 21",
-            "name": "Heritage Oak",
+            "number": "3",
             "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663573/3-ILZ-D-21_ryohsg.webp",
             "cta": "VIEW DETAILS",
             "details": {
@@ -79,7 +79,7 @@ export const luxuryDoorsData = {
           },
           {
             "id": "ILZ 108",
-            "name": "Heritage Oak",
+            "number": "4",
             "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663571/4-ILZ-108_dkqvjb.webp",
             "cta": "VIEW DETAILS",
             "details": {
@@ -104,7 +104,7 @@ export const luxuryDoorsData = {
 
           {
             "id": "ILZ D 205",
-            "name": "Heritage Oak",
+           "number": "5",
             "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663572/5-ILZ-D-205_wi8phk.webp",
             "cta": "VIEW DETAILS",
             "details": {
@@ -128,7 +128,7 @@ export const luxuryDoorsData = {
           },
           {
             "id": "MATE 05",
-            "name": "Heritage Oak",
+           "number": "6",
             "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663572/6-MATE-05_wn3vhy.webp",
             "cta": "VIEW DETAILS",
             "details": {
