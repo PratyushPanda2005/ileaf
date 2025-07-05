@@ -3,19 +3,19 @@ import React from "react";
 const FeatureDescription = () => {
   return (
     <section className="bg-black p-10 lg:p-20 min-h-screen">
-      <div className="bg-[#707070] px-10 lg:px-20">
-        <div className="bg-[#ffbf00] py-20">
+      <div className="bg-[#707070]  lg:px-20">
+        <div className="bg-[#ffbf00] px-6 py-20">
           <div className="flex flex-col gap-6 justify-center items-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-black tracking-wide">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-style italic text-black tracking-wide">
               Features
             </h1>
-            <div className="w-4 h-2 bg-white transform skew-x-[-200deg]" />
+            <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
           </div>
           <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
-            <h1 className="uppercase text-black font-serif italic text-2xl">
+            <h1 className="uppercase text-black font-style italic text-2xl">
               Luxury Doors
             </h1>
-            <ul className="text-center space-y-2 max-w-lg italic">
+            <ul className="text-center space-y-3 max-w-lg italic font-raleway text-[14px] font-[500] tracking-[1px]">
               <li>Made of incorporating Cast Aluminium and GL sheets</li>
               <li>Door leaf thickness 100 mm</li>
               <li>Extra big special frames of 220 mm</li>
@@ -33,13 +33,13 @@ const FeatureDescription = () => {
               </li>
               <li>Attractive handles with smart lock operation.</li>
             </ul>
-            <div className="w-4 h-2 bg-white transform skew-x-[-200deg]" />
+            <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
           </div>
           <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
-            <h1 className="uppercase text-black font-serif italic text-2xl">
+            <h1 className="uppercase text-black font-style italic text-2xl">
               GL Doors
             </h1>
-            <ul className="text-center space-y-2 max-w-lg italic">
+            <ul className="text-center space-y-2 max-w-lg italic font-raleway text-[14px] font-[500] tracking-[1px]">
               <li>
                 Made of high quality Galvalume Steel with several unique
                 features.
@@ -64,13 +64,13 @@ const FeatureDescription = () => {
               <li>Easy to install.</li>
               <li>Available in different sizes.</li>
             </ul>
-            <div className="w-4 h-2 bg-white transform skew-x-[-200deg]" />
+            <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
           </div>
           <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
-            <h1 className="uppercase text-black font-serif italic text-2xl">
+            <h1 className="uppercase text-black font-style italic text-2xl">
               Gi Doors
             </h1>
-            <ul className="text-center space-y-2 max-w-lg italic">
+            <ul className="text-center space-y-2 max-w-lg italic font-raleway text-[14px] font-[500] tracking-[1px]">
               <li>
                 Made of high quality Galvanised Steel with several unique
                 features.
@@ -95,13 +95,13 @@ const FeatureDescription = () => {
               <li>Easy to install.</li>
               <li>Available in different sizes.</li>
             </ul>
-            <div className="w-4 h-2 bg-white transform skew-x-[-200deg]" />
+            <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
           </div>
           <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
-            <h1 className="uppercase text-black font-serif italic text-2xl">
+            <h1 className="uppercase text-black font-style italic text-2xl">
               Steel Windows
             </h1>
-            <ul className="text-center space-y-2 max-w-lg italic">
+            <ul className="text-center space-y-2 max-w-lg italic font-raleway text-[14px] font-[500] tracking-[1px]">
               <li>
                 Made of high quality Galvanised Steel with several unique
                 features.
@@ -114,14 +114,14 @@ const FeatureDescription = () => {
               <li>No additional cost for frame.</li>
               <li>Easy to install.</li>
             </ul>
-            <div className="w-4 h-2 bg-white transform skew-x-[-200deg]" />
+            <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
           </div>
 
           <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
-            <h1 className="uppercase text-black font-serif italic text-2xl">
+            <h1 className="uppercase text-black font-style italic text-2xl">
               Fibre Doors
             </h1>
-            <ul className="text-center space-y-2 max-w-lg italic">
+            <ul className="text-center space-y-2 max-w-lg italic font-raleway text-[14px] font-[500] tracking-[1px]">
               <li>
                 Made of high quality genuine raw material available in the
                 industry.
@@ -142,7 +142,7 @@ const FeatureDescription = () => {
               <li>Water proof, termite proof.</li>
               <li>Long lasting.</li>
             </ul>
-            <div className="w-4 h-2 bg-white transform skew-x-[-200deg]" />
+            <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
           </div>
         </div>
       </div>

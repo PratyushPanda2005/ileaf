@@ -27,6 +27,10 @@
   .font-style {
     @apply font-blafhyglibs tracking-[4px] lg:tracking-[7px];
   }
+
+  .about-para{
+    @apply mt-2 font-raleway text-center lg:text-left text-[14px] font-[300] tracking-[1px] leading-[180%]
+  }
 }
 
 ::view-transition-group(root) {

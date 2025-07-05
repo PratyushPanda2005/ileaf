@@ -23,7 +23,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
 }) => {
   return (
     <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 p-10 bg-[#707070]">
-      <h1 className="category-heading font-serif italic text-2xl">{heading}</h1>
+      <h1 className="font-style">{heading}</h1>
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -31,11 +31,13 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
         width={300}
         height={200}
       />
-      <h2 className="category-subheading text-md text-center max-w-[50%] italic  font-thin">
+      <h2 className="about-para uppercase !text-center w-full max-w-[60%]">
         {subheading}
       </h2>
       <Button 
-      title=""
+      title="explore"
+      bgColor="black"
+      textColor="#FFBF00"
       />
     </div>
   );
@@ -43,7 +45,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
 
 const ProductGrid = () => {
   return (
-    <section className="min-h-screen px-10 lg:px-20 bg-black">
+    <section className="min-h-screen px-10 lg:px-20 bg-black py-20">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-10">
         <ProductGridCard
           heading="Luxury Doors"
