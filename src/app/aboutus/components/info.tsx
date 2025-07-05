@@ -84,7 +84,7 @@ const Info = () => {
           <Parallelogram />
         </div>
         <div className="lg:hidden">
-          <Button title="Enquiry" border={1} borderColor="black" />
+          <Button routeLink="/" title="Enquiry" border={1} borderColor="black" />
         </div>
       </div>
     </section>

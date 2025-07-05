@@ -118,6 +118,7 @@ const Customer = () => {
               </h1>
             </div>
             <Button
+            routeLink="/"
             title="Explore now"
             bgColor="#FFC600"
             textColor="black"
@@ -149,6 +150,7 @@ const Customer = () => {
         </div>
         <div className="pt-20 flex justify-center items-center pb-20 ">
           <Button
+          routeLink="/"
           title="Explore Now"
           bgColor="#FFC600"
           textColor="black"

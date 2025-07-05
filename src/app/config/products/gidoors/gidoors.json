@@ -1,0 +1,113 @@
+{
+  "Gi Doors": {
+    "description": "Built from premium galvanised steel, our GI doors provide heightened security with lock points and heavy-duty hinges. These steel wood doors are perfect for homes looking for a balance of affordability and luxury.",
+    "series": [
+      {
+        "variants": [
+          {
+            "id": "IL GI SM 50 T",
+            "name": "GI SM 50 T",
+            "image": "images/gi/gi-sm-50-t.jpg",
+            "cta": "VIEW DETAILS",
+            "description": "READY TO INSTALL DOOR, HIIGHER GSM ZINC GALVANISED STEEL WITH ADDITIONAL POWDER COATING AND HTPT. DOORS WITH AESTHETIC DESIGN, FEATURING THE MOST RELIABLE AND TESTED LOCKING SYSTEM",
+            "details": {
+              "doorLeafThickness": "88 mm",
+              "frameSheetThickness": "2 mm",
+              "leafSheetThickness": "1mm x 2",
+              "threshold": "Structured stainless steel threshold",
+              "panelStuffing": "Door panel stuffing with rock wool / honey comp paper",
+              "lockingSystem": {
+                "primary": "Multi point, multi position, single key operated lever locks.",
+                "secondary": "Additional secondary security lock with 6 keys"
+              },
+              "finish": "Matt finish Heat Transmission Painting Technology (MHTPT)",
+              "protection": "Termite proof, sound proof, dust proof, anti-corrosive",
+              "hardware": "Attractive handles & high quality hardware"
+            }
+          },
+          {
+            "id": "IL 61 50 T",
+            "name": "61 50 T",
+            "image": "images/gi/gi-61-50-t.jpg",
+            "cta": "VIEW DETAILS",
+            "description": "READY TO INSTALL DOOR, HIGHER GSM ZINC GALVANISED STEEL WITH ADDITIONAL POWDER COATING AND HTPT. DOORS WITH AESTHETIC DESIGN, FEATURING THE MOST RELIABLE AND TESTED LOCKING SYSTEM",
+            "details": {
+              "doorLeafThickness": "88 mm",
+              "frameSheetThickness": "2 mm",
+              "leafSheetThickness": "1mm x 2",
+              "threshold": "Structured stainless steel threshold",
+              "panelStuffing": "Door panel stuffing with rock wool / honey comb paper",
+              "lockingSystem": {
+                "primary": "Multi-point, multi-position, single key operated lever locks",
+                "secondary": "Additional secondary security lock with 6 keys"
+              },
+              "finish": "Matt finish Heat Transmission Painting Technology (MHTPT)",
+              "protection": "Termite proof, sound proof, dust proof, anti-corrosive",
+              "hardware": "Attractive handles & high quality hardware"
+            }
+          },
+          {
+            "id": "IL Gi 50 E",
+            "name": "61 50 T",
+            "image": "images/gi/gi-61-50-t.jpg",
+            "cta": "VIEW DETAILS",
+            "description": "READY TO INSTALL DOOR, HIGHER GSM ZINC GALVANISED STEEL WITH ADDITIONAL POWDER COATING AND HTPT. DOORS WITH AESTHETIC DESIGN, FEATURING THE MOST RELIABLE AND TESTED LOCKING SYSTEM",
+            "details": {
+              "doorLeafThickness": "88 mm",
+              "frameSheetThickness": "2 mm",
+              "leafSheetThickness": "1mm x 2",
+              "threshold": "Structured stainless steel threshold",
+              "panelStuffing": "Door panel stuffing with rock wool / honey comb paper",
+              "lockingSystem": {
+                "primary": "Multi-point, multi-position, single key operated lever locks",
+                "secondary": "Additional secondary security lock with 6 keys"
+              },
+              "finish": "Matt finish Heat Transmission Painting Technology (MHTPT)",
+              "protection": "Termite proof, sound proof, dust proof, anti-corrosive",
+              "hardware": "Attractive handles & high quality hardware"
+            }
+          },
+          {
+            "id": "IL Gi 12",
+            "name": "61 50 T",
+            "image": "images/gi/gi-61-50-t.jpg",
+            "cta": "VIEW DETAILS",
+            "description": "READY TO INSTALL DOOR, HIGHER GSM ZINC GALVANISED STEEL WITH ADDITIONAL POWDER COATING AND HTPT. DOORS WITH AESTHETIC DESIGN, FEATURING THE MOST RELIABLE AND TESTED LOCKING SYSTEM",
+            "details": {
+              "doorLeafThickness": "67 mm",
+              "frameSheetThickness": "1.5 mm",
+              "leafSheetThickness": "0.8 mm x 2",
+              "threshold": "Structured stainless steel threshold",
+              "panelStuffing": "Door panel stuffing with rock wool / honey comb paper",
+              "lockingSystem": {
+                "primary": "Multi-point, multi-position, single key operated lever locks"
+              },
+              "finish": "Matt finish Heat Transmission Painting Technology (MHTPT)",
+              "protection": "Termite proof, sound proof, dust proof, anti-corrosive",
+              "hardware": "Attractive handles & high quality hardware"
+            }
+          },
+          {
+            "id": "IL Gi SM 12",
+            "name": "61 50 T",
+            "image": "images/gi/gi-61-50-t.jpg",
+            "cta": "VIEW DETAILS",
+            "description": "READY TO INSTALL DOOR, HIGHER GSM ZINC GALVANISED STEEL WITH ADDITIONAL POWDER COATING AND HTPT. DOORS WITH AESTHETIC DESIGN, FEATURING THE MOST RELIABLE AND TESTED LOCKING SYSTEM",
+            "details": {
+              "doorLeafThickness": "67 mm",
+              "frameSheetThickness": "2 mm",
+              "leafSheetThickness": "1 mm x 2",
+              "panelStuffing": "Door panel stuffing with rock wool / honey comb paper",
+              "lockingSystem": {
+                "primary": "Multi-point, multi-position, single key operated lever locks"
+              },
+              "finish": "Matt finish Heat Transmission Painting Technology (MHTPT)",
+              "protection": "Termite proof, sound proof, dust proof, anti-corrosive",
+              "hardware": "Attractive handles & high quality hardware"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

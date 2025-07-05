@@ -107,6 +107,7 @@ const WhyUs = () => {
       </div>
       <div className="w-full hidden md:flex justify-center items-center">
         <Button
+        routeLink="/"
         title="Explore now"
         bgColor="#707070"
         textColor="#FFC600"

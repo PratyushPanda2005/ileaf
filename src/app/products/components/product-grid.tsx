@@ -13,6 +13,7 @@ interface ProductGridCardProps {
   subheading?: string; // Made optional with ?
   imageSrc: StaticImageData;
   imageAlt: string;
+  routeLink: string;
 }
 
 const ProductGridCard: React.FC<ProductGridCardProps> = ({
@@ -20,10 +21,11 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   subheading = "",
   imageSrc,
   imageAlt,
+  routeLink
 }) => {
   return (
     <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 p-10 bg-[#707070]">
-      <h1 className="font-style">{heading}</h1>
+      <h1 className="font-style text-lg">{heading}</h1>
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -35,6 +37,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
         {subheading}
       </h2>
       <Button 
+      routeLink={routeLink}
       title="explore"
       bgColor="black"
       textColor="#FFBF00"
@@ -48,36 +51,42 @@ const ProductGrid = () => {
     <section className="min-h-screen px-10 lg:px-20 bg-black py-20">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-10">
         <ProductGridCard
+          routeLink="/product-category/luxury"
           heading="Luxury Doors"
           imageSrc={LuxuryDoor}
           imageAlt=""
           subheading="Unbeatable Strength. Unmatched Beauty. Long Life Span."
         />
         <ProductGridCard
+          routeLink="/product-category/gldoors"
           heading="GL Doors"
           imageSrc={GLDoor}
           imageAlt=""
           subheading="Elevate safety and elegance"
         />
         <ProductGridCard
+        routeLink="/product-category/gidoors"
           heading="Gi Doors"
           imageSrc={GiDoor}
           imageAlt=""
           subheading="Long lasting robust security"
         />
         <ProductGridCard
+        routeLink="/product-category/windows"
           heading="Windows"
           imageSrc={Windows}
           imageAlt=""
           subheading="Strength and simplicity for modern homes"
         />
         <ProductGridCard
+        routeLink="/product-category/fibredoors"
           heading="Fibre Doors"
           imageSrc={FibreDoor}
           imageAlt=""
           subheading="Lightweight durability with stylish finishes"
         />
         <ProductGridCard
+        routeLink="/product-category/wpcdoors"
           heading="WPC Doors"
           imageSrc={WPCDoor}
           imageAlt=""

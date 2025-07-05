@@ -21,7 +21,7 @@ const ProductsPage = () => {
    />
    <ProductGrid/>
    <div className="lg:hidden bg-[#707070] p-10 flex justify-center items-center">
-          <Button title="Enquiry" border={1} borderColor="black" />
+          <Button routeLink='/' title="Enquiry" border={1} borderColor="black" />
    </div>
    </>
   )

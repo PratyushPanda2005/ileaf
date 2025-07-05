@@ -39,7 +39,7 @@ const ProductRange = () => {
                 </span>{" "}
                 with several unique features.
               </p>
-              <Button title="Explore now" bgColor="#FFBF00" textColor="black" />
+              <Button  routeLink="/product-category/luxury" title="Explore now" bgColor="#FFBF00" textColor="black" />
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
@@ -84,7 +84,7 @@ const ProductRange = () => {
                 </span>{" "}
                 combining durability with aesthetic appeal
               </p>
-              <Button title="Explore now" bgColor="#FFBF00" textColor="black" />
+              <Button routeLink="/product-category/gldoors" title="Explore now" bgColor="#FFBF00" textColor="black" />
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
@@ -131,7 +131,7 @@ const ProductRange = () => {
                 are perfect for homes looking for a balance of affordability and
                 luxury.
               </p>
-              <Button title="Explore now" bgColor="#FFBF00" textColor="black" />
+              <Button routeLink="/product-category/gidoors" title="Explore now" bgColor="#FFBF00" textColor="black" />
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
@@ -175,7 +175,7 @@ const ProductRange = () => {
                 and maintenance-free. Easy to install, they are ideal for modern
                 homes, eliminating the need for carpentry.{" "}
               </p>
-              <Button title="Explore now" bgColor="#FFBF00" textColor="black" />
+              <Button routeLink="/product-category/windows" title="Explore now" bgColor="#FFBF00" textColor="black" />
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
@@ -221,7 +221,7 @@ const ProductRange = () => {
                 <span className="text-black font-[600]">customised doors</span>{" "}
                 bring a fresh look to your interiors.
               </p>
-              <Button title="Explore now" bgColor="#FFBF00" textColor="black" />
+              <Button routeLink="/product-category/fibredoors" title="Explore now" bgColor="#FFBF00" textColor="black" />
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
@@ -259,7 +259,7 @@ const ProductRange = () => {
               WPC Doors and Frames are widely accepted with its property and so becoming perfect replacement to wooden doors and frames. WPC frames are{" "}
                 <span className="text-black font-[600]">water proof, termite/borer resistant</span>{" "}and{" "}<span className="text-black font-[600]">high screw holding capacity.</span>
               </p>
-              <Button title="Explore now" bgColor="#FFBF00" textColor="black" />
+              <Button routeLink="/product-category/wpcdoors" title="Explore now" bgColor="#FFBF00" textColor="black" />
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
