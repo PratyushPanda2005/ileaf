@@ -1,6 +1,6 @@
-{
+export const giDoorsData = {
   "Gi Doors": {
-    "description": "Built from premium galvanised steel, our GI doors provide heightened security with lock points and heavy-duty hinges. These steel wood doors are perfect for homes looking for a balance of affordability and luxury.",
+    "description": "READY TO INSTALL DOOR, MADE OF HIGH QUALITY GALVALUME SHEETS WITH SUPERIOR LOCKS, HARDWARES AND ACCESSORIES WITH SEVERAL UNIQUES FEATURES",
     "series": [
       {
         "variants": [

@@ -1,5 +1,5 @@
 import ProductCategory from "@/app/components/product-category";
-import { luxuryDoorsData } from "@/app/config/products/luxury/luxury";
+import { glDoorsData } from "@/app/config/products/gldoors/gldoors";
 import Image from "next/image";
 
 
@@ -9,11 +9,11 @@ async function DoorDetailsPage({ params } : {params : Params}) {
 
     const {subcategory} = await params;
 
-  const doorDetails = luxuryDoorsData["Luxury Doors"].series[0].variants.find(
+  const doorDetails = glDoorsData["GL Doors"].series[0].variants.find(
     variant => variant.number === subcategory
   );
 
-  const description = luxuryDoorsData["Luxury Doors"]
+  const description = glDoorsData["GL Doors"]
 
   if (!doorDetails) {
     return <div>Door not found</div>;
@@ -37,18 +37,15 @@ async function DoorDetailsPage({ params } : {params : Params}) {
         </div>
         <div className="col-span-1 bg-[#6b6b6b] text-[#ffc600] font-raleway font-[300] leading-[180%] flex justify-center items-center p-20 tracking-[1px] text-[14px]">
             <ul>
-            <li className="leading-[180%]"><span className="font-semibold ">Door leaf thickness: </span>{doorDetails.details.doorLeafThickness} </li>
-            <li>{doorDetails.details.specialframes}</li>
             <li><span className="font-semibold">Structured door frame sheet thickness: </span>{doorDetails.details.frameSheetThickness} </li>
-            <li>{doorDetails.details.panelStuffing}</li>
             <li><span className="font-semibold">Structured door leaf sheet thickness:</span> {doorDetails.details.leafSheetThickness} </li>
+            <li><span className="font-semibold">Door panel stuffing:</span> {doorDetails.details.panelStuffing}</li>
             <li>{doorDetails.details.threshold}</li>
             <li>{doorDetails.details.lock}</li>
-            <li>{doorDetails.details.handle}</li>
             <li>{doorDetails.details.features}</li>
-            <li>{doorDetails.details.extras}</li>
-            <li>{doorDetails.details.sizes}</li>
-            <li>{doorDetails.details.hinges}</li>
+            <li>{doorDetails.details.protection}</li>
+            <li><span className="font-semibold">Cylinder:</span> {doorDetails.details.cylinder}</li>
+            <li><span className="font-semibold">Easy to install, aesthetic finish</span> {doorDetails.details.hardware}</li>
             </ul>
         </div>
      </div>

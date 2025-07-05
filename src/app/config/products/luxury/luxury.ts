@@ -12,17 +12,14 @@ export const luxuryDoorsData = {
             "details": {
               "doorLeafThickness": "100 mm",
               "frameSize": "Up to 220 mm",
+              "specialframes" : "Extra size special frames – up to 220 mm",
               "frameSheetThickness": "8-12 mm Cast aluminium, 1mm x 2 GL Sheets, 8mm Carbonated wood",
-              "panelStuffing": "Fire proof blocks and reinforced sheets",
+              "panelStuffing": "Door panel stuffing with fire proof blocks and reinforced sheets",
               "leafSheetThickness": "100 mm",
-              "threshold": "High quality structured stainless steel",
+              "threshold": "High quality structured stainless steel threshold",
               "lock": "Multi point, multi position, single key smart lock operated lever locks",
               "handle": "Attractive handle designs with smart lock operation",
-              "features": [
-                "Termite proof",
-                "Sound and dust proof",
-                "Anti-corrosive"
-              ],
+              "features": "Termite proof, sound and dust proof, anti-corrosive",
               "extras": "No additional cost for frame, lock, painting and accessories",
               "sizes": "Available in different sizes",
               "hinges": "180° openable visible extra heavy hinges"
@@ -36,17 +33,14 @@ export const luxuryDoorsData = {
             "details": {
               "doorLeafThickness": "100 mm",
               "frameSize": "Up to 220 mm",
+              "specialframes" : "Extra size special frames – up to 220 mm",
               "frameSheetThickness": "8–10 mm Cast Aluminum, 1mm X 2 GL Sheets, 8mm Carbonated wood",
-              "panelStuffing": "Fire proof blocks and reinforced sheets",
+              "panelStuffing": "Door panel stuffing with fire proof blocks and reinforced sheets",
               "leafSheetThickness": "100 mm",
-              "threshold": "High quality structured stainless steel",
+              "threshold": "High quality structured stainless steel threshold",
               "lock": "Multi point, multi position, single key smart lock operated lever locks",
               "handle": "Attractive handle designs with smart lock operation",
-              "features": [
-                "Termite proof",
-                "Sound and dust proof",
-                "Anti-corrosive"
-              ],
+              "features": "Termite proof, sound and dust proof, anti-corrosive",
               "extras": "No additional cost for frame, lock, painting and accessories",
               "sizes": "Available in different sizes",
               "hinges": "180° openable visible extra heavy hinges"
@@ -61,17 +55,14 @@ export const luxuryDoorsData = {
             "details": {
               "doorLeafThickness": "100 mm",
               "frameSize": "Up to 220 mm",
+              "specialframes" : "Extra size special frames – up to 220 mm",
               "frameSheetThickness": "8–12 mm Cast Aluminum, 1mm x 2 GL Sheets, 8mm Carbonated wood",
-              "panelStuffing": "Fire proof blocks and reinforced sheets",
+              "panelStuffing": "Door panel stuffing with fire proof blocks and reinforced sheets",
               "leafSheetThickness": "100 mm",
-              "threshold": "High quality structured stainless steel",
+              "threshold": "High quality structured stainless steel threshold",
               "lock": "Multi point, multi position, single key smart lock operated lever locks",
               "handle": "Attractive handle designs with smart lock operation",
-              "features": [
-                "Termite proof",
-                "Sound and dust proof",
-                "Anti-corrosive"
-              ],
+             "features": "Termite proof, sound and dust proof, anti-corrosive",
               "extras": "No additional cost for frame, lock, painting and accessories",
               "sizes": "Available in different sizes",
               "hinges": "180° openable visible extra heavy hinges"
@@ -85,17 +76,14 @@ export const luxuryDoorsData = {
             "details": {
               "doorLeafThickness": "100 mm",
               "frameSize": "Up to 220 mm",
+              "specialframes" : "Extra size special frames – up to 220 mm",
               "frameSheetThickness": "8–12 mm Cast Aluminum, 1mm x 2 GL Sheets, 8mm Carbonated wood",
-              "panelStuffing": "Fire proof blocks and reinforced sheets",
+              "panelStuffing": "Door panel stuffing with fire proof blocks and reinforced sheets",
               "leafSheetThickness": "100 mm",
-              "threshold": "High quality structured stainless steel",
+              "threshold": "High quality structured stainless steel threshold",
               "lock": "Multi point, multi position, single key smart lock operated lever locks",
               "handle": "Attractive handle designs with smart lock operation",
-              "features": [
-                "Termite proof",
-                "Sound and dust proof",
-                "Anti-corrosive"
-              ],
+              "features": "Termite proof, sound and dust proof, anti-corrosive",
               "extras": "No additional cost for frame, lock, painting and accessories",
               "sizes": "Available in different sizes",
               "hinges": "180° openable visible extra heavy hinges"
@@ -110,17 +98,14 @@ export const luxuryDoorsData = {
             "details": {
               "doorLeafThickness": "100 mm",
               "frameSize": "Up to 220 mm",
+              "specialframes" : "Extra size special frames – up to 220 mm",
               "frameSheetThickness": "3 mm Cast Aluminum, 1mm x 2 GL Sheets, 8mm Carbonated wood",
-              "panelStuffing": "Fire proof blocks and reinforced sheets",
+              "panelStuffing": "Door panel stuffing with fire proof blocks and reinforced sheets",
               "leafSheetThickness": "100 mm",
-              "threshold": "High quality structured stainless steel",
+              "threshold": "High quality structured stainless steel threshold",
               "lock": "Multi point, multi position, single key smart lock operated lever locks",
               "handle": "Attractive handle designs with smart lock operation",
-              "features": [
-                "Termite proof",
-                "Sound and dust proof",
-                "Anti-corrosive"
-              ],
+             "features": "Termite proof, sound and dust proof, anti-corrosive",
               "extras": "No additional cost for frame, lock, painting and accessories",
               "sizes": "Available in different sizes",
               "hinges": "180° openable visible extra heavy hinges"
@@ -134,17 +119,14 @@ export const luxuryDoorsData = {
             "details": {
               "doorLeafThickness": "100 mm",
               "frameSize": "Up to 220 mm",
+              "specialframes" : "Extra size special frames – up to 220 mm",
               "frameSheetThickness": "8–12 mm Cast Aluminum, 1mm x 2 GL Sheets, 8mm Carbonated wood",
-              "panelStuffing": "Fire proof blocks and reinforced sheets",
+              "panelStuffing": "Door panel stuffing with fire proof blocks and reinforced sheets",
               "leafSheetThickness": "100 mm",
-              "threshold": "High quality structured stainless steel",
+              "threshold": "High quality structured stainless steel threshold",
               "lock": "Multi point, multi position, single key smart lock operated lever locks",
               "handle": "Attractive handle designs with smart lock operation",
-              "features": [
-                "Termite proof",
-                "Sound and dust proof",
-                "Anti-corrosive"
-              ],
+             "features": "Termite proof, sound and dust proof, anti-corrosive",
               "extras": "No additional cost for frame, lock, painting and accessories",
               "sizes": "Available in different sizes",
               "hinges": "180° openable visible extra heavy hinges"

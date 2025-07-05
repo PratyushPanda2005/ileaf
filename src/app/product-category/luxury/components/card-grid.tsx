@@ -45,12 +45,12 @@ const CardGrid = () => {
   return (
     <section className="min-h-screen bg-black p-10 lg:p-20">
       <h1 className="text-[#707070] font-raleway mb-10 tracking-[1px] text-[14px]">Showing all {luxuryDoors.length} results</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-4 ">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-3.5">
         {luxuryDoors.map((variant) => (
           <ProductGridCard
             key={variant.id}
             heading={variant.id}
-            routeLink={`/products/luxury/${variant.id}`} // Example dynamic route
+            routeLink={`/product-category/luxury/${variant.number}`}
             imageSrc={variant.image}
             imageAlt={`${variant.id} luxury door`}
           />

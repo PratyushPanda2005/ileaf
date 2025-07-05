@@ -1,13 +1,13 @@
-{
+export const glDoorsData =  {
     "GL Doors": {
-        "description": "Designed with UV-protected Galvalume sheets, i-Leaf GL doors offer superior fireproof and termite-proof protection. These multi-locking doors features a stunning wooden steel door finish, combining durability with aesthetic appeal. The advanced Matt Finish Heat Transmission Painting Technology (MHTPT) ensures long-lasting beauty and weather resistance.",
+        "description": "READY TO INSTALL DOOR, MADE OF HIGH QUALITY GALVALUME SHEETS WITH SUPERIOR LOCKS, HARDWARES AND ACCESSORIES WITH SEVERAL UNIQUES FEATURES",
         "series": [
           {
             "variants": [
               {
                 "id": "IL GL SG121",
-                "name": "Galvalume Slate",
-                "image": "images/gl/galvalume-slate.jpg",
+                "number": "1",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663492/1-IL-GL-SG121_mvnjlx.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -24,8 +24,8 @@
               },
               {
                 "id": "IL GL JP02 TW-220 F",
-                "name": "Galvalume Twin Walnut",
-                "image": "images/gl/galvalume-twin-walnut.jpg",
+                "number": "2",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663498/2-IL-GL-JP02-TW-220_fofpwk.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -41,8 +41,8 @@
               },
               {
                 "id": "IL GL JP02",
-                "name": "Galvalume JP02",
-                "image": "images/gl/galvalume-jp02.jpg",
+                "number": "3",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663498/3-IL-GL-JP02_m6uhua.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -58,8 +58,8 @@
               },
               {
                 "id": "IL GL SM JP02",
-                "name": "Galvalume JP02",
-                "image": "images/gl/galvalume-jp02.jpg",
+                "number": "4",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663491/4-IL-GL-SM-JP-02_ufgqid.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -75,8 +75,8 @@
               },
               {
                 "id": "IL GL JP05",
-                "name": "Galvalume JP05",
-                "image": "images/gl/galvalume-jp05.jpg",
+                "number": "5",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663495/5-IL-GL-JP05_eymqid.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -93,8 +93,8 @@
               
               {
                 "id": "IL GL 18 T-220 F",
-                "name": "Galvalume 18 T-220 F",
-                "image": "images/gl/galvalume-18-t-220-f.jpg",
+                "number": "6",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663497/6-IL-GL-SM18-T-220_i2rs7v.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -111,8 +111,8 @@
               },
               {
                 "id": "IL GL SM 18",
-                "name": "Galvalume SM 18",
-                "image": "images/gl/galvalume-sm-18.jpg",
+                "number": "7",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663495/7-IL-GL-SM18_svcux8.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -129,8 +129,8 @@
               },
               {
                 "id": "IL GL SM XY 6",
-                "name": "Galvalume SM XY 6",
-                "image": "images/gl/galvalume-sm-xy-6.jpg",
+                "number": "8",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663496/8-IL-GL-SM-XY-6_csnfna.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -147,8 +147,8 @@
 
               {
                 "id": "IL GL XY 6",
-                "name": "Galvalume XY 6",
-                "image": "images/gl/galvalume-xy-6.jpg",
+                "number": "9",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663496/9-IL-GL-XY-6_efgu7d.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -164,8 +164,8 @@
               },
               {
                 "id": "IL GL SM XS 4",
-                "name": "Galvalume SM XS 4",
-                "image": "images/gl/galvalume-sm-xs-4.jpg",
+               "number": "10",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663492/10-IL-GL-SM-XS4_mapz2h.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -181,8 +181,8 @@
               },
               {
                 "id": "IL GL XH 3",
-                "name": "Galvalume XH 3",
-                "image": "images/gl/galvalume-xh-3.jpg",
+                "number": "11",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663493/11-IL-GL-XH-3_vy7gmq.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -198,8 +198,8 @@
               },
               {
                 "id": "IL GL SM 17",
-                "name": "Galvalume SM 17",
-                "image": "images/gl/galvalume-sm-17.jpg",
+                "number": "12",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663495/12-IL-GL-SM-17_yd2fto.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -216,8 +216,8 @@
               },
               {
                 "id": "IL GL SM 17 E",
-                "name": "Galvalume SM 17 E",
-                "image": "images/gl/galvalume-sm-17-e.jpg",
+                "number": "13",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663496/13-IL-GL-SM-17-E_gtjjeq.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -234,8 +234,8 @@
               },
               {
                 "id": "IL GL SM 17 T",
-                "name": "Galvalume SM 17 T",
-                "image": "images/gl/galvalume-sm-17-t.jpg",
+                "number": "14",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663497/14-IL-GL-SM-17-T_kvs58k.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -252,8 +252,8 @@
               },
               {
                 "id": "IL GL 20 E",
-                "name": "Galvalume 20 E",
-                "image": "images/gl/galvalume-20-e.jpg",
+                "number": "15",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663493/15-IL-GL-20-E_ixsu2b.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -270,8 +270,8 @@
               },
               {
                 "id": "IL GL 20",
-                "name": "Galvalume 20",
-                "image": "images/gl/galvalume-20.jpg",
+                "number": "16",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663492/16-IL-GL-20_dpq0jo.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
@@ -288,8 +288,8 @@
               },
               {
                 "id": "IL GL SM 20",
-                "name": "Galvalume SM 20",
-                "image": "images/gl/galvalume-sm-20.jpg",
+                "number": "17",
+                "image": "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663498/17-IL-GL-SM-20_pcdlvg.webp",
                 "cta": "VIEW DETAILS",
                 "description": "Ready to install door made of high quality galvalume sheets with superior locks, hardware and accessories with several unique features.",
                 "details": {
