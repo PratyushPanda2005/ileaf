@@ -1,4 +1,6 @@
+import Parallelogram from "@/app/components/parallelogram";
 import ProductCategory from "@/app/components/product-category";
+import RelatedProducts from "@/app/components/related-products";
 import { luxuryDoorsData } from "@/app/config/products/luxury/luxury";
 import Image from "next/image";
 
@@ -18,6 +20,8 @@ async function DoorDetailsPage({ params } : {params : Params}) {
   if (!doorDetails) {
     return <div>Door not found</div>;
   }
+
+  const allProducts = luxuryDoorsData["Luxury Doors"].series[0].variants;
 
   return (
     <section className="min-h-screen bg-black">
@@ -51,6 +55,15 @@ async function DoorDetailsPage({ params } : {params : Params}) {
             </ul>
         </div>
      </div>
+     <div className='flex flex-col justify-center items-center p-10 md:p-20 md:bg-black'>
+        <h1 className='text-xl md:text-2xl lg:text-3xl font-blafhyglibs italic text-black md:text-white tracking-[4px]'>Related Products</h1>
+        <Parallelogram/>
+    </div>
+     <RelatedProducts
+     currentSubcategory={subcategory} 
+     allProducts={allProducts} 
+     />
+
     </section>
   );
 }

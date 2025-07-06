@@ -49,6 +49,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
 const ProductGrid = () => {
   return (
     <section className="min-h-screen px-10 lg:px-20 bg-black py-20">
+      
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-10">
         <ProductGridCard
           routeLink="/product-category/luxury"
