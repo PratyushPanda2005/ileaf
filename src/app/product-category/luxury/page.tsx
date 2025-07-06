@@ -4,6 +4,7 @@ import ProductHero from '@/app/components/productsHero'
 import { luxuryDoorsData } from '@/app/config/products/luxury/luxury';
 import React from 'react'
 import CardGrid from './components/card-grid';
+import ProductCategoryMob from '@/app/components/product-category-mob';
 
 const LuxuryDoors = () => {
   const luxuryDoors = luxuryDoorsData["Luxury Doors"];
@@ -17,12 +18,13 @@ const LuxuryDoors = () => {
     headingFour='Beauty.'
     bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/04/Hero-Luxury-doors-scaled.webp'
     />
-    <div className='bg-black text-white flex flex-col justify-center items-center px-20 pt-20'>
-      <h1 className='font-raleway tracking-[1px] font-[300] text-sm text-center'>{luxuryDoors.description}</h1>
+    <div className='bg-black text-white flex flex-col justify-center items-center px-16 lg:px-20 pt-20'>
+      <h1 className='font-raleway tracking-[1px] font-[300] text-sm text-center max-sm:uppercase'>{luxuryDoors.description}</h1>
       <Parallelogram/>
     </div>
     <ProductCategory/>
     <CardGrid/>
+    <ProductCategoryMob/>
     </>
   )
 }
