@@ -13,7 +13,7 @@ async function DoorDetailsPage({ params } : {params : Params}) {
     variant => variant.number === subcategory
   );
 
-  const description = windowsData["Windows"]
+ 
 
   if (!doorDetails) {
     return <div>Door not found</div>;
