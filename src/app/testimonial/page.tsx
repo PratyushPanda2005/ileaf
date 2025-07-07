@@ -107,7 +107,6 @@ const Testimonial = () => {
               className="object-cover"
             />
 
-            
             <div className="relative flex flex-col justify-center items-center "> 
               <div className="relative w-full lg:max-w-[70%] ">
               <p className={`text-[#707070] text-center font-style leading-[160%] !tracking-[0.5px] w-full ${
