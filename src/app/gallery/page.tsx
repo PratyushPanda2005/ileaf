@@ -20,7 +20,14 @@ const Gallery = () => {
     },
     {
       id: 5
-    }
+    },
+    {
+      id: 6
+    },
+    {
+      id: 7
+    },
+
   ]
   const marginClasses = [
     'translate-x-[0px]', 
@@ -28,7 +35,9 @@ const Gallery = () => {
     'lg:-translate-x-[34.333px]', 
     'lg:-translate-x-[34.333px]',           
     'lg:-translate-x-[68.666px]', 
-    'lg:-translate-x-[68.666px]'          
+    'lg:-translate-x-[68.666px]',          
+    'lg:-translate-x-[103px]',          
+    'lg:-translate-x-[103px]',          
   ];
   
   
