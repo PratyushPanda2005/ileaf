@@ -25,10 +25,10 @@ const Gallery = () => {
   const marginClasses = [
     'translate-x-[0px]', 
     'translate-x-[0px]',         
-    '-translate-x-[34.333px]', 
-    '-translate-x-[34.333px]',           
-    '-translate-x-[68.666px]', 
-    '-translate-x-[68.666px]'          
+    'lg:-translate-x-[34.333px]', 
+    'lg:-translate-x-[34.333px]',           
+    'lg:-translate-x-[68.666px]', 
+    'lg:-translate-x-[68.666px]'          
   ];
   
   
