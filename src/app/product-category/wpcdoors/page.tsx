@@ -4,6 +4,7 @@ import ProductHero from '@/app/components/productsHero'
 import { wpcDoorsData } from '@/app/config/products/wpcdoors/wpcdoors'
 import React from 'react'
 import CardGrid from './components/card-grid'
+import ProductCategoryMob from '@/app/components/product-category-mob'
 
 const WPCDoors = () => {
   const wpcDoors = wpcDoorsData["WpcDoors"]
@@ -20,6 +21,7 @@ const WPCDoors = () => {
       </div>
       <ProductCategory />
       <CardGrid />
+      <ProductCategoryMob/>
    </>
   )
 }

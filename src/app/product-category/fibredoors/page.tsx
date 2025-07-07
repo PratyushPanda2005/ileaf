@@ -4,6 +4,7 @@ import ProductHero from "@/app/components/productsHero";
 import { fibreDoorData } from "@/app/config/products/fibredoors/fibredoors";
 import React from "react";
 import CardGrid from "./components/card-grid";
+import ProductCategoryMob from "@/app/components/product-category-mob";
 
 const FibreDoors = () => {
   const giDoors = fibreDoorData["FibreDoors"];
@@ -18,6 +19,7 @@ const FibreDoors = () => {
       </div>
       <ProductCategory />
       <CardGrid />
+      <ProductCategoryMob/>
     </>
   );
 };

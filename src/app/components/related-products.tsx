@@ -12,9 +12,6 @@ interface ProductVariant {
   number: string;
   id: string;
   image: string;
-  details: {
-    [key: string]: string;
-  };
 }
 
 interface RelatedProductsProps {
@@ -59,7 +56,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
       >
         {relatedProducts.map((product) => (
           <SwiperSlide key={product.number}>
-            <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 bg-[#707070] relative overflow-hidden">
+            <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 px-10 bg-[#707070] relative overflow-hidden">
               <Image
                 src={product.image}
                 alt={product.id}

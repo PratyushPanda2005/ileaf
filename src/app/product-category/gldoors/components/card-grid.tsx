@@ -2,7 +2,7 @@
 import Button from "@/app/components/button";
 import { glDoorsData } from "@/app/config/products/gldoors/gldoors";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface ProductGridCardProps {
   heading?: string;
@@ -44,6 +44,8 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
 const CardGrid = () => {
   const glDoors = glDoorsData["GL Doors"].series[0].variants;
   const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const itemsPerPage = 12;
 
   const totalPages = Math.ceil(glDoors.length / itemsPerPage);
@@ -54,6 +56,19 @@ const CardGrid = () => {
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
+  const itemsToShow = isMobile && !showAll ? 1 : glDoors.length;
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   return (
     <section className="min-h-screen bg-black p-10 lg:p-20">
       <h1 className="text-[#707070] font-raleway mb-10 tracking-[1px] text-[14px]">
@@ -62,16 +77,27 @@ const CardGrid = () => {
       </h1>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-3.5">
-        {currentItems.map((variant) => (
+      {currentItems.slice(0, itemsToShow).map((variant) => (
           <ProductGridCard
             key={variant.id}
             heading={variant.id}
             routeLink={`/product-category/gldoors/${variant.number}`}
             imageSrc={variant.image}
-            imageAlt={`${variant.id} gl door`}
+            imageAlt={`${variant.id} gldoor`}
           />
         ))}
       </div>
+
+      {isMobile && (
+        <div className="flex justify-center mt-20">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-[#707070] text-black"
+          >
+           <span className="inline-block transform skew-x-[20deg]">{showAll ? 'View Less' : 'View All'}</span>
+          </button>
+        </div>
+      )}
 
       {totalPages > 1 && (
         <div className="flex justify-between items-center mt-10 ">

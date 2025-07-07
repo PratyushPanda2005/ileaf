@@ -2,7 +2,7 @@
 import Button from "@/app/components/button";
 import { windowsData } from "@/app/config/products/windows/windows";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface ProductGridCardProps {
   heading?: string;
@@ -42,27 +42,43 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
 };
 
 const CardGrid = () => {
-  const glDoors = windowsData["Windows"].series[0].variants;
+  const windows = windowsData["Windows"].series[0].variants;
   const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const itemsPerPage = 12;
 
-  const totalPages = Math.ceil(glDoors.length / itemsPerPage);
+  const totalPages = Math.ceil(windows.length / itemsPerPage);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = glDoors.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = windows.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+  const itemsToShow = isMobile && !showAll ? 1 : windows.length;
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
 
   return (
     <section className="min-h-screen bg-black p-10 lg:p-20">
       <h1 className="text-[#707070] font-raleway mb-10 tracking-[1px] text-[14px]">
         Showing {indexOfFirstItem + 1}-
-        {Math.min(indexOfLastItem, glDoors.length)} of {glDoors.length} results
+        {Math.min(indexOfLastItem, windows.length)} of {windows.length} results
       </h1>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-3.5">
-        {currentItems.map((variant) => (
+        {currentItems.slice(0, itemsToShow).map((variant) => (
           <ProductGridCard
             key={variant.id}
             heading={variant.id}
@@ -72,12 +88,23 @@ const CardGrid = () => {
           />
         ))}
       </div>
+      
+      {isMobile && (
+        <div className="flex justify-center mt-20">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-[#707070] text-black"
+          >
+           <span className="inline-block transform skew-x-[20deg]">{showAll ? 'View Less' : 'View All'}</span>
+          </button>
+        </div>
+      )}
 
       {totalPages > 1 && (
         <div className="flex justify-between items-center mt-10 ">
           <h1 className="text-[#707070] font-raleway tracking-[1px] text-[14px]">
             Showing {indexOfFirstItem + 1}-
-            {Math.min(indexOfLastItem, glDoors.length)} of {glDoors.length}{" "}
+            {Math.min(indexOfLastItem, windows.length)} of {windows.length}{" "}
             results
           </h1>
           <nav className="flex items-center gap-2 ">

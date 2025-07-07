@@ -4,6 +4,7 @@ import ProductHero from '@/app/components/productsHero'
 import { windowsData } from '@/app/config/products/windows/windows';
 import React from 'react'
 import CardGrid from './components/card-grid';
+import ProductCategoryMob from '@/app/components/product-category-mob';
 
 const Windows = () => {
   const windows = windowsData["Windows"];
@@ -19,6 +20,7 @@ const Windows = () => {
     </div>
     <ProductCategory/>
     <CardGrid/>
+    <ProductCategoryMob/>
     </>
   )
 }
