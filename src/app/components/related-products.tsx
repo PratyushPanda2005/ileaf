@@ -6,7 +6,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import Image from "next/image";
 import Button from "./button";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 
 interface ProductVariant {
   number: string;
@@ -41,6 +41,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
         pagination={{
           clickable: true,
         }}
+        autoplay={true}
         navigation={{
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
@@ -53,7 +54,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({
             slidesPerView: 3,
           },
         }}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         className="mySwiper h-auto"
       >
         {relatedProducts.map((product) => (
