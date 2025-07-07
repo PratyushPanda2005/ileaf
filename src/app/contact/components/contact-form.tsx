@@ -5,7 +5,7 @@ import React from "react";
 const ContactForm = () => {
   return (
     <section className="bg-black p-10 lg:p-20">
-      <div className="w-full bg-white pb-[120px]">
+      <div className="w-full bg-white">
         <div className="flex flex-col justify-center items-center p-10 md:p-20 lg:p-[120px]">
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-blafhyglibs italic text-black tracking-[4px] lg:tracking-[7px] mb-10">
             Contact
