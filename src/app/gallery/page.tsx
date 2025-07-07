@@ -42,7 +42,7 @@ const Gallery = () => {
       </ul>
       <div className='grid lg:grid-cols-2 gap-10'>
       {list.map((item) => (
-          <div key={item.id} className='col-span-1 -skew-x-6'>
+          <div key={item.id} className='col-span-1 -skew-x-6 flex justify-center items-center'>
             <Image src={Cycling} alt='Cycling' className={`w-96 h-64 ${marginClasses[item.id]}`} />
           </div>
       ))}
