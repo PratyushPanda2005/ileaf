@@ -4,6 +4,7 @@ import ProductHero from "@/app/components/productsHero";
 import { glDoorsData } from "@/app/config/products/gldoors/gldoors";
 import React from "react";
 import CardGrid from "./components/card-grid";
+import ProductCategoryMob from "@/app/components/product-category-mob";
 
 const GLDoors = () => {
   const glDoors = glDoorsData["GL Doors"];
@@ -23,6 +24,7 @@ const GLDoors = () => {
       </div>
       <ProductCategory />
       <CardGrid />
+      <ProductCategoryMob/>
     </>
   );
 };
