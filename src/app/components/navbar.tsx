@@ -1,17 +1,20 @@
 "use client";
 
-import React, { useState, useEffect, MouseEvent } from "react";
+import React, { useState, useEffect, MouseEvent, useRef } from "react";
 import { useTransitionRouter } from "next-view-transitions";
 import Logo from "../../../public/assets/logos/logo-i-LEAF-logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import Parallelogram from "./parallelogram";
+import Button from "./button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useTransitionRouter();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const leftRoutes = [
     { label: "Home", url: "/" },
     { label: "About Us", url: "/aboutus" },
@@ -22,12 +25,16 @@ const Navbar = () => {
   const rightRoutes = [
     { label: "Gallery", url: "/gallery" },
     { label: "Testimonial", url: "/testimonial" },
-    { label: "Enquiry", url: "/enquiry" },
     { label: "Contact", url: "/contact" },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDropdown = (e: MouseEvent) => {
+    e.preventDefault();
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   useEffect(() => {
@@ -46,6 +53,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
+  useEffect(() => {
+  const handleClickOutside = (event: globalThis.MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setIsDropdownOpen(false);
+    }
+  };
+    if (isDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside as EventListener);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside as EventListener);
+    };
+  }, [isDropdownOpen]);
+
+  
+
   const handleNavigation = (e: MouseEvent<HTMLAnchorElement>, url: string) => {
     e.preventDefault();
     router.push(url, {
@@ -56,7 +82,7 @@ const Navbar = () => {
   return (
     <>
       {/* Mobile Nav */}
-      <div 
+      <div
         className={`lg:hidden relative top-0 left-0 right-0 z-50 bg-[#5e636b]/70 p-4 flex justify-center items-center transition-transform duration-300 ${
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
@@ -68,91 +94,90 @@ const Navbar = () => {
         </div>
       </div>
 
-
       <button
-          onClick={toggleMenu}
-          className="text-yellow-400 fixed lg:hidden focus:outline-none  top-20 right-4 z-[60]"
-          aria-label="Toggle menu"
+        onClick={toggleMenu}
+        className="text-yellow-400 fixed lg:hidden focus:outline-none  top-20 right-4 z-[60]"
+        aria-label="Toggle menu"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-        <div
-          className={`fixed lg:hidden top-0 left-0 min-h-screen w-full bg-black z-50 transform ${
-            isMenuOpen ? "translate-x-0" : "-translate-y-full"
-          } transition-transform duration-300 ease-in-out md:hidden pt-4`}
-        >
-          <ul className="flex flex-col gap-4 uppercase text-sm italic p-6 text-[#FFBF00] text-center">
-            {leftRoutes.map((route) => (
-              <li key={route.label}>
-                <Link
-                  href={route.url}
-                  onClick={(e) => {
-                    handleNavigation(e, route.url);
-                    setIsMenuOpen(false);
-                  }}
-                  className="hover:text-amber-300 transition-all duration-300"
-                >
-                  {route.label}
-                </Link>
-              </li>
-            ))}
-             {rightRoutes.map((route) => (
-              <li key={route.label}>
-                <Link
-                  href={route.url}
-                  onClick={(e) => {
-                    handleNavigation(e, route.url);
-                    setIsMenuOpen(false);
-                  }}
-                  className="hover:text-amber-300 transition-all duration-300"
-                >
-                  {route.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="flex justify-center items-center">
-            <div className=" w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
-          </div>
-          <ul className="flex flex-col gap-2 uppercase text-sm italic p-6 text-[#FFBF00] text-center">
-            <li className="pb-2">Luxury doors</li>
-            <li className="pb-2">Gi doorss</li>
-            <li className="pb-2">GL doors</li>
-            <li className="pb-2">windows</li>
-            <li className="pb-2">fiber doors</li>
-            <li className="pb-2">wpc doors</li>
-          </ul>
-          <div className="flex-1 flex flex-col gap-10 justify-center items-center">
-            <button className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base border border-[#707070] text-amber-400">
-              download brochure
-            </button>
-          </div>
+          {isMenuOpen ? (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          ) : (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          )}
+        </svg>
+      </button>
+      <div
+        className={`fixed lg:hidden top-0 left-0 min-h-screen w-full bg-black z-50 transform ${
+          isMenuOpen ? "translate-x-0" : "-translate-y-full"
+        } transition-transform duration-300 ease-in-out md:hidden pt-4`}
+      >
+        <ul className="flex flex-col gap-4 uppercase text-sm italic p-6 text-[#FFBF00] text-center">
+          {leftRoutes.map((route) => (
+            <li key={route.label}>
+              <Link
+                href={route.url}
+                onClick={(e) => {
+                  handleNavigation(e, route.url);
+                  setIsMenuOpen(false);
+                }}
+                className="hover:text-amber-300 transition-all duration-300"
+              >
+                {route.label}
+              </Link>
+            </li>
+          ))}
+          {rightRoutes.map((route) => (
+            <li key={route.label}>
+              <Link
+                href={route.url}
+                onClick={(e) => {
+                  handleNavigation(e, route.url);
+                  setIsMenuOpen(false);
+                }}
+                className="hover:text-amber-300 transition-all duration-300"
+              >
+                {route.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="flex justify-center items-center">
+          <div className=" w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
         </div>
+        <ul className="flex flex-col gap-2 uppercase text-sm italic p-6 text-[#FFBF00] text-center">
+          <li className="pb-2">Luxury doors</li>
+          <li className="pb-2">Gi doorss</li>
+          <li className="pb-2">GL doors</li>
+          <li className="pb-2">windows</li>
+          <li className="pb-2">fiber doors</li>
+          <li className="pb-2">wpc doors</li>
+        </ul>
+        <div className="flex-1 flex flex-col gap-10 justify-center items-center">
+          <button className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base border border-[#707070] text-amber-400">
+            download brochure
+          </button>
+        </div>
+      </div>
 
       {/* Desktop Nav */}
-      <nav 
+      <nav
         className={`hidden lg:flex fixed z-[50] justify-between items-center w-full py-6 px-12 lg:px-20 bg-[#5e636b]/90 transition-transform duration-300 ${
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
@@ -172,13 +197,13 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        
+
         <div>
           <Link href="/" onClick={(e) => handleNavigation(e, "/")}>
             <Image src={Logo} alt="i-LEAF Logo" className="h-[3em] w-fit" />
           </Link>
         </div>
-        
+
         <div className="mt-7">
           <ul className="flex lg:gap-6 xl:gap-10 uppercase text-[13px] font-raleway font-[500]">
             {rightRoutes.map((route) => (
@@ -192,6 +217,116 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            <li className="relative">
+              <span
+                onClick={toggleDropdown}
+                className="cursor-pointer hover:text-amber-300"
+              >
+                Enquiry
+              </span>
+              {isDropdownOpen && (
+                <div ref={dropdownRef} className="absolute top-full right-0 mt-2 bg-white text-black rounded shadow-lg z-50 flex justify-center items-center w-[380px]  p-8 overflow-auto">
+                  <div className="flex flex-col items-center justify-center gap-6 w-full">
+                    <div>
+                      <h1 className="text-base font-raleway text-amber-400 font-bold">
+                        Enquiry Form
+                      </h1>
+                      <Parallelogram />
+                    </div>
+                    <div className="flex flex-col gap-4 w-full ">
+                      <input
+                        name="name"
+                        type="text"
+                        placeholder="Name"
+                        className="p-2 border border-amber-300 w-full text-base font-[300]"
+                      />
+                      <input
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        className="p-2 border border-amber-300 font-[300] text-base"
+                      />
+                      <input
+                        name="mobile"
+                        type="number"
+                        placeholder="Mobile No."
+                        className="p-2 border border-amber-300 font-[300] text-base"
+                      />
+                      <input
+                        name="whatsapp"
+                        type="number"
+                        placeholder="Whatsapp No."
+                        className="p-2 border border-amber-300 font-[300] text-base"
+                      />
+                      <select
+                        id="options"
+                        name="options"
+                        className="p-2 border border-amber-300 text-base font-[300]"
+                      >
+                        <option value="">Select Country</option>
+                        <option value="option1">India</option>
+                      </select>
+                      <select
+                        id="options"
+                        name="options"
+                        className="p-2 border border-amber-300 text-base font-[300]"
+                      >
+                        <option value="">How did you find us?</option>
+                        <option value="option1">Google</option>
+                        <option value="option2">Facebook</option>
+                        <option value="option3">Instagram</option>
+                        <option value="option4">Friend/Family</option>
+                        <option value="option4">Other</option>
+                      </select>
+                      <h2 className="normal-case text-base font-[300]">Select a product</h2>
+                      <div className="flex flex-wrap gap-2">
+                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                          <input
+                            type="checkbox"
+                            id="luxury-doors"
+                            name="product"
+                          />
+                          <label htmlFor="luxury-doors">Luxury Doors</label>
+                        </div>
+                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                          <input type="checkbox" id="gl-doors" name="product" />
+                          <label htmlFor="gl-doors">GL Doors</label>
+                        </div>
+                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                          <input type="checkbox" id="gi-doors" name="product" />
+                          <label htmlFor="gi-doors">Gi Doors</label>
+                        </div>
+                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                          <input type="checkbox" id="windows" name="product" />
+                          <label htmlFor="windows">Windows</label>
+                        </div>
+                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                          <input
+                            type="checkbox"
+                            id="fibre-doors"
+                            name="product"
+                          />
+                          <label htmlFor="fibre-doors">Fibre Doors</label>
+                        </div>
+                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                          <input
+                            type="checkbox"
+                            id="wpc-doors"
+                            name="product"
+                          />
+                          <label htmlFor="wpc-doors">WPC Doors</label>
+                        </div>
+                      </div>
+                    </div>
+                    <Button
+                    title="submit"
+                    routeLink="/"
+                    bgColor="#FFC600"
+                    />
+                  </div>
+                </div>
+              )}
+            </li>
           </ul>
         </div>
       </nav>

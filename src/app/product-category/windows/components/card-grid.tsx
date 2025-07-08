@@ -26,17 +26,17 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
         width={300}
         height={200}
       />
+      <div className="">
+        <h1 className="text-black transform  font-raleway font-semibold line-clamp-1">
+          {heading}
+        </h1>
+      </div>
       <Button
         routeLink={routeLink}
         title="view details"
         bgColor="black"
         textColor="#FFBF00"
       />
-      <div className="w-40 h-14 bg-[#ffbf00] transform -skew-x-[-20deg] absolute top-0 left-0 rotate-[270deg] -translate-x-[32.4%] translate-y-[75%] flex justify-center items-center p-4">
-        <h1 className="text-black transform skew-x-[-20deg] font-raleway font-semibold line-clamp-1">
-          {heading}
-        </h1>
-      </div>
     </div>
   );
 };

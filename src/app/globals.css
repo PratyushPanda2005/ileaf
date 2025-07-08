@@ -31,6 +31,10 @@
   .about-para{
     @apply mt-2 font-raleway text-center lg:text-left text-[14px] font-[300] tracking-[1px] leading-[180%]
   }
+
+  .footer-flex{
+    @apply flex flex-col justify-center lg:justify-start items-center lg:items-start
+  }
 }
 
 ::view-transition-group(root) {
