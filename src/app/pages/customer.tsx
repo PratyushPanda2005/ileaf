@@ -3,17 +3,24 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import MaskImage from "../../../public/assets/bg/mask-image.png";
 import MaskImageMob from "../../../public/assets/bg/mask-image-mob.webp";
-import {
-  most_asked_doubts_1,
-  most_asked_doubts_2,
-  most_asked_doubts_3,
-  most_asked_doubts_4,
-} from "../config";
+import Cycling from "@/../public/maico-amorim-SJWPKMb9u-k-unsplash.jpg";
 import Play_Button from "../../../public/play_button.svg";
 import Button from "../components/button";
-const VideoPlayer = ({ src, poster }: { src: string; poster: string }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+const marginClasses = [
+  "translate-x-[0px]",
+  "translate-x-[0px]",
+  "lg:-translate-x-[34.333px]",
+  "lg:-translate-x-[34.333px]",
+];
+
+const Customer = () => {
+  const [selectedVideo, setSelectedVideo] = useState<{
+    src: string;
+    poster: string;
+  } | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -27,71 +34,45 @@ const VideoPlayer = ({ src, poster }: { src: string; poster: string }) => {
     }
   };
 
-  return (
-    <div className="w-auto mx-auto relative group h-[40vw] md:h-[20vw]">
-      <video
-        ref={videoRef}
-        className="w-full h-full"
-        poster={poster}
-        onClick={togglePlay}
-        loop
-      >
-        <source src={src} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  const openVideoPopup = (video: { src: string; poster: string }) => {
+    setSelectedVideo(video);
+    setIsPlaying(true);
+  };
 
-      <button
-        onClick={togglePlay}
-        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-           text-white rounded-full p-4 transition-opacity duration-300
-          ${isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"}`}
-        aria-label={isPlaying ? "Pause" : "Play"}
-      >
-        {isPlaying ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-12 w-12"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        ) : (
-          <Image src={Play_Button} alt="" />
-        )}
-      </button>
-    </div>
-  );
-};
+  const closeVideoPopup = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    setSelectedVideo(null);
+    setIsPlaying(false);
+  };
 
-const Customer = () => {
-  const videos = [
+  const list = [
     {
+      id: 0,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
-      poster: most_asked_doubts_1,
+      poster: Cycling.src,
     },
     {
+      id: 1,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
-      poster: most_asked_doubts_2,
+      poster: Cycling.src,
     },
     {
+      id: 2,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/I-Leaf-5-Things-Before-Buying-Kashi-18-3-25.mp4",
-      poster: most_asked_doubts_3,
+      poster: Cycling.src,
     },
     {
+      id: 3,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
-      poster: most_asked_doubts_4,
+      poster: Cycling.src,
     },
   ];
 
   return (
     <section className="min-h-screen bg-[#e4e4e4] lg:px-20">
+      {/* Hero Section */}
       <div
         style={{
           backgroundImage:
@@ -103,25 +84,24 @@ const Customer = () => {
         }}
         className="relative"
       >
-        <div className="absolute top-0 z-10 w-full md:w-1/2 h-full flex items-end md:items-center justify-center  py-12">
+        <div className="absolute top-0 z-10 w-full md:w-1/2 h-full flex items-end md:items-center justify-center py-12">
           <div className="text-center">
             <div className="mb-20 text-white">
               <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
                 Our
               </h1>
               <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
-                {" "}
-                Customer&apos;s{" "}
+                Customer&apos;s
               </h1>
               <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px]">
                 Say
               </h1>
             </div>
             <Button
-            routeLink="/"
-            title="Explore now"
-            bgColor="#FFC600"
-            textColor="black"
+              routeLink="/"
+              title="Explore now"
+              bgColor="#FFC600"
+              textColor="black"
             />
           </div>
         </div>
@@ -136,27 +116,82 @@ const Customer = () => {
           className="w-full relative flex md:hidden"
         />
       </div>
-      <section className="bg-black min-h-screen gallery p-20">
+
+      {/* Gallery Section */}
+      <section className="bg-black min-h-screen gallery p-20 flex flex-col justify-center items-center">
         <div className="flex flex-col gap-6 justify-center items-center p-20">
           <h1 className="text-3xl md:text-4xl font-style italic text-amber-400 lg:text-white tracking-wide">
             Gallery
           </h1>
           <div className="w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
         </div>
-        <div className="w-full h-full grid md:grid-cols-2 md:grid-rows-2 gap-y-10 mt-10 lg:mt-20">
-          {videos.map((video, index) => (
-            <VideoPlayer key={index} src={video.src} poster={video.poster} />
+        <div className="w-full max-w-4xl h-full grid md:grid-cols-2 gap-y-10 gap-x-4 mt-10 lg:mt-20">
+          {list.map((item) => (
+            <div
+              key={item.id}
+              className="col-span-1 -skew-x-6 flex justify-center items-center relative group cursor-pointer"
+              onClick={() => openVideoPopup(item)}
+            >
+              <video
+                poster={item.poster}
+                className={`w-96 h-64 ${marginClasses[item.id]}`}
+              >
+                <source src={item.src} type="video/mp4" />
+              </video>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image src={Play_Button} alt="Play" />
+              </div>
+            </div>
           ))}
         </div>
-        <div className="pt-20 flex justify-center items-center pb-20 ">
+        <div className="pt-20 flex justify-center items-center pb-20">
           <Button
-          routeLink="/"
-          title="Explore Now"
-          bgColor="#FFC600"
-          textColor="black"
+            routeLink="/"
+            title="Explore Now"
+            bgColor="#FFC600"
+            textColor="black"
           />
         </div>
       </section>
+
+      {/* Video Popup */}
+      {selectedVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl">
+            <button
+              onClick={closeVideoPopup}
+              className="absolute -top-10 right-0 text-white text-3xl z-50"
+              aria-label="Close video"
+            >
+              &times;
+            </button>
+            <div className="relative pt-[56.25%]"> {/* 16:9 aspect ratio */}
+              <video
+                ref={videoRef}
+                className="absolute top-0 left-0 w-full h-full"
+                poster={selectedVideo.poster}
+                onClick={togglePlay}
+                controls
+                autoPlay
+                loop
+              >
+                <source src={selectedVideo.src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              {!isPlaying && (
+                <button
+                  onClick={togglePlay}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                    text-white rounded-full p-4"
+                  aria-label="Play"
+                >
+                  <Image src={Play_Button} alt="Play" />
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
