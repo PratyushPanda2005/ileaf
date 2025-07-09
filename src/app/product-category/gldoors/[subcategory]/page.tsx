@@ -16,7 +16,6 @@ async function DoorDetailsPage({ params } : {params : Params}) {
     variant => variant.number === subcategory
   );
 
-  const description = glDoorsData["GL Doors"]
 
   if (!doorDetails) {
     return <div>Door not found</div>;
@@ -40,7 +39,7 @@ async function DoorDetailsPage({ params } : {params : Params}) {
             <Image src={doorDetails.image} width={300} height={300} alt="" className="max-sm:h-[240px] max-sm:w-auto" />
             </div>
             <div className="h-full w-full items-center justify-center hidden lg:flex">
-            <p className="font-raleway tracking-[1px] text-[14px] font-[300] leading-[180%] max-w-[280px] ">{description.description}</p>
+            <p className="font-raleway tracking-[1px] text-[14px] font-[300] leading-[180%] max-w-[280px] uppercase">{doorDetails.description}</p>
             </div>
             </div>
 

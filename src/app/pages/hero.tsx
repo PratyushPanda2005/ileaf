@@ -14,6 +14,10 @@ const Hero = () => {
               'url("https://www.ileafdoors.com/wp-content/uploads/2024/12/hero-01.webp")',
           }}
         ></div>
+        <div className="hidden lg:absolute top-[20%] left-[5.5%] text-amber-400 font-raleway uppercase text-xs tracking-[0.1em]">
+          <h1>Download <br/> Brochure</h1>
+          <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mt-4" />
+        </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center">
           <div className="flex-1 flex items-start sm:items-center justify-center sm:justify-end w-[90%] py-10 ">
@@ -29,7 +33,7 @@ const Hero = () => {
 
               <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl italic text-amber-400 leading-tight">
                 <span className="inline-block md:mr-6 font-blafhyglibs tracking-[4px] lg:tracking-[7px]">
-                  Safety and Security
+                  S<span className="inline-block"><div className="w-2 lg:w-3.5 h-1 lg:h-1.5 bg-amber-400 transform skew-x-[-200deg] ml-2" />a</span>fety and Security
                 </span>
               </h2>
             </div>

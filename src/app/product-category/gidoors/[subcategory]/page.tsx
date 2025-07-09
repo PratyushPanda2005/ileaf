@@ -13,7 +13,6 @@ async function DoorDetailsPage({ params }: { params: Params }) {
     (variant) => variant.number === subcategory
   );
 
-  const description = giDoorsData["Gi Doors"];
 
   if (!doorDetails) {
     return <div>Door not found</div>;
@@ -41,7 +40,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
             </div>
             <div className="h-full w-full items-center justify-center hidden lg:flex">
               <p className="font-raleway tracking-[1px] text-[14px] font-[300] leading-[180%] max-w-[280px] ">
-                {description.description}
+                {doorDetails.description}
               </p>
             </div>
           </div>

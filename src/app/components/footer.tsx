@@ -10,14 +10,14 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="lg:px-20 bg-[#e4e4e4]">
-      <div className="bg-[#e4e4e4] p-10 flex flex-col gap-10 lg:flex-row justify-between items-center">
+      <div className="bg-[#e4e4e4] p-10 pt-12 pb-8 flex flex-col gap-10 lg:flex-row justify-between items-center">
         <Image src={Logo} alt="" className="h-16 w-auto" />
         <div className="flex flex-col lg:flex-row gap-2 items-center justify-center">
           <Image src={Artherate} alt="" className="w-8" />
           <h1 className="font-raleway">info@ileafdoors.com</h1>
         </div>
       </div>
-      <div className="bg-black pt-20 pb-10 px-20 flex flex-col items-center justify-center">
+      <div className="bg-black pt-12 pb-10 px-20 flex flex-col items-center justify-center">
         <div className="flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between w-full">
           <div className="lg:w-1/3 text-center lg:text-left font-raleway footer-flex">
             <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mb-10" />
@@ -57,6 +57,7 @@ const Footer = () => {
                 Kochi, Kerala, India - 682025
               </p>
               <h2>Tel : +91 484 4042626</h2>
+              <h2>Mob : +91 91427 78877</h2>
               <h2>e-Mail : ileafdoor@gmail.com</h2>
               <div className="flex gap-2 mt-4 items-center lg:items-start lg:justify-start justify-center">
                 <Link href="https://www.instagram.com/ileaf.doors/">
@@ -72,7 +73,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-16 flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 text-center lg:text-left justify-between w-full font-raleway">
+        <div className="mt-10 flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 text-center lg:text-left justify-between w-full font-raleway">
           <h1 className="text-[#707070]">
             Copyright © 2025 i-LEAF Doors & Windows
           </h1>

@@ -7,6 +7,7 @@ import Windows from "../../../../public/assets/doors/Stell-Window.webp";
 import FibreDoor from "../../../../public/assets/doors/DUTON.webp";
 import WPCDoor from "../../../../public/assets/doors/WPC-doors.webp";
 import Button from "@/app/components/button";
+import Parallelogram from "@/app/components/parallelogram";
 
 interface ProductGridCardProps {
   heading?: string;
@@ -24,16 +25,16 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   routeLink
 }) => {
   return (
-    <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 p-10 bg-[#707070]">
-      <h1 className="font-style text-lg">{heading}</h1>
+    <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 p-10 bg-[#707070] relative">
+      <h1 className="font-style text-lg !tracking-[3px]">{heading}</h1>
       <Image
         src={imageSrc}
         alt={imageAlt}
-        className="w-auto h-[320px] object-contain"
+        className="w-auto h-[280px] object-contain"
         width={300}
         height={200}
       />
-      <h2 className="about-para uppercase !text-center w-full max-w-[60%]">
+      <h2 className="about-para uppercase !text-xs !text-center w-full !max-w-[60%]">
         {subheading}
       </h2>
       <Button 
@@ -42,6 +43,9 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
       bgColor="black"
       textColor="#FFBF00"
       />
+      <div className="absolute right-6 top-0">
+      <Parallelogram/>
+      </div>
     </div>
   );
 };

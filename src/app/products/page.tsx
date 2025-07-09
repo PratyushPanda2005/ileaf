@@ -18,6 +18,7 @@ const ProductsPage = () => {
    <ProductCategory/>
    <Parallax
    bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/products-hero-2-scaled.webp'
+   className='hidden'
    />
    <ProductGrid/>
    <div className="lg:hidden bg-[#707070] p-10 flex justify-center items-center">

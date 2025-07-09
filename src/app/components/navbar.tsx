@@ -183,7 +183,7 @@ const Navbar = () => {
         }`}
       >
         <div className="mt-7">
-          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-[13px] font-raleway font-[500]">
+          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-xs font-raleway font-[500] tracking-[0.1em]">
             {leftRoutes.map((route) => (
               <li key={route.label}>
                 <Link
@@ -205,7 +205,7 @@ const Navbar = () => {
         </div>
 
         <div className="mt-7">
-          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-[13px] font-raleway font-[500]">
+          <ul className="flex lg:gap-6 xl:gap-10 uppercase text-xs font-raleway font-[500] tracking-[0.1em]">
             {rightRoutes.map((route) => (
               <li key={route.label}>
                 <Link

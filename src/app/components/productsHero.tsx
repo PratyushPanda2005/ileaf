@@ -24,7 +24,7 @@ const ProductHero = ({
               `url(${bgImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-black/20"></div>
+        
         </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center">

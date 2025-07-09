@@ -124,10 +124,10 @@ const CardGrid = () => {
                   className={`px-3 py-1 transform font-raleway -skew-x-[20deg] ${
                     currentPage === number
                       ? "bg-[#FFBF00] text-black"
-                      : "text-[#FFBF00]"
+                      : "text-[#FFBF00] hover:bg-[#FFBF00] hover:text-black"
                   }`}
                 >
-                  {number}
+                 <span className="transform skew-x-[20deg] inline-block">{number}</span>
                 </button>
               )
             )}

@@ -1,7 +1,7 @@
 export const glDoorsData = {
   "GL Doors": {
     description:
-      "READY TO INSTALL DOOR, MADE OF HIGH QUALITY GALVALUME SHEETS WITH SUPERIOR LOCKS, HARDWARES AND ACCESSORIES WITH SEVERAL UNIQUES FEATURES",
+      "Designed with UV-protected Galvalume sheets, i-Leaf GL doors offer superior fireproof and termite-proof protection. These multi-locking doors features a stunning wooden steel door finish, combining durability with aesthetic appeal. The advanced Matt Finish Heat Transmission Painting Technology (MHTPT) ensures long-lasting beauty and weather resistance.",
     series: [
       {
         variants: [

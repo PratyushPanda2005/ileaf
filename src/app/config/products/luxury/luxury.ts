@@ -6,7 +6,7 @@ export const luxuryDoorsData = {
       {
         variants: [
           {
-            id: "ILZ W598",
+            id: "ILZ W508",
             number: "1",
             image:
               "https://res.cloudinary.com/db4zbyipc/image/upload/v1751663573/1-ILZ-W508_zbaavy.webp",

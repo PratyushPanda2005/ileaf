@@ -1,6 +1,5 @@
 import Button from "@/app/components/button";
 import Parallelogram from "@/app/components/parallelogram";
-import { ChevronRight } from "lucide-react";
 import React from "react";
 
 const Info = () => {
@@ -38,19 +37,17 @@ const Info = () => {
               <br />
               <ul className="">
                 <li className="flex items-start">
-                  <ChevronRight className="w-4 h-4 mr-1 mt-1 flex-shrink-0" />
-                  <span className="text-left">Affordable luxury home doors in India</span>
+                  {"> "}
+                  Affordable luxury home doors in India
                 </li>
                 <li className="flex items-start">
-                  <ChevronRight className="w-4 h-4 mr-1 mt-1 flex-shrink-0" />
-                  <span className="text-left">Eco-conscious manufacturing processes</span>
+                  {"> "}
+                  Eco-conscious manufacturing processes
                 </li>
                 <li className="flex items-start">
-                  <ChevronRight className="w-4 h-4 mr-1 mt-1 flex-shrink-0" />
-                  <span className="text-left">
-                    Products designed for both residential and commercial
-                    applications
-                  </span>
+                  {"> "}
+                  Products designed for both residential and commercial
+                  applications
                 </li>
               </ul>
               <div className="w-full flex justify-center items-center lg:hidden">
@@ -84,7 +81,12 @@ const Info = () => {
           <Parallelogram />
         </div>
         <div className="lg:hidden">
-          <Button routeLink="/" title="Enquiry" border={1} borderColor="black" />
+          <Button
+            routeLink="/"
+            title="Enquiry"
+            border={1}
+            borderColor="black"
+          />
         </div>
       </div>
     </section>

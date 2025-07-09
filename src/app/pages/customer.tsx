@@ -97,12 +97,9 @@ const Customer = () => {
                 Say
               </h1>
             </div>
-            <Button
-              routeLink="/"
-              title="Explore now"
-              bgColor="#FFC600"
-              textColor="black"
-            />
+            <button className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
+            <span className="inline-block transform skew-x-[20deg]">Explore now</span>
+            </button>
           </div>
         </div>
         <Image
@@ -125,7 +122,7 @@ const Customer = () => {
           </h1>
           <div className="w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
         </div>
-        <div className="w-full max-w-4xl h-full grid md:grid-cols-2 gap-y-10 gap-x-4 mt-10 lg:mt-20">
+        <div className="w-full max-w-4xl h-full grid md:grid-cols-2 gap-y-16 gap-x-4 mt-10 lg:mt-20">
           {list.map((item) => (
             <div
               key={item.id}
@@ -165,7 +162,9 @@ const Customer = () => {
             >
               &times;
             </button>
-            <div className="relative pt-[56.25%]"> {/* 16:9 aspect ratio */}
+            <div className="relative pt-[56.25%]">
+              {" "}
+              {/* 16:9 aspect ratio */}
               <video
                 ref={videoRef}
                 className="absolute top-0 left-0 w-full h-full"

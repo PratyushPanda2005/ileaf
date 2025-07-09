@@ -71,10 +71,48 @@ const CardGrid = () => {
 
   return (
     <section className="min-h-screen bg-black p-10 lg:p-20">
-      <h1 className="text-[#707070] font-raleway mb-10 tracking-[1px] text-[14px]">
-        Showing {indexOfFirstItem + 1}-
-        {Math.min(indexOfLastItem, giDoors.length)} of {giDoors.length} results
-      </h1>
+    {totalPages > 1 && (
+        <div className="flex justify-between items-center mb-10 ">
+          <h1 className="text-[#707070] font-raleway tracking-[1px] text-[14px]">
+            Showing {indexOfFirstItem + 1}-
+            {Math.min(indexOfLastItem, giDoors.length)} of {giDoors.length}{" "}
+            results
+          </h1>
+          <nav className="flex items-center gap-2 ">
+            <button
+              onClick={() => paginate(Math.max(1, currentPage - 1))}
+              disabled={currentPage === 1}
+              className="px-3 py-1 text-[#FFBF00] disabled:opacity-50"
+            >
+              &lt;
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+              (number) => (
+                <button
+                  key={number}
+                  onClick={() => paginate(number)}
+                  className={`px-3 py-1 transform font-raleway -skew-x-[20deg] ${
+                    currentPage === number
+                      ? "bg-[#FFBF00] text-black"
+                      : "text-[#FFBF00] hover:bg-[#FFBF00] hover:text-black"
+                  }`}
+                >
+                 <span className="transform skew-x-[20deg] inline-block">{number}</span>
+                </button>
+              )
+            )}
+
+            <button
+              onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
+              disabled={currentPage === totalPages}
+              className="px-3 py-1 text-[#FFBF00] disabled:opacity-50"
+            >
+              &gt;
+            </button>
+          </nav>
+        </div>
+      )}
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-3.5">
         {currentItems.slice(0, itemsToShow).map((variant) => (
@@ -122,10 +160,10 @@ const CardGrid = () => {
                   className={`px-3 py-1 transform font-raleway -skew-x-[20deg] ${
                     currentPage === number
                       ? "bg-[#FFBF00] text-black"
-                      : "text-[#FFBF00]"
+                      : "text-[#FFBF00] hover:bg-[#FFBF00] hover:text-black"
                   }`}
                 >
-                  {number}
+                 <span className="transform skew-x-[20deg] inline-block">{number}</span>
                 </button>
               )
             )}
