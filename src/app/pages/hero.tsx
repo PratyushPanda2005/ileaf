@@ -14,7 +14,7 @@ const Hero = () => {
               'url("https://www.ileafdoors.com/wp-content/uploads/2024/12/hero-01.webp")',
           }}
         ></div>
-        <div className="hidden lg:absolute top-[20%] left-[5.5%] text-amber-400 font-raleway uppercase text-xs tracking-[0.1em]">
+        <div className="hidden lg:flex lg:flex-col absolute top-[20%] left-[5.5%] text-amber-400 font-raleway uppercase text-xs tracking-[0.1em]">
           <h1>Download <br/> Brochure</h1>
           <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mt-4" />
         </div>
