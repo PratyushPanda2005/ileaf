@@ -260,12 +260,14 @@ const Navbar = () => {
           <div className=" w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
         </div>
         <ul className="flex flex-col gap-2 uppercase text-sm italic p-6 text-[#FFBF00] text-center">
-          <li className="pb-2">Luxury doors</li>
-          <li className="pb-2">Gi doorss</li>
-          <li className="pb-2">GL doors</li>
-          <li className="pb-2">windows</li>
-          <li className="pb-2">fiber doors</li>
-          <li className="pb-2">wpc doors</li>
+          <li className="pb-2">
+            <Link onClick={() => setIsMenuOpen(false)} href="/product-category/luxury" >Luxury Doors</Link>
+          </li>
+          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/gidoors" >Gi Doors</Link></li>
+          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/gldoors" >GL Doors</Link></li>
+          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/windows" >windows</Link></li>
+          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/fibredoors" >Fibre doors</Link></li>
+          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/wpcdoors" >wpc Doors</Link></li>
         </ul>
         <div className="flex-1 flex flex-col gap-10 justify-center items-center">
           <button className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base border border-[#707070] text-amber-400">
