@@ -1,8 +1,8 @@
 import Parallelogram from "@/app/components/parallelogram";
 import ProductCategory from "@/app/components/product-category";
 import RelatedProducts from "@/app/components/related-products";
+import ImageZoom from "@/app/components/zoomin-effect";
 import { giDoorsData } from "@/app/config/products/gidoors/gidoors";
-import Image from "next/image";
 
 type Params = Promise<{ subcategory: string }>;
 
@@ -30,12 +30,10 @@ async function DoorDetailsPage({ params }: { params: Params }) {
               <h1 className="text-[#FFBF00] lg:text-black font-style text-xl md:text-2xl lg:text-3xl mb-10">
                 {doorDetails.id}
               </h1>
-              <Image
-                src={doorDetails.image}
-                width={300}
-                height={300}
-                alt=""
-                className="max-sm:h-[240px] max-sm:w-auto"
+              <ImageZoom
+                  src={doorDetails.image}
+                  alt={doorDetails.id}
+                  className="max-sm:h-[240px] max-sm:w-auto"
               />
             </div>
             <div className="h-full w-full items-center justify-center hidden lg:flex">

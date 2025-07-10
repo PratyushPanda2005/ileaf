@@ -40,7 +40,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
                   src={doorDetails.image}
                   alt={doorDetails.id}
                   className="max-sm:h-[240px] max-sm:w-auto"
-                />
+              />
             </div>
             <div className="h-full w-full items-center justify-center hidden lg:flex">
               <p className="font-raleway tracking-[1px] text-[14px] font-[300] leading-[180%] max-w-[280px] ">
