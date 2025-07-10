@@ -122,16 +122,16 @@ const Customer = () => {
           </h1>
           <div className="w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
         </div>
-        <div className="w-full max-w-4xl h-full grid md:grid-cols-2 gap-y-16 gap-x-4 mt-10 lg:mt-20">
+        <div className="w-full max-w-4xl h-full grid md:grid-cols-2 gap-y-6 gap-x-4 lg:gap-16 mt-0 lg:mt-20">
           {list.map((item) => (
             <div
               key={item.id}
-              className="col-span-1 -skew-x-6 flex justify-center items-center relative group cursor-pointer"
+              className="col-span-1 -skew-x-6 flex justify-center items-center relative group cursor-pointer "
               onClick={() => openVideoPopup(item)}
             >
               <video
                 poster={item.poster}
-                className={`w-96 h-64 ${marginClasses[item.id]}`}
+                className={`${marginClasses[item.id]}`}
               >
                 <source src={item.src} type="video/mp4" />
               </video>
