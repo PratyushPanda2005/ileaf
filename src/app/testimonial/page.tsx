@@ -98,13 +98,13 @@ const Testimonial = () => {
     <section className="min-h-screen bg-black px-10 lg:px-20 py-20 lg:py-[160px]">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-32">
         {testimonialData.slice(0,itemsToShow).map((item) => (
-          <div key={item.id} className="col-span-1 flex flex-col justify-start items-center gap-6 relative ">
+          <div key={item.id} className="col-span-1 flex flex-col justify-start items-center gap-6 relative">
             <Image 
               src={item.image} 
               alt={item.title} 
               width={300} 
               height={300}
-              className="object-cover"
+              className="object-cover translate-x-[20px]"
             />
 
             <div className="relative flex flex-col justify-center items-center "> 
@@ -125,7 +125,7 @@ const Testimonial = () => {
             </div>
 
             <h1 className="text-[#FFBF00] mt-4 font-style !tracking-[1px] text-lg uppercase">
-              {item.title}
+            <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] inline-block" /> {item.title}
             </h1>
           </div>
         ))}

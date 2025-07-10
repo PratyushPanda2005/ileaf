@@ -40,7 +40,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="min-h-screen flex justify-center items-center py-[120px] bg-black px-20 lg:px-20">
+    <section className="min-h-screen flex justify-center items-center pb-[120px] pt-[120px] lg:pt-[160px] bg-black px-20 lg:px-20">
       <div className="flex flex-col gap-10 lg:flex-row w-full justify-between">
         <ul className="text-[#707070] font-style !tracking-[1px] space-y-4 text-sm text-center lg:text-left">
           <li>Video Gallery</li>

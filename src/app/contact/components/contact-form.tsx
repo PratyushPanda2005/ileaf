@@ -6,7 +6,7 @@ const ContactForm = () => {
   return (
     <section className="bg-black p-10 lg:p-20">
       <div className="w-full bg-white">
-        <div className="flex flex-col justify-center items-center p-10 md:p-20 lg:p-[120px]">
+        <div className="flex flex-col justify-center items-center p-10 md:p-20 lg:p-[100px]">
           <h1 className="text-2xl md:text-3xl lg:text-5xl font-blafhyglibs italic text-black tracking-[4px] lg:tracking-[7px] mb-10">
             Contact
           </h1>
