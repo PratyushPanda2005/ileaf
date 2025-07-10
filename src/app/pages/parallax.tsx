@@ -12,7 +12,7 @@ const Parallax = ({
   className?: string;
 }) => {
   return (
-    <section className="h-[55vh] w-full relative">
+    <section className="h-[40vh] md:h-[55vh] w-full relative">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
