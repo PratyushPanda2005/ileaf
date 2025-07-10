@@ -66,7 +66,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
           <Parallelogram />
         </div>
         <RelatedProducts
-          routeType="luxury"
+          routeType="windows"
           currentSubcategory={subcategory}
           allProducts={allProducts}
         />

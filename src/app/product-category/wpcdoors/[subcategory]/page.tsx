@@ -35,7 +35,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
                 <ImageZoom
                   src={doorDetails.image}
                   alt={doorDetails.id}
-                  className="max-sm:h-[240px] max-sm:w-auto"
+                  className="max-sm:h-[240px] max-lg:h-[320px] h-[90vh] w-auto"
               />
               </div>
               <div className="h-full w-full items-center justify-center hidden lg:flex">
@@ -67,7 +67,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
           <Parallelogram />
         </div>
         <RelatedProducts
-          routeType="luxury"
+          routeType="wpcdoors"
           currentSubcategory={subcategory}
           allProducts={allProducts}
         />

@@ -86,7 +86,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
         <Parallelogram />
       </div>
       <RelatedProducts
-        routeType="gldoors"
+        routeType="gidoors"
         currentSubcategory={subcategory}
         allProducts={allProducts}
       />

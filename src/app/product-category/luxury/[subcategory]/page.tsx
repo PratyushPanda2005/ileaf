@@ -36,11 +36,14 @@ async function DoorDetailsPage({ params }: { params: Params }) {
               <h1 className=" text-[#FFBF00] lg:text-black font-style text-xl md:text-2xl lg:text-3xl mb-10">
                 {doorDetails.id}
               </h1>
+           
               <ImageZoom
                   src={doorDetails.image}
                   alt={doorDetails.id}
                   className="max-sm:h-[240px] max-sm:w-auto"
               />
+              
+            
             </div>
             <div className="h-full w-full items-center justify-center hidden lg:flex">
               <p className="font-raleway tracking-[1px] text-[14px] font-[300] leading-[180%] max-w-[280px] ">
