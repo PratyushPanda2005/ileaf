@@ -71,7 +71,7 @@ const CardGrid = () => {
 
   return (
     <section className="min-h-screen bg-black p-10 lg:p-20">
-      <h1 className="text-[#707070] font-raleway mb-10 tracking-[1px] text-[14px]">
+      <h1 className="text-[#707070] max-sm:text-center font-raleway mb-10 tracking-[1px] text-[14px]">
         Showing {indexOfFirstItem + 1}-
         {Math.min(indexOfLastItem, wpcDoors.length)} of {wpcDoors.length} results
       </h1>
@@ -101,7 +101,7 @@ const CardGrid = () => {
       )}
 
       {totalPages > 1 && (
-        <div className="flex justify-between items-center mt-10 ">
+        <div className="flex max-sm:flex-col gap-3 justify-between items-center mt-10 ">
           <h1 className="text-[#707070] font-raleway tracking-[1px] text-[14px]">
             Showing {indexOfFirstItem + 1}-
             {Math.min(indexOfLastItem, wpcDoors.length)} of {wpcDoors.length}{" "}

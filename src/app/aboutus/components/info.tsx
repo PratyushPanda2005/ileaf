@@ -1,6 +1,4 @@
-import Button from "@/app/components/button";
 import Parallelogram from "@/app/components/parallelogram";
-import React from "react";
 
 const Info = () => {
   return (
@@ -51,7 +49,8 @@ const Info = () => {
                 </li>
               </ul>
               <div className="w-full flex justify-center items-center lg:hidden">
-                <Parallelogram />
+                <Parallelogram
+                />
               </div>
             </div>
           </div>
@@ -81,12 +80,9 @@ const Info = () => {
           <Parallelogram />
         </div>
         <div className="lg:hidden">
-          <Button
-            routeLink="/"
-            title="Enquiry"
-            border={1}
-            borderColor="black"
-          />
+         <button className="uppercase p-3 px-6 lg:px-8 transform border -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500]">
+         <span className="inline-block transform skew-x-[20deg]">enquiry</span>
+         </button>
         </div>
       </div>
     </section>

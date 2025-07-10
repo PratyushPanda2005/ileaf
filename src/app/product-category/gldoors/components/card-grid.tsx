@@ -72,7 +72,7 @@ const CardGrid = () => {
   return (
     <section className="min-h-screen bg-black p-10 lg:p-20">
        {totalPages > 1 && (
-        <div className="flex justify-between items-center mb-10 ">
+        <div className="flex max-sm:flex-col gap-3 justify-between items-center mb-10 ">
           <h1 className="text-[#707070] font-raleway tracking-[1px] text-[14px]">
             Showing {indexOfFirstItem + 1}-
             {Math.min(indexOfLastItem, glDoors.length)} of {glDoors.length}{" "}
@@ -127,7 +127,7 @@ const CardGrid = () => {
       </div>
 
       {isMobile && (
-        <div className="flex justify-center mt-20">
+        <div className="flex  justify-center mt-20">
           <button
             onClick={() => setShowAll(!showAll)}
             className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-[#707070] text-black"
@@ -138,7 +138,7 @@ const CardGrid = () => {
       )}
 
       {totalPages > 1 && (
-        <div className="flex justify-between items-center mt-10 ">
+        <div className="flex max-sm:flex-col gap-3 justify-between items-center mt-10 ">
           <h1 className="text-[#707070] font-raleway tracking-[1px] text-[14px]">
             Showing {indexOfFirstItem + 1}-
             {Math.min(indexOfLastItem, glDoors.length)} of {glDoors.length}{" "}

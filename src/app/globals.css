@@ -29,7 +29,7 @@
   }
 
   .about-para{
-    @apply font-raleway text-center lg:text-left text-[14px] font-[300] tracking-[1px] leading-[180%] max-w-[90%]
+    @apply font-raleway text-center lg:text-left text-[14px] font-[300] tracking-[1px] leading-[180%] lg:max-w-[90%] 
   }
 
   .footer-flex{

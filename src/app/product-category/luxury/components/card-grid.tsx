@@ -61,7 +61,7 @@ const CardGrid = () => {
 
   return (
     <section className="min-h-screen bg-black p-10 lg:p-20">
-      <h1 className="text-[#707070] font-raleway mb-10 tracking-[1px] text-[14px]">
+      <h1 className="text-[#707070] font-raleway mb-10 tracking-[1px] text-[14px] max-sm:text-center">
         Showing {showAll || !isMobile ? 'all' : itemsToShow} of {luxuryDoors.length} results
       </h1>
       
@@ -78,7 +78,7 @@ const CardGrid = () => {
       </div>
       
       {isMobile && (
-        <div className="flex justify-center mt-20">
+        <div className="flex justify-center  mt-20">
           <button
             onClick={() => setShowAll(!showAll)}
             className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-[#707070] text-black"
@@ -88,7 +88,7 @@ const CardGrid = () => {
         </div>
       )}
       
-      <h1 className="text-[#707070] font-raleway mt-10 tracking-[1px] text-[14px]">
+      <h1 className="text-[#707070] font-raleway mt-10 tracking-[1px] text-[14px] max-sm:text-center">
         Showing {showAll || !isMobile ? 'all' : itemsToShow} of {luxuryDoors.length} results
       </h1>
     </section>

@@ -6,7 +6,6 @@ import Logo from "../../../public/assets/logos/logo-i-LEAF-logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Parallelogram from "./parallelogram";
-import Button from "./button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +13,12 @@ const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  // Location selection states
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+  
   const dropdownRef = useRef<HTMLDivElement>(null);
   const leftRoutes = [
     { label: "Home", url: "/" },
@@ -28,6 +33,62 @@ const Navbar = () => {
     { label: "Contact", url: "/contact" },
   ];
 
+  // Data structure for India's states and cities
+  const locationData = {
+    india: {
+      states: {
+        'andhra-pradesh': {
+          name: 'Andhra Pradesh',
+          cities: ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Kurnool']
+        },
+        'maharashtra': {
+          name: 'Maharashtra',
+          cities: ['Mumbai', 'Pune', 'Nagpur', 'Nashik', 'Aurangabad']
+        },
+        'karnataka': {
+          name: 'Karnataka',
+          cities: ['Bangalore', 'Mysore', 'Hubli', 'Mangalore', 'Belgaum']
+        },
+        'tamil-nadu': {
+          name: 'Tamil Nadu',
+          cities: ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem']
+        },
+        'west-bengal': {
+          name: 'West Bengal',
+          cities: ['Kolkata', 'Howrah', 'Durgapur', 'Asansol', 'Siliguri']
+        },
+        'gujarat': {
+          name: 'Gujarat',
+          cities: ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar']
+        },
+        'rajasthan': {
+          name: 'Rajasthan',
+          cities: ['Jaipur', 'Jodhpur', 'Udaipur', 'Kota', 'Bikaner']
+        },
+        'uttar-pradesh': {
+          name: 'Uttar Pradesh',
+          cities: ['Lucknow', 'Kanpur', 'Agra', 'Varanasi', 'Meerut']
+        },
+        'delhi': {
+          name: 'Delhi',
+          cities: ['New Delhi', 'Old Delhi', 'Dwarka', 'Rohini', 'Lajpat Nagar']
+        },
+        'punjab': {
+          name: 'Punjab',
+          cities: ['Chandigarh', 'Ludhiana', 'Amritsar', 'Jalandhar', 'Patiala']
+        },
+        'haryana': {
+          name: 'Haryana',
+          cities: ['Gurgaon', 'Faridabad', 'Panipat', 'Ambala', 'Hisar']
+        },
+        'kerala': {
+          name: 'Kerala',
+          cities: ['Kochi', 'Thiruvananthapuram', 'Kozhikode', 'Thrissur', 'Kollam']
+        }
+      }
+    }
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -35,6 +96,36 @@ const Navbar = () => {
   const toggleDropdown = (e: MouseEvent) => {
     e.preventDefault();
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const country = e.target.value;
+    setSelectedCountry(country);
+    setSelectedState(''); // Reset state when country changes
+    setSelectedCity(''); // Reset city when country changes
+  };
+
+  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const state = e.target.value;
+    setSelectedState(state);
+    setSelectedCity(''); // Reset city when state changes
+  };
+
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCity(e.target.value);
+  };
+
+  const getStates = () => {
+    if (!selectedCountry || !locationData[selectedCountry as keyof typeof locationData]) return [];
+    return Object.entries(locationData[selectedCountry as keyof typeof locationData].states).map(([key, value]) => ({
+      key,
+      name: value.name
+    }));
+  };
+
+  const getCities = () => {
+    if (!selectedCountry || !selectedState || !locationData[selectedCountry as keyof typeof locationData]?.states[selectedState as keyof typeof locationData.india.states]) return [];
+    return locationData[selectedCountry as keyof typeof locationData].states[selectedState as keyof typeof locationData.india.states].cities;
   };
 
   useEffect(() => {
@@ -54,23 +145,30 @@ const Navbar = () => {
   }, [prevScrollPos]);
 
   useEffect(() => {
-  const handleClickOutside = (event: globalThis.MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-      setIsDropdownOpen(false);
-    }
-  };
+    const handleClickOutside = (event: globalThis.MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
     if (isDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside as EventListener);
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside as EventListener
+      );
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside as EventListener);
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside as EventListener
+      );
     };
   }, [isDropdownOpen]);
-
-  
 
   const handleNavigation = (e: MouseEvent<HTMLAnchorElement>, url: string) => {
     e.preventDefault();
@@ -225,104 +323,196 @@ const Navbar = () => {
                 Enquiry
               </span>
               {isDropdownOpen && (
-                <div ref={dropdownRef} className="absolute top-full right-0 mt-2 bg-white text-black rounded shadow-lg z-50 flex justify-center items-center w-[380px]  p-8 overflow-auto">
-                  <div className="flex flex-col items-center justify-center gap-6 w-full">
-                    <div>
+                <div
+                  ref={dropdownRef}
+                  className="absolute right-0 mt-6 bg-white text-black shadow-lg z-50 w-[380px] h-[520px] overflow-y-auto"
+                >
+                  <div className="flex flex-col items-center justify-start gap-6 w-full p-8">
+                    <div className="text-center">
                       <h1 className="text-base font-raleway text-amber-400 font-bold">
                         Enquiry Form
                       </h1>
                       <Parallelogram />
                     </div>
-                    <div className="flex flex-col gap-4 w-full ">
-                      <input
-                        name="name"
-                        type="text"
-                        placeholder="Name"
-                        className="p-2 border border-amber-300 w-full text-base font-[300]"
-                      />
-                      <input
-                        name="email"
-                        type="email"
-                        placeholder="Email"
-                        className="p-2 border border-amber-300 font-[300] text-base"
-                      />
-                      <input
-                        name="mobile"
-                        type="number"
-                        placeholder="Mobile No."
-                        className="p-2 border border-amber-300 font-[300] text-base"
-                      />
-                      <input
-                        name="whatsapp"
-                        type="number"
-                        placeholder="Whatsapp No."
-                        className="p-2 border border-amber-300 font-[300] text-base"
-                      />
+                    <div className="flex flex-col gap-4 w-full">
+                      <div className="relative">
+                        <input
+                          type="text"
+                          id="floating_outlined1"
+                          className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
+                          placeholder=" "
+                        />
+                        <label
+                          htmlFor="floating_outlined1"
+                          className="absolute text-base text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-amber-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 normal-case"
+                        >
+                          Name
+                        </label>
+                      </div>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          id="floating_outlined2"
+                          className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
+                          placeholder=" "
+                        />
+                        <label
+                          htmlFor="floating_outlined2"
+                          className="absolute text-base text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-amber-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 normal-case"
+                        >
+                          Email
+                        </label>
+                      </div>
+                      <div className="relative">
+                        <input
+                          type="number"
+                          id="floating_outlined3"
+                          className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
+                          placeholder=" "
+                        />
+                        <label
+                          htmlFor="floating_outlined3"
+                          className="absolute text-base text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-amber-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 normal-case"
+                        >
+                          Mobile No.
+                        </label>
+                      </div>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          id="floating_outlined4"
+                          className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
+                          placeholder=" "
+                        />
+                        <label
+                          htmlFor="floating_outlined4"
+                          className="absolute text-base text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-amber-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1 normal-case"
+                        >
+                          Whatsapp No.
+                        </label>
+                      </div>
+                      
+                      {/* Country Dropdown */}
                       <select
-                        id="options"
-                        name="options"
-                        className="p-2 border border-amber-300 text-base font-[300]"
+                        id="country"
+                        name="country"
+                        value={selectedCountry}
+                        onChange={handleCountryChange}
+                        className="p-2 border border-amber-300 text-base font-[300] focus:outline-none focus:ring-0 focus:border-amber-600"
                       >
                         <option value="">Select Country</option>
-                        <option value="option1">India</option>
+                        <option value="india">India</option>
                       </select>
+
+                      {/* State Dropdown */}
                       <select
-                        id="options"
-                        name="options"
+                        id="state"
+                        name="state"
+                        value={selectedState}
+                        onChange={handleStateChange}
+                        disabled={!selectedCountry}
+                        className="p-2 border border-amber-300 text-base font-[300] focus:outline-none focus:ring-0 focus:border-amber-600 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      >
+                        <option value="">Select State</option>
+                        {selectedCountry && getStates().map((state) => (
+                          <option key={state.key} value={state.key}>
+                            {state.name}
+                          </option>
+                        ))}
+                      </select>
+
+                      {/* City Dropdown */}
+                      <select
+                        id="city"
+                        name="city"
+                        value={selectedCity}
+                        onChange={handleCityChange}
+                        disabled={!selectedState}
+                        className="p-2 border border-amber-300 text-base font-[300] focus:outline-none focus:ring-0 focus:border-amber-600 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      >
+                        <option value="">Select City</option>
+                        {selectedState && getCities().map((city) => (
+                          <option key={city} value={city}>
+                            {city}
+                          </option>
+                        ))}
+                      </select>
+
+                      <select
+                        id="source"
+                        name="source"
                         className="p-2 border border-amber-300 text-base font-[300]"
                       >
                         <option value="">How did you find us?</option>
-                        <option value="option1">Google</option>
-                        <option value="option2">Facebook</option>
-                        <option value="option3">Instagram</option>
-                        <option value="option4">Friend/Family</option>
-                        <option value="option4">Other</option>
+                        <option value="google">Google</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="friend">Friend/Family</option>
+                        <option value="other">Other</option>
                       </select>
-                      <h2 className="normal-case text-base font-[300]">Select a product</h2>
+                      <h2 className="normal-case text-base font-[300] mt-2">
+                        Select a product
+                      </h2>
                       <div className="flex flex-wrap gap-2">
-                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                        <div className="flex gap-1 text-base font-[300] normal-case">
                           <input
                             type="checkbox"
                             id="luxury-doors"
                             name="product"
+                            value="luxury-doors"
                           />
                           <label htmlFor="luxury-doors">Luxury Doors</label>
                         </div>
-                        <div className=" flex gap-1 text-base font-[300] normal-case">
-                          <input type="checkbox" id="gl-doors" name="product" />
+                        <div className="flex gap-1 text-base font-[300] normal-case">
+                          <input
+                            type="checkbox"
+                            id="gl-doors"
+                            name="product"
+                            value="gl-doors"
+                          />
                           <label htmlFor="gl-doors">GL Doors</label>
                         </div>
-                        <div className=" flex gap-1 text-base font-[300] normal-case">
-                          <input type="checkbox" id="gi-doors" name="product" />
+                        <div className="flex gap-1 text-base font-[300] normal-case">
+                          <input
+                            type="checkbox"
+                            id="gi-doors"
+                            name="product"
+                            value="gi-doors"
+                          />
                           <label htmlFor="gi-doors">Gi Doors</label>
                         </div>
-                        <div className=" flex gap-1 text-base font-[300] normal-case">
-                          <input type="checkbox" id="windows" name="product" />
+                        <div className="flex gap-1 text-base font-[300] normal-case">
+                          <input
+                            type="checkbox"
+                            id="windows"
+                            name="product"
+                            value="windows"
+                          />
                           <label htmlFor="windows">Windows</label>
                         </div>
-                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                        <div className="flex gap-1 text-base font-[300] normal-case">
                           <input
                             type="checkbox"
                             id="fibre-doors"
                             name="product"
+                            value="fibre-doors"
                           />
                           <label htmlFor="fibre-doors">Fibre Doors</label>
                         </div>
-                        <div className=" flex gap-1 text-base font-[300] normal-case">
+                        <div className="flex gap-1 text-base font-[300] normal-case">
                           <input
                             type="checkbox"
                             id="wpc-doors"
                             name="product"
+                            value="wpc-doors"
                           />
                           <label htmlFor="wpc-doors">WPC Doors</label>
                         </div>
                       </div>
                     </div>
-                    <Button
-                    title="submit"
-                    routeLink="/"
-                    bgColor="#FFC600"
-                    />
+                    <button className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
+                      <span className="inline-block transform skew-x-[20deg]">Submit</span>
+                    </button>
                   </div>
                 </div>
               )}

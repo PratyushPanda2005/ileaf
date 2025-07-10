@@ -1,5 +1,6 @@
 import Parallelogram from "@/app/components/parallelogram";
 import ProductCategory from "@/app/components/product-category";
+import ProductCategoryMob from "@/app/components/product-category-mob";
 import RelatedProducts from "@/app/components/related-products";
 import ImageZoom from "@/app/components/zoomin-effect";
 import { fibreDoorData } from "@/app/config/products/fibredoors/fibredoors";
@@ -22,7 +23,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
   return (
     <section className="min-h-screen bg-black">
       <ProductCategory />
-      <div className="grid lg:grid-cols-3 px-20">
+      <div className="grid lg:grid-cols-3 px-10 lg:px-20">
         <div className="lg:col-span-2 bg-[#5a5a5a] p-10 lg:p-20">
           <div className="flex h-full w-full gap-10">
             <div className="h-full w-full flex flex-col justify-center items-center">
@@ -57,6 +58,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
           </ul>
         </div>
       </div>
+      <ProductCategoryMob/>
       <div className="flex flex-col justify-center items-center p-10 md:p-20 md:bg-black">
         <h1 className="text-xl md:text-2xl lg:text-3xl md:font-blafhyglibs md:normal-case italic uppercase font-raleway text-[#FFBF00] md:text-white tracking-[4px]">
           Related Products

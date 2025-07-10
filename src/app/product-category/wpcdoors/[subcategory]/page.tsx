@@ -1,5 +1,6 @@
 import Parallelogram from "@/app/components/parallelogram";
 import ProductCategory from "@/app/components/product-category";
+import ProductCategoryMob from "@/app/components/product-category-mob";
 import ProductHero from "@/app/components/productsHero";
 import RelatedProducts from "@/app/components/related-products";
 import ImageZoom from "@/app/components/zoomin-effect";
@@ -60,6 +61,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
             </ul>
           </div>
         </div>
+        <ProductCategoryMob/>
         <div className="flex flex-col justify-center items-center p-10 md:p-20 md:bg-black">
           <h1 className="text-xl md:text-2xl lg:text-3xl md:font-blafhyglibs md:normal-case italic uppercase font-raleway text-[#FFBF00] md:text-white tracking-[4px]">
             Related Products

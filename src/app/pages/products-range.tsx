@@ -7,8 +7,8 @@ const ProductRange = () => {
     <div>
       <SectionHeading />
       <div className="lg:px-20 bg-[#e4e4e4]">
-        <div className="sticky top-0">
-          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-20 px-6 inset-0">
+        <div className="md:sticky top-0">
+          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-10 md:py-20 px-6 inset-0">
             <div className="text-center md:w-1/3 ">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic leading-[120%]">
                 Luxury
@@ -26,7 +26,7 @@ const ProductRange = () => {
                 alt=""
                 width={100}
                 height={100}
-                className="h-[240px] md:h-[30vw] w-auto"
+                className="h-[400px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -52,8 +52,8 @@ const ProductRange = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-0 z-[2]">
-          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-20 px-6 inset-0">
+        <div className="md:sticky top-0 z-[2]">
+          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-10 md:py-20 px-6 inset-0">
             <div className="text-center md:w-1/3 ">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic leading-[120%]">
                 GL Doors
@@ -68,7 +68,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[240px] md:h-[30vw] w-auto"
+                className="h-[400px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -97,8 +97,8 @@ const ProductRange = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-0 z-[4]">
-          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-20 px-6 inset-0">
+        <div className="md:sticky top-0 z-[4]">
+          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-10 md:py-20 px-6 inset-0">
             <div className="text-center md:w-1/3 ">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic leading-[120%]">
                 Gi Doors
@@ -113,7 +113,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[240px] md:h-[30vw] w-auto"
+                className="h-[400px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -144,8 +144,8 @@ const ProductRange = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-0 z-[10] ">
-          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-20 px-6 inset-0">
+        <div className="md:sticky top-0 z-[10] ">
+          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-10 md:py-20 px-6 inset-0">
             <div className="text-center md:w-1/3 ">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic leading-[120%]">
                 Windows
@@ -160,7 +160,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[240px] md:h-[30vw] w-auto"
+                className="h-[400px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -188,8 +188,8 @@ const ProductRange = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-0 z-[20]">
-          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-20 px-6 inset-0">
+        <div className="md:sticky top-0 z-[20]">
+          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-10 md:py-20 px-6 inset-0">
             <div className="text-center md:w-1/3 ">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic leading-[120%]">
                 Fibre Doors
@@ -204,7 +204,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[240px] md:h-[30vw] w-auto"
+                className="h-[400px] md:h-[30vw] w-auto"
               />
             </div>
 
@@ -234,8 +234,8 @@ const ProductRange = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-0 z-[30]">
-          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly py-20 px-6 inset-0">
+        <div className="md:sticky top-0 z-[30]">
+          <div className="w-full min-h-screen flex  flex-col md:flex-row bg-[#dbdbdb] justify-evenly pt-10 pb-20 md:py-20 px-6 inset-0">
             <div className="text-center md:w-1/3 ">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic leading-[120%]">
               WPC Doors
@@ -250,7 +250,7 @@ const ProductRange = () => {
                 alt=""
                 width={500}
                 height={500}
-                className="h-[240px] md:h-[30vw] w-auto"
+                className="h-[400px] md:h-[30vw] w-auto"
               />
             </div>
 

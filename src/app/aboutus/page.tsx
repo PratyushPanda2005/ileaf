@@ -12,6 +12,7 @@ const AboutUs = () => {
       bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/about-hero-1-scaled.webp'
       />
       <Parallax
+      className='hidden'
       bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/about-hero-2-scaled.webp'
       />
       <Info/>

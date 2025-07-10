@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../../../public/assets/logos/8f93e9b7801587928403b047a3fddf9487d7866f.png";
 import Artherate from "../../../public/assets/logos/artherate.svg";
 import Image from "next/image";
@@ -7,12 +6,13 @@ import Instagram from "@/../public/assets/logos/linkedln.svg";
 import Facebook from "@/../public/assets/logos/facebook.svg";
 import Youtube from "@/../public/assets/logos/youtube.svg";
 import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="lg:px-20 bg-[#e4e4e4]">
       <div className="bg-[#e4e4e4] p-10 pt-12 pb-8 flex flex-col gap-10 lg:flex-row justify-between items-center">
         <Image src={Logo} alt="" className="h-16 w-auto" />
-        <div className="flex flex-col lg:flex-row gap-2 items-center justify-center">
+        <div className="flex  gap-2 items-center justify-center">
           <Image src={Artherate} alt="" className="w-8" />
           <h1 className="font-raleway">info@ileafdoors.com</h1>
         </div>
@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="bg-black pt-12 pb-10 px-20 flex flex-col items-center justify-center">
         <div className="flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between w-full">
           <div className="lg:w-1/3 text-center lg:text-left font-raleway footer-flex">
-            <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mb-10" />
+            <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mb-10 hidden lg:flex" />
             <h1 className="uppercase text-[#707070] mb-4 italic">
               Quick Links
             </h1>

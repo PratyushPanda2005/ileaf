@@ -14,6 +14,11 @@ const marginClasses = [
   "lg:-translate-x-[34.333px]",
 ];
 
+const marginClassesMob = [
+  "translate-x-[20.33px]",
+  "translate-x-[0px]",
+];
+
 const Customer = () => {
   const [selectedVideo, setSelectedVideo] = useState<{
     src: string;
@@ -70,6 +75,8 @@ const Customer = () => {
     },
   ];
 
+  const videosToShow = list.slice(0, 2);
+
   return (
     <section className="min-h-screen bg-[#e4e4e4] lg:px-20">
       {/* Hero Section */}
@@ -84,9 +91,9 @@ const Customer = () => {
         }}
         className="relative"
       >
-        <div className="absolute top-0 z-10 w-full md:w-1/2 h-full flex items-end md:items-center justify-center py-12">
+        <div className="absolute top-0 z-10 w-full md:w-1/2 h-full flex items-end md:items-center justify-center py-20 lg:py-12">
           <div className="text-center">
-            <div className="mb-20 text-white">
+            <div className="mb-10 lg:mb-20 text-black lg:text-white">
               <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl italic font-blafhyglibs tracking-[3px] lg:tracking-[7px] mb-2">
                 Our
               </h1>
@@ -115,31 +122,59 @@ const Customer = () => {
       </div>
 
       {/* Gallery Section */}
-      <section className="bg-black min-h-screen gallery p-20 flex flex-col justify-center items-center">
+      <section className="bg-black min-h-screen gallery py-10 px-20 lg:p-20 flex flex-col justify-center items-center">
         <div className="flex flex-col gap-6 justify-center items-center p-20">
           <h1 className="text-3xl md:text-4xl font-style italic text-amber-400 lg:text-white tracking-wide">
             Gallery
           </h1>
           <div className="w-4 h-2 bg-amber-300 transform skew-x-[-200deg]" />
         </div>
-        <div className="w-full max-w-4xl h-full grid md:grid-cols-2 gap-y-6 gap-x-4 lg:gap-16 mt-0 lg:mt-20">
-          {list.map((item) => (
-            <div
-              key={item.id}
-              className="col-span-1 -skew-x-6 flex justify-center items-center relative group cursor-pointer "
-              onClick={() => openVideoPopup(item)}
-            >
-              <video
-                poster={item.poster}
-                className={`${marginClasses[item.id]}`}
+
+
+
+        
+        <div className="w-full max-w-4xl h-full grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 lg:gap-16 mt-0 lg:mt-20">
+         
+          <div className="grid grid-cols-1 gap-y-6 md:hidden">
+            {videosToShow.map((item) => (
+              <div
+                key={item.id}
+                className="col-span-1 -skew-x-6 flex justify-center items-center relative group cursor-pointer"
+                onClick={() => openVideoPopup(item)}
               >
-                <source src={item.src} type="video/mp4" />
-              </video>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <Image src={Play_Button} alt="Play" />
+                <video
+                  poster={item.poster}
+                  className={`${marginClassesMob[item.id]}`}
+                >
+                  <source src={item.src} type="video/mp4" />
+                </video>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <Image src={Play_Button} alt="Play" />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          
+          <div className="hidden md:grid md:grid-cols-2 gap-y-6 gap-x-4 lg:gap-16 col-span-full">
+            {list.map((item) => (
+              <div
+                key={item.id}
+                className="col-span-1 -skew-x-6 flex justify-center items-center relative group cursor-pointer"
+                onClick={() => openVideoPopup(item)}
+              >
+                <video
+                  poster={item.poster}
+                  className={`${marginClasses[item.id]}`}
+                >
+                  <source src={item.src} type="video/mp4" />
+                </video>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <Image src={Play_Button} alt="Play" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="pt-20 flex justify-center items-center pb-20">
           <Button

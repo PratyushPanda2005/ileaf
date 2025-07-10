@@ -44,8 +44,8 @@ const WhyUs = () => {
               alt="Security"
             />
 
-            <div className="absolute top-1/2 -translate-y-[50%] left-[15%] flex flex-col items-center justify-center">
-              <div className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-left flex flex-col gap-3">
+            <div className="absolute top-1/2 -translate-y-[50%] left-[5%] lg:left-[15%] flex flex-col items-center justify-center">
+              <div className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-left flex flex-col gap-3 max-w-[30%] lg:max-w-full">
                 <h1>Our doors are</h1>
               </div>
             </div>
