@@ -5,7 +5,9 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { ViewTransitions } from "next-view-transitions";
 import Image from "next/image";
-import wtspLogo from "../../public/assets/logos/whatsapp.svg"
+import wtspLogo from "../../public/assets/logos/whatsapp.svg";
+import MobileMenu from "../../public/assets/logos/home.svg";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,12 +33,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <ViewTransitions>
-        <Navbar/>
-        {children}
-        <Image src={wtspLogo} alt="" className="fixed bottom-6 right-6 size-8" />
-        <Footer/>
-         </ViewTransitions>
+        <ViewTransitions>
+          <Navbar />
+          {children}
+          <Image
+            src={wtspLogo}
+            alt=""
+            className="fixed bottom-6 right-6 size-8"
+          />
+          <div className="flex lg:hidden fixed bottom-6 left-6 w-full">
+          <Image src={MobileMenu} alt="" className="size-8" />
+          </div>
+          <Footer />
+        </ViewTransitions>
       </body>
     </html>
   );

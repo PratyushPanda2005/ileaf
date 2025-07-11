@@ -15,8 +15,8 @@ const marginClasses = [
 ];
 
 const marginClassesMob = [
-  "translate-x-[20.33px]",
   "translate-x-[0px]",
+  "-translate-x-[20.33px]",
 ];
 
 const Customer = () => {

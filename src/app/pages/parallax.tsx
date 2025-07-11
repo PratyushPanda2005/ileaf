@@ -1,6 +1,6 @@
 import React from "react";
 import Parallelogram from "../components/parallelogram";
-import MobileMenu from "../components/mobile-menu";
+import { ChevronUp } from "lucide-react";
 
 const Parallax = ({
   title,
@@ -19,7 +19,7 @@ const Parallax = ({
           backgroundImage: `url(${bgImage})`,
         }}
       >
-        <div className="h-full flex flex-col items-center justify-evenly">
+        <div className="relative h-full flex flex-col items-center justify-evenly">
           <div className="flex flex-col w-full items-center justify-center">
             <h1 className="text-white text-xl md:text-2xl lg:text-3xl font-blafhyglibs tracking-[4px] lg:tracking-[7px] italic">
               {title}
@@ -28,8 +28,8 @@ const Parallax = ({
               <Parallelogram />
             </div>
           </div>
-          <div className="flex lg:hidden w-full">
-            <MobileMenu/>
+          <div className="bg-amber-400 rounded-full sm:hidden absolute bottom-6">
+            <ChevronUp strokeWidth={1.5} />
           </div>
         </div>
       </div>

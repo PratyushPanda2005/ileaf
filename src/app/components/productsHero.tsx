@@ -15,8 +15,8 @@ const ProductHero = ({
   bgImage: string;
 }) => {
   return (
-    <div className="min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
-      <div className="relative h-screen w-full">
+    <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
+      <div className="relative h-[60vh] sm:h-screen w-full">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -24,7 +24,6 @@ const ProductHero = ({
               `url(${bgImage})`,
           }}
         >
-        
         </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center">

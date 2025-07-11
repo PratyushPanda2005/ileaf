@@ -5,8 +5,8 @@ const Hero = () => {
   
 
   return (
-    <div className="h-[60vh] sm:min-h-screen relative top-0 left-0 w-full">
-      <div className="relative h-screen w-full">
+    <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full">
+      <div className="relative h-[60vh] sm:h-screen w-full">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
