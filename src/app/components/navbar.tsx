@@ -306,7 +306,7 @@ const Navbar = () => {
 
         <div className="mt-7">
           <ul className="flex lg:gap-6 xl:gap-10 uppercase text-xs font-raleway font-[500] tracking-[0.1em]">
-            {rightRoutes.map((route) => (
+            {rightRoutes.slice(0,2).map((route) => (
               <li key={route.label}>
                 <Link
                   href={route.url}
@@ -519,6 +519,17 @@ const Navbar = () => {
                 </div>
               )}
             </li>
+            {rightRoutes.slice(2,3).map((route) => (
+              <li key={route.label}>
+                <Link
+                  href={route.url}
+                  onClick={(e) => handleNavigation(e, route.url)}
+                  className="hover:text-amber-300 transition-all duration-300"
+                >
+                  {route.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
