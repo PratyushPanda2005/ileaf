@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect, MouseEvent, useRef } from "react";
 import { useTransitionRouter } from "next-view-transitions";
 import Logo from "../../../public/assets/logos/logo-i-LEAF-logo.svg";
