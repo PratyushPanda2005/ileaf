@@ -99,7 +99,7 @@ const CardGrid = () => {
                       : "text-[#FFBF00]"
                   }`}
                 >
-                  {number}
+                  <span className="transform skew-x-[20deg] inline-block">{number}</span>
                 </button>
               )
             )}
@@ -165,7 +165,7 @@ const CardGrid = () => {
                       : "text-[#FFBF00]"
                   }`}
                 >
-                  {number}
+                  <span className="transform skew-x-[20deg] inline-block">{number}</span>
                 </button>
               )
             )}

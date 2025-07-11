@@ -37,6 +37,44 @@
   }
 }
 
+@keyframes bg-bounce {
+  0%, 100% {
+    background-position: center center;
+  }
+  50% {
+    background-position: 40% center;
+  }
+}
+
+@keyframes bg-bounce-vertical {
+  0%, 100% {
+    background-position: center center;
+  }
+  50% {
+    background-position: center 40%;
+  }
+}
+
+.animate-bg-bounce {
+  animation: bg-bounce 2s ease-in-out 2;
+}
+
+.animate-bg-bounce-vertical {
+  animation: bg-bounce-vertical 2s ease-in-out 2;
+}
+
+@media (min-width: 640px) {
+  .animate-bg-bounce {
+    animation: bg-bounce-vertical 2s ease-in-out 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .animate-bg-bounce-vertical {
+    animation: bg-bounce-vertical 2s ease-in-out 2;
+  }
+}
+
 ::view-transition-group(root) {
   z-index: auto !important;
 }
