@@ -1,6 +1,10 @@
-import React from "react";
+'use client'
+import React, { useEffect, useRef } from "react";
 import Parallelogram from "../components/parallelogram";
 import { ChevronUp } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger)
 
 const Parallax = ({
   title,
@@ -11,10 +15,27 @@ const Parallax = ({
   bgImage: string;
   className?: string;
 }) => {
+
+  const parallaxRef = useRef(null)
+
+  useEffect(() => {
+    if (!parallaxRef.current) return;
+    
+    gsap.to(parallaxRef.current, {
+      backgroundPositionY: "30%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: parallaxRef.current,
+        start: "top bottom",
+        end: "bottom top", 
+        scrub: true,
+      }
+    })
+  }, [])
   return (
-    <section className="h-[40vh] md:h-[55vh] w-full relative">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    <section  className="h-[40vh] md:h-[55vh] w-full relative">
+      <div ref={parallaxRef}
+        className="absolute inset-0 bg-cover bg-[position:center_0%] bg-no-repeat"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}

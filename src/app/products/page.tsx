@@ -1,11 +1,31 @@
-import React from "react";
+'use client'
+import React, { useEffect, useRef } from "react";
 import ProductHero from "../components/productsHero";
 import ProductCategory from "../components/product-category";
 import ProductGrid from "./components/product-grid";
 import Button from "../components/button";
 import { ChevronUp } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger)
 
 const ProductsPage = () => {
+  const parallaxRef = useRef(null)
+
+  useEffect(() => {
+    if (!parallaxRef.current) return;
+    
+    gsap.to(parallaxRef.current, {
+      backgroundPositionY: "30%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: parallaxRef.current,
+        start: "top bottom",
+        end: "bottom top", 
+        scrub: true,
+      }
+    })
+  }, [])
   return (
     <>
       <ProductHero
@@ -18,8 +38,8 @@ const ProductsPage = () => {
       <ProductCategory />
 
       <section className="h-[40vh] md:h-[55vh] w-full relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        <div ref={parallaxRef}
+          className="absolute inset-0 bg-cover bg-[position:center_0%] bg-no-repeat"
           style={{
             backgroundImage: `url(https://www.ileafdoors.com/wp-content/uploads/2025/06/products-hero-2-scaled.webp)`,
           }}

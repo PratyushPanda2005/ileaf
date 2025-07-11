@@ -3,9 +3,9 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import MaskImage from "../../../public/assets/bg/mask-image.png";
 import MaskImageMob from "../../../public/assets/bg/mask-image-mob.webp";
-import Cycling from "@/../public/maico-amorim-SJWPKMb9u-k-unsplash.jpg";
 import Play_Button from "../../../public/play_button.svg";
 import Button from "../components/button";
+import { most_asked_doubts_1, most_asked_doubts_2, most_asked_doubts_3, most_asked_doubts_4 } from "../config";
 
 const marginClasses = [
   "translate-x-[0px]",
@@ -56,22 +56,22 @@ const Customer = () => {
     {
       id: 0,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
-      poster: Cycling.src,
+      poster: most_asked_doubts_1,
     },
     {
       id: 1,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
-      poster: Cycling.src,
+      poster: most_asked_doubts_2,
     },
     {
       id: 2,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/I-Leaf-5-Things-Before-Buying-Kashi-18-3-25.mp4",
-      poster: Cycling.src,
+      poster: most_asked_doubts_3,
     },
     {
       id: 3,
       src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
-      poster: Cycling.src,
+      poster: most_asked_doubts_4,
     },
   ];
 
