@@ -6,6 +6,7 @@ import Logo from "../../../public/assets/logos/logo-i-LEAF-logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Parallelogram from "./parallelogram";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,6 +21,12 @@ const Navbar = () => {
   const [selectedCity, setSelectedCity] = useState('');
   
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const pathname = usePathname()
+
+  const isActive = (href: string) => {
+    return pathname === href;
+  };
   const leftRoutes = [
     { label: "Home", url: "/" },
     { label: "About Us", url: "/aboutus" },
@@ -288,8 +295,11 @@ const Navbar = () => {
               <li key={route.label}>
                 <Link
                   href={route.url}
+
                   onClick={(e) => handleNavigation(e, route.url)}
-                  className="hover:text-amber-300 transition-all duration-300"
+                  className={`hover:text-amber-300 transition-all duration-300  ${
+                    isActive(route.url) ? "text-amber-300" : "text-black"
+                  }`}
                 >
                   {route.label}
                 </Link>
@@ -311,7 +321,9 @@ const Navbar = () => {
                 <Link
                   href={route.url}
                   onClick={(e) => handleNavigation(e, route.url)}
-                  className="hover:text-amber-300 transition-all duration-300"
+                  className={`hover:text-amber-300 transition-all duration-300  ${
+                    isActive(route.url) ? "text-amber-300" : "text-black"
+                  }`}
                 >
                   {route.label}
                 </Link>
@@ -524,7 +536,9 @@ const Navbar = () => {
                 <Link
                   href={route.url}
                   onClick={(e) => handleNavigation(e, route.url)}
-                  className="hover:text-amber-300 transition-all duration-300"
+                  className={`hover:text-amber-300 transition-all duration-300  ${
+                    isActive(route.url) ? "text-amber-300" : "text-black"
+                  }`}
                 >
                   {route.label}
                 </Link>
