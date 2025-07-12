@@ -37,43 +37,17 @@
   }
 }
 
-@keyframes bg-bounce {
-  0%, 100% {
-    background-position: center center;
-  }
-  50% {
-    background-position: 40% center;
-  }
+@keyframes bgBounce {
+  0% { background-position: center 30%; }
+  25% { background-position: center 60%; }
+  50% { background-position: center 30%; }
+  75% { background-position: center 60%; }
+  100% { background-position: center 30%; }
 }
-
-@keyframes bg-bounce-vertical {
-  0%, 100% {
-    background-position: center center;
-  }
-  50% {
-    background-position: center 40%;
-  }
-}
-
 .animate-bg-bounce {
-  animation: bg-bounce 2s ease-in-out 2;
+  animation: bgBounce 3s ease-in-out;
 }
 
-.animate-bg-bounce-vertical {
-  animation: bg-bounce-vertical 2s ease-in-out 2;
-}
-
-@media (min-width: 640px) {
-  .animate-bg-bounce {
-    animation: bg-bounce-vertical 2s ease-in-out 2;
-  }
-}
-
-@media (max-width: 640px) {
-  .animate-bg-bounce-vertical {
-    animation: bg-bounce-vertical 2s ease-in-out 2;
-  }
-}
 
 ::view-transition-group(root) {
   z-index: auto !important;
