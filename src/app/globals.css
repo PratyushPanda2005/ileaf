@@ -44,8 +44,9 @@
   75% { background-position: center 60%; }
   100% { background-position: center 30%; }
 }
+
 .animate-bg-bounce {
-  animation: bgBounce 3s ease-in-out;
+  animation: bgBounce 5s ease-in-out;
 }
 
 
