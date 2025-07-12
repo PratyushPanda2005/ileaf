@@ -13,6 +13,7 @@
     "gap": "^0.3.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.525.0",
+    "motion": "^12.23.3",
     "next": "15.3.5",
     "next-view-transitions": "^0.3.4",
     "react": "19.1.0",

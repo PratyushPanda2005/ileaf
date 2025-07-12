@@ -1,5 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const ProductHero = ({
   headingOne,
@@ -14,14 +17,38 @@ const ProductHero = ({
   headingFour?: string;
   bgImage: string;
 }) => {
+
+  const bgRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    
+    if (bgRef.current) {
+      gsap.to(bgRef.current, {
+        backgroundPosition: "center 80%", 
+        ease: "none",
+        scrollTrigger: {
+          trigger: bgRef.current,
+          start: "top top", 
+          end: "bottom top", 
+          scrub: 1, 
+          markers: false 
+        }
+      });
+    }
+    
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
   return (
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
       <div className="relative h-[60vh] sm:h-screen w-full">
-        <div
+        <div ref={bgRef}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
               `url(${bgImage})`,
+              backgroundPosition: 'center 30%', 
+            willChange: 'background-position'
           }}
         >
         </div>

@@ -104,7 +104,7 @@ const Customer = () => {
                 Say
               </h1>
             </div>
-            <button className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
+            <button className="btn-1 !text-black uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
             <span className="inline-block transform skew-x-[20deg]">Explore now</span>
             </button>
           </div>

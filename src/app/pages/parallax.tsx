@@ -22,20 +22,20 @@ const Parallax = ({
     if (!parallaxRef.current) return;
     
     gsap.to(parallaxRef.current, {
-      backgroundPositionY: "30%",
+      backgroundPositionY: "100%",
       ease: "none",
       scrollTrigger: {
         trigger: parallaxRef.current,
         start: "top bottom",
         end: "bottom top", 
-        scrub: true,
+        scrub: 1,
       }
     })
   }, [])
   return (
     <section  className="h-[40vh] md:h-[55vh] w-full relative">
       <div ref={parallaxRef}
-        className="absolute inset-0 bg-cover bg-[position:center_0%] bg-no-repeat bg-fixed"
+        className="absolute inset-0 bg-cover bg-[position:center_60%] bg-no-repeat"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}

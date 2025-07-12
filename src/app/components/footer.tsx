@@ -25,26 +25,82 @@ const Footer = () => {
               Quick Links
             </h1>
             <ul className="text-[#707070]  italic space-y-1">
-              <li>- Home</li>
-              <li>- About Us</li>
-              <li>- Products</li>
-              <li>- Features</li>
-              <li>- Gallery</li>
-              <li>- Testimonials</li>
+              <li>
+                <Link href="/" className="hover:text-amber-400">- Home</Link>
+              </li>
+              <li>
+                <Link href="/aboutus" className="hover:text-amber-400">- About Us</Link>
+              </li>
+              <li>
+                <Link href="/products" className="hover:text-amber-400">- Products</Link>
+              </li>
+              <li>
+                <Link href="/features" className="hover:text-amber-400">- Features</Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="hover:text-amber-400">- Gallery</Link>
+              </li>
+              <li>
+                <Link href="/testimonials" className="hover:text-amber-400">- Testimonials</Link>
+              </li>
               <li>- Enquiry</li>
-              <li>- Contact Us</li>
+              <li>
+                <Link href="/contact" className="hover:text-amber-400">- Contact Us</Link>
+              </li>
             </ul>
           </div>
           <div className="lg:w-1/3 text-center lg:text-left font-raleway footer-flex">
             <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mb-10" />
             <h1 className="uppercase text-[#707070]  mb-4 italic">products</h1>
-            <ul className="text-[#707070] italic space-y-1">
-              <li>- Luxury Doors</li>
-              <li>- GL Doors</li>
-              <li>- Gi Doors</li>
-              <li>- Windows</li>
-              <li>- Fibre Doors</li>
-              <li>- WPC Doors</li>
+            <ul className="text-[#707070]  italic space-y-1">
+              <li>
+                <Link
+                  href="/product-category/luxury"
+                  className="hover:text-amber-400"
+                >
+                  - Luxury Doors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/product-category/gldoors"
+                  className="hover:text-amber-400"
+                >
+                  - GL Doors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/product-category/gidoors"
+                  className="hover:text-amber-400"
+                >
+                  - Gi Doors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/product-category/windows"
+                  className="hover:text-amber-400"
+                >
+                  - Windows
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/product-category/fibredoors"
+                  className="hover:text-amber-400"
+                >
+                  - Fibre Doors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/product-category/wpcdoors"
+                  className="hover:text-amber-400"
+                >
+                  - WPC Doors
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="lg:w-1/3 text-center lg:text-left font-raleway footer-flex">
@@ -61,13 +117,13 @@ const Footer = () => {
               <h2>e-Mail : ileafdoor@gmail.com</h2>
               <div className="flex gap-2 mt-4 items-center lg:items-start lg:justify-start justify-center">
                 <Link href="https://www.instagram.com/ileaf.doors/">
-                <Image src={Instagram} alt="Instagram Logo" />
+                  <Image src={Instagram} alt="Instagram Logo" />
                 </Link>
-                <Link href="https://www.facebook.com/ILEAFSTEELDOORS" >
-                <Image src={Facebook} alt="Facebook Logo" />
+                <Link href="https://www.facebook.com/ILEAFSTEELDOORS">
+                  <Image src={Facebook} alt="Facebook Logo" />
                 </Link>
-                <Link href="https://www.youtube.com/channel/UC84D_VYQW3Hi2Xa3SD8YccQ" >   
-                <Image src={Youtube} alt="Youtube Logo" />
+                <Link href="https://www.youtube.com/channel/UC84D_VYQW3Hi2Xa3SD8YccQ">
+                  <Image src={Youtube} alt="Youtube Logo" />
                 </Link>
               </div>
             </ul>
@@ -78,15 +134,24 @@ const Footer = () => {
             Copyright © 2025 i-LEAF Doors & Windows
           </h1>
           <div className="flex flex-wrap justify-center items-center  gap-3">
-          <Link href="/legal/privacy" className="text-[#707070] flex gap-3 uppercase lg:normal-case">
-            Privacy Policy<span className="hidden lg:flex">|</span>
-          </Link>
-          <Link href="/legal/terms" className="text-[#707070] flex gap-3 uppercase lg:normal-case">
-            Terms of Service<span className="hidden lg:flex">|</span>
-          </Link>
-          <Link href="/legal/conditions" className="text-[#707070] uppercase lg:normal-case">
-            Terms and Conditions
-          </Link>
+            <Link
+              href="/legal/privacy"
+              className="text-[#707070] flex gap-3 uppercase lg:normal-case"
+            >
+              Privacy Policy<span className="hidden lg:flex">|</span>
+            </Link>
+            <Link
+              href="/legal/terms"
+              className="text-[#707070] flex gap-3 uppercase lg:normal-case"
+            >
+              Terms of Service<span className="hidden lg:flex">|</span>
+            </Link>
+            <Link
+              href="/legal/conditions"
+              className="text-[#707070] uppercase lg:normal-case"
+            >
+              Terms and Conditions
+            </Link>
           </div>
         </div>
       </div>

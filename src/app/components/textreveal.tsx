@@ -1,11 +1,12 @@
+'use client'
 import Parallelogram from "./parallelogram";
-
+import { motion } from "motion/react"
 const TextReveal = () => {
   return (
     <section className="p-16 lg:p-20 w-full relative bg-[#707070]">
       <div className="bg-cover bg-center bg-no-repeat flex justify-center items-center">
         <div className="w-full h-full flex items-center justify-center">
-          <p className="text-black font-[300] italic text-base leading-7 tracking-[1px] text-center font-raleway md:max-w-[64%]">
+          <motion.p initial={{opacity: 0, y : 64}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}}  className="text-black font-[300] italic text-base leading-7 tracking-[1px] text-center font-raleway md:max-w-[64%]">
             In today’s fast-paced world, homes are often left unattended due to
             hectic work schedules and constant travel.
             <span className="max-sm:inline-block">
@@ -22,7 +23,7 @@ const TextReveal = () => {
                 every space.
               </span>
             </span>
-          </p>
+          </motion.p>
         </div>
       </div>
       <Parallelogram />
