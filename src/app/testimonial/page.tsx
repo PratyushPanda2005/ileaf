@@ -13,6 +13,7 @@ import {
   remya,
 } from "../config";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { motion } from "motion/react";
 
 const Testimonial = () => {
   const testimonialData = [
@@ -106,7 +107,7 @@ const Testimonial = () => {
     <section className="min-h-screen bg-black px-10 lg:px-20 py-20 lg:py-[160px]">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-32">
         {testimonialData.slice(0, itemsToShow).map((item) => (
-          <div
+          <motion.div initial={{opacity: 0, y : 64}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}}
             key={item.id}
             className="col-span-1 flex flex-col justify-start items-center gap-6 relative"
           >
@@ -157,7 +158,7 @@ const Testimonial = () => {
               <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] inline-block" />{" "}
               {item.title}
             </h1>
-          </div>
+          </motion.div>
         ))}
 
         {isMobile && (

@@ -1,3 +1,4 @@
+'use client'
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import LuxuryDoor from "../../../../public/assets/doors/Villa-doors.webp";
@@ -8,7 +9,7 @@ import FibreDoor from "../../../../public/assets/doors/DUTON.webp";
 import WPCDoor from "../../../../public/assets/doors/WPC-doors.webp";
 import Button from "@/app/components/button";
 import Parallelogram from "@/app/components/parallelogram";
-
+import { motion } from "motion/react";
 interface ProductGridCardProps {
   heading?: string;
   subheading?: string; // Made optional with ?
@@ -55,7 +56,7 @@ const ProductGrid = () => {
   return (
     <section className="min-h-screen px-10 lg:px-20 bg-black py-20">
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-10">
+      <motion.div initial={{opacity: 0}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-10">
         <ProductGridCard
           routeLink="/product-category/luxury"
           heading="Luxury Doors"
@@ -98,7 +99,7 @@ const ProductGrid = () => {
           imageAlt=""
           subheading="Eco-friendly and waterproof solutions for every space"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

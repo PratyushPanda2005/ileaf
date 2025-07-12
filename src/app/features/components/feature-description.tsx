@@ -1,17 +1,18 @@
+'use client'
 import React from "react";
-
+import { motion } from "motion/react";
 const FeatureDescription = () => {
   return (
     <section className="bg-black p-10 lg:p-20 min-h-screen">
       <div className="bg-[#707070]  lg:px-20">
         <div className="bg-[#ffbf00] px-6 py-20">
-          <div className="flex flex-col gap-6 justify-center items-center">
+          <motion.div initial={{opacity: 0, y : 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}}  className="flex flex-col gap-6 justify-center items-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-style italic text-black tracking-wide">
               Features
             </h1>
             <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
-          </div>
-          <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y : 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col gap-10 justify-center items-center w-full mt-10">
             <h1 className="uppercase text-black font-style italic text-2xl">
               Luxury Doors
             </h1>
@@ -34,8 +35,8 @@ const FeatureDescription = () => {
               <li>Attractive handles with smart lock operation.</li>
             </ul>
             <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
-          </div>
-          <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y : 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col gap-10 justify-center items-center w-full mt-10">
             <h1 className="uppercase text-black font-style italic text-2xl">
               GL Doors
             </h1>
@@ -65,8 +66,8 @@ const FeatureDescription = () => {
               <li>Available in different sizes.</li>
             </ul>
             <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
-          </div>
-          <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y : 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col gap-10 justify-center items-center w-full mt-10">
             <h1 className="uppercase text-black font-style italic text-2xl">
               Gi Doors
             </h1>
@@ -96,8 +97,8 @@ const FeatureDescription = () => {
               <li>Available in different sizes.</li>
             </ul>
             <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
-          </div>
-          <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y : 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col gap-10 justify-center items-center w-full mt-10">
             <h1 className="uppercase text-black font-style italic text-2xl">
               Steel Windows
             </h1>
@@ -115,9 +116,9 @@ const FeatureDescription = () => {
               <li>Easy to install.</li>
             </ul>
             <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-10 justify-center items-center w-full mt-10">
+          <motion.div initial={{opacity: 0, y : 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col gap-10 justify-center items-center w-full mt-10">
             <h1 className="uppercase text-black font-style italic text-2xl">
               Fibre Doors
             </h1>
@@ -143,7 +144,7 @@ const FeatureDescription = () => {
               <li>Long lasting.</li>
             </ul>
             <div className="w-3.5 h-1.5 bg-white transform skew-x-[-200deg]" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
