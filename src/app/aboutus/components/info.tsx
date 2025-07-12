@@ -1,10 +1,12 @@
+'use client'
 import Parallelogram from "@/app/components/parallelogram";
+import { motion } from "motion/react"
 
 const Info = () => {
   return (
     <section className="px-10 lg:px-20 bg-[#707070]">
       <div className="w-full flex flex-col gap-16 lg:gap-28 justify-center items-center py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <motion.div initial={{opacity: 0, y : 64}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}}  className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="col-span-1">
             <h1 className="font-semibold font-raleway text-center lg:text-left text-[14px]">
               Two decades of excellence in home protection
@@ -69,10 +71,10 @@ const Info = () => {
               <Parallelogram />
             </div>
           </div>
-        </div>
-        <h1 className="text-3xl italic font-style hidden lg:flex">
+        </motion.div>
+        <motion.h1 initial={{opacity: 0, y : 64}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}}  className="text-3xl italic font-style hidden lg:flex">
           Choose i-Leaf. Secure Your Future.
-        </h1>
+        </motion.h1>
         <h1 className="text-lg md:text-xl italic font-style text-center flex lg:hidden">
           Choose i-Leaf <br /> Secure Your Future.
         </h1>
