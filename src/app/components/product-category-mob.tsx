@@ -12,7 +12,7 @@ const ProductCategoryMob = () => {
             textColor='#FFBF00'
             routeLink='/product-category/luxury'
             title='luxury doors'
-            className='w-full flex justify-center items-center'
+            className='w-full !flex !justify-center items-center'
             />
             <Button
             borderColor='#707070'
@@ -21,7 +21,7 @@ const ProductCategoryMob = () => {
             textColor='#FFBF00'
             routeLink='/product-category/gidoors'
             title='gi doors'
-            className='w-full flex justify-center items-center'
+            className='w-full !flex !justify-center !items-center'
             />
             <Button
             borderColor='#707070'
@@ -30,7 +30,7 @@ const ProductCategoryMob = () => {
             textColor='#FFBF00'
             routeLink='/product-category/gldoors'
             title='gl doors'
-            className='w-full flex justify-center items-center'
+            className='w-full !flex !justify-center !items-center'
             />
             <Button
             borderColor='#707070'
@@ -39,7 +39,7 @@ const ProductCategoryMob = () => {
             textColor='#FFBF00'
             routeLink='/product-category/windows'
             title='windows'
-            className='w-full flex justify-center items-center'
+            className='w-full !flex !justify-center !items-center'
             />
             <Button
             borderColor='#707070'
@@ -48,7 +48,7 @@ const ProductCategoryMob = () => {
             textColor='#FFBF00'
             routeLink='/product-category/fibredoors'
             title='fibre doors'
-            className='w-full flex justify-center items-center'
+            className='w-full !flex !justify-center !items-center'
             />
             <Button
             borderColor='#707070'
@@ -57,7 +57,7 @@ const ProductCategoryMob = () => {
             textColor='#FFBF00'
             routeLink='/product-category/wpcdoors'
             title='wpc doors'
-            className='w-full flex justify-center items-center'
+            className='w-full !flex !justify-center !items-center'
             />
         </div>
     </div>

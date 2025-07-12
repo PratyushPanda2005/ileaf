@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import {
   most_asked_doubts_1,
@@ -11,9 +11,41 @@ import {
   most_asked_doubts_7,
   most_asked_doubts_8
 } from "../config";
+import Play_Button from "../../../public/play_button.svg";
 
 const Gallery = () => {
   const [showAll, setShowAll] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<{
+    src: string;
+    poster: string;
+  } | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  const openVideoPopup = (video: { src: string; poster: string }) => {
+    setSelectedVideo(video);
+    setIsPlaying(true);
+  };
+
+  const closeVideoPopup = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    setSelectedVideo(null);
+    setIsPlaying(false);
+  };
   const list = [
     {
       id: 0,
@@ -22,37 +54,37 @@ const Gallery = () => {
     },
     {
       id: 1,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319624/Most-Asked-Doubts-Part-2_dmxo99.mp4",
       poster: most_asked_doubts_2,
     },
     {
       id: 2,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/I-Leaf-5-Things-Before-Buying-Kashi-18-3-25.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319628/Steel-Doors-For-Your-Home_ebnelz.mp4",
       poster: most_asked_doubts_3,
     },
     {
       id: 3,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319618/I-Leaf-Elavate-Your-Home-07-4-25-Kashi-2_jtewka.mp4",
       poster: most_asked_doubts_4,
     },
     {
       id: 4,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319617/Match-Your-Home-Style-Ileaf-Abhijith_mcnq4j.mp4",
       poster: most_asked_doubts_5,
     },
     {
       id: 5,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319618/Ileaf-Price-Of-Steel-Doors-Part1_m40esk.mp4",
       poster: most_asked_doubts_6,
     },
     {
       id: 6,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319618/I-Leaf-Elavate-Your-Home-07-4-25-Kashi-2_jtewka.mp4",
       poster: most_asked_doubts_7,
     },
     {
       id: 7,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319621/Safety-Locking-System_fzkcl5.mp4",
       poster: most_asked_doubts_8,
     },
   ];
@@ -68,7 +100,6 @@ const Gallery = () => {
     "lg:-translate-x-[103px]",
   ];
 
-  // Show only first 4 items on mobile initially, all items on desktop
   const displayList = showAll ? list : list.slice(0, 4); // Mobile: first 4 items or all based on state
   const fullList = list; // Desktop: all items
 
@@ -93,17 +124,19 @@ const Gallery = () => {
         <div className="lg:hidden">
           <div className="grid grid-cols-1 gap-10">
             {displayList.map((item) => (
-              <div
+              <div onClick={() => openVideoPopup(item)}
                 key={item.id}
                 className="col-span-1 -skew-x-6 flex justify-center items-center"
               >
-                <Image
-                  src={item.poster}
-                  alt="Cycling"
-                  width={300}
-                  height={300}
-                  className={`w-96 h-64 ${marginClasses[item.id]}`}
-                />
+                <video
+                  poster={item.poster}
+                  className={`${marginClasses[item.id]} md:w-96 md:h-64`}
+                >
+                  <source src={item.src} type="video/mp4" />
+                </video>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <Image src={Play_Button} alt="Play" className={`${marginClasses[item.id]}`} />
+                </div>
               </div>
             ))}
           </div>
@@ -136,19 +169,61 @@ const Gallery = () => {
         <div className="hidden lg:grid lg:grid-cols-2 gap-10">
           {fullList.map((item) => (
             <div
+            onClick={() => openVideoPopup(item)}
               key={item.id}
               className="col-span-1 -skew-x-6 flex justify-center items-center"
             >
-              <Image
-                src={item.poster}
-                alt="Cycling"
-                width={300}
-                height={300}
-                className={`w-96 h-64 ${marginClasses[item.id]}`}
-              />
+              <video
+                  poster={item.poster}
+                  className={`${marginClasses[item.id]} w-96 h-64`}
+                >
+                  <source src={item.src} type="video/mp4" />
+                </video>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <Image src={Play_Button} alt="Play" className={`${marginClasses[item.id]}`} />
+                </div>
             </div>
           ))}
         </div>
+        {selectedVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl">
+            <button
+              onClick={closeVideoPopup}
+              className="absolute -top-10 right-0 text-white text-3xl z-50"
+              aria-label="Close video"
+            >
+              &times;
+            </button>
+            <div className="relative pt-[56.25%]">
+              {" "}
+              {/* 16:9 aspect ratio */}
+              <video
+                ref={videoRef}
+                className="absolute top-0 left-0 w-full h-full"
+                poster={selectedVideo.poster}
+                onClick={togglePlay}
+                controls
+                autoPlay
+                loop
+              >
+                <source src={selectedVideo.src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              {!isPlaying && (
+                <button
+                  onClick={togglePlay}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                    text-white rounded-full p-4"
+                  aria-label="Play"
+                >
+                  <Image src={Play_Button} alt="Play" />
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
       </div>
     </section>
   );

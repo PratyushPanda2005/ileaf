@@ -31,6 +31,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
         title="view details"
         bgColor="black"
         textColor="#FFBF00"
+        bgHoverColor="#000000"
       />
       <div className="w-40 h-14 bg-[#ffbf00] transform -skew-x-[-20deg] absolute top-0 left-0 rotate-[270deg] -translate-x-[32.4%] translate-y-[75%] flex justify-center items-center p-4">
         <h1 className="text-black transform skew-x-[-20deg] font-raleway font-semibold">

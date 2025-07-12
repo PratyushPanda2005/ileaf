@@ -11,6 +11,7 @@ const FeaturesPage = () => {
     />
     <Parallax
     bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/feature-hero-2-scaled.webp'
+    className='hidden'
     />
     <FeatureDescription/>
     </>

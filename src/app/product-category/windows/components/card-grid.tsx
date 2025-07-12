@@ -36,6 +36,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
         title="view details"
         bgColor="black"
         textColor="#FFBF00"
+        bgHoverColor="#000000"
       />
     </div>
   );

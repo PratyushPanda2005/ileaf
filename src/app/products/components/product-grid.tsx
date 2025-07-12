@@ -42,6 +42,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
       title="explore"
       bgColor="black"
       textColor="#FFBF00"
+      bgHoverColor="#000000"
       />
       <div className="absolute right-6 top-0">
       <Parallelogram/>
