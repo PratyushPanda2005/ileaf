@@ -35,7 +35,7 @@ const Parallax = ({
   return (
     <section  className="h-[40vh] md:h-[55vh] w-full relative">
       <div ref={parallaxRef}
-        className="absolute inset-0 bg-cover bg-[position:center_60%] bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-[position:center_0%] bg-no-repeat"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}
