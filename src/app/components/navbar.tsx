@@ -95,6 +95,18 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
+    const handleOpenEnquiryDropdown = () => {
+      setIsDropdownOpen(true);
+    };
+
+    window.addEventListener('openEnquiryDropdown', handleOpenEnquiryDropdown);
+
+    return () => {
+      window.removeEventListener('openEnquiryDropdown', handleOpenEnquiryDropdown);
+    };
+  }, []);
+
+  useEffect(() => {
     const fetchLocationData = async () => {
       try {
         setLoading(true);

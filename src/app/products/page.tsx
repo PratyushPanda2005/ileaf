@@ -26,10 +26,16 @@ const ProductsPage = () => {
       }
     })
   }, [])
+
+  const handleEnquiryClick = () => {
+    // Dispatch a custom event that the Navbar can listen to
+    const event = new CustomEvent('openEnquiryDropdown');
+    window.dispatchEvent(event);
+  };
   return (
     <>
       <ProductHero
-        bgImage="https://www.ileafdoors.com/wp-content/uploads/2025/01/hero-03.webp"
+        bgImage="https://res.cloudinary.com/db4zbyipc/image/upload/v1752412510/product-hero_1_nmirl7.webp"
         headingOne="Discover"
         headingTwo="unmatched"
         headingThree="Strength"
@@ -41,7 +47,7 @@ const ProductsPage = () => {
         <div ref={parallaxRef}
           className="absolute inset-0 bg-cover bg-[position:center_0%] bg-no-repeat"
           style={{
-            backgroundImage: `url(https://www.ileafdoors.com/wp-content/uploads/2025/06/products-hero-2-scaled.webp)`,
+            backgroundImage: `url(https://res.cloudinary.com/db4zbyipc/image/upload/v1752412522/product-hero_2_cthfb5.webp)`,
           }}
         >
           <div className="relative h-full flex items-center">
@@ -50,6 +56,7 @@ const ProductsPage = () => {
             </div>
             <div className="hidden sm:flex justify-end w-full px-20 ">
               <button
+              onClick={handleEnquiryClick}
                 id="enquiry-button"
                 className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] border border-amber-400"
               >

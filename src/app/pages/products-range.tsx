@@ -22,8 +22,8 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 flex md:hidden justify-center items-center mt-6 mb-6">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/01/ILZ-D-21.webp"
-                alt=""
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663573/1-ILZ-W508_zbaavy.webp"
+                alt="Luxury Door"
                 width={100}
                 height={100}
                 className="h-[400px] md:h-[30vw] w-auto"
@@ -43,7 +43,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/01/ILZ-D-21.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663573/3-ILZ-D-21_ryohsg.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -64,7 +64,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3  flex md:hidden justify-center items-center mt-6 mb-6">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/04/IL-GL-SG121.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663492/1-IL-GL-SG121_mvnjlx.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -88,7 +88,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/04/IL-GL-SG121.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663492/1-IL-GL-SG121_mvnjlx.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -109,7 +109,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3  flex md:hidden justify-center items-center mt-6 mb-6">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/04/IL-Gi-66-TW.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663470/6-IL_Gi_66_TW_dqfomf.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -135,7 +135,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/04/IL-Gi-66-TW.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663470/6-IL_Gi_66_TW_dqfomf.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -156,7 +156,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3  flex md:hidden justify-center items-center mt-6 mb-6">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2024/12/EP-3-Panel-CD.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663551/3-Panel-French-Check_pzsqxr.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -179,7 +179,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2024/12/EP-3-Panel-CD.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663551/3-Panel-French-Check_pzsqxr.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -200,7 +200,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3  flex md:hidden justify-center items-center mt-6 mb-6">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/05/DUTON.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663540/DUTON_jkjmgm.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -225,7 +225,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2025/05/DUTON.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663540/DUTON_jkjmgm.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -246,7 +246,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3  flex md:hidden justify-center items-center mt-8 mb-6">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2024/12/WPC-Doors.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663557/p3_mgkbmh.webp"
                 alt=""
                 width={500}
                 height={500}
@@ -263,7 +263,7 @@ const ProductRange = () => {
             </div>
             <div className="md:w-1/3 hidden md:flex justify-center items-center ">
               <img
-                src="https://www.ileafdoors.com/wp-content/uploads/2024/12/WPC-Doors.webp"
+                src="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663557/p3_mgkbmh.webp"
                 alt=""
                 width={500}
                 height={500}

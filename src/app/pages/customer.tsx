@@ -83,7 +83,7 @@ const Customer = () => {
       <div
         style={{
           backgroundImage:
-            "url(https://www.ileafdoors.com/wp-content/uploads/2025/06/our-customers-say-hero2.webp)",
+            "url(https://res.cloudinary.com/db4zbyipc/image/upload/v1752412420/our-customers-say-hero2_ju5nqa.webp)",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

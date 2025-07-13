@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <>
     <ProductHero
-    bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/04/hero-contact.webp'
+    bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752412754/contact-hero_1_qbxoan.webp'
     />
     <ContactForm/>
     </>

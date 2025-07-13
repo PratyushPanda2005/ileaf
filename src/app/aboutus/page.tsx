@@ -9,11 +9,11 @@ const AboutUs = () => {
   return (
     <div>
       <ProductHero
-      bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/about-hero-1-scaled.webp'
+      bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752403214/about-hero-1-scaled_iikyso.webp'
       />
       <Parallax
       className='hidden'
-      bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/about-hero-2-scaled.webp'
+      bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752403559/about-hero-2-scaled_hetv9f.webp'
       />
       <Info/>
       <ProductCategory/>

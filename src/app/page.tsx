@@ -14,7 +14,7 @@ export default function Home() {
      <Hero/>
      <Parallax
      title="Live safe and sound"
-     bgImage="https://www.ileafdoors.com/wp-content/uploads/2024/12/live-safe-and-sound.webp"
+     bgImage="https://res.cloudinary.com/db4zbyipc/image/upload/v1752411530/home-hero_2_s4pvhn.webp"
      />
      <TextReveal
      />

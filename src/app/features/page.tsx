@@ -7,10 +7,10 @@ const FeaturesPage = () => {
   return (
     <>
     <ProductHero
-    bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/feature-hero-1-scaled.webp'
+    bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752412625/feature-hero_1_i9zptd.webp'
     />
     <Parallax
-    bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/06/feature-hero-2-scaled.webp'
+    bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752412687/feature-hero_2_kexzfm.webp'
     className='hidden'
     />
     <FeatureDescription/>

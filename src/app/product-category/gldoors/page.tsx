@@ -14,7 +14,7 @@ const GLDoors = () => {
         headingOne="Long Lasting"
         headingTwo="Robust"
         headingThree="Security"
-        bgImage="https://www.ileafdoors.com/wp-content/uploads/2025/05/Hero-Gl-doors-scaled.webp"
+        bgImage="https://res.cloudinary.com/db4zbyipc/image/upload/v1752404316/Gl-hero_1_dnlhtc.webp"
       />
       <div className="bg-black text-white flex flex-col justify-center items-center px-20 pt-20">
         <h1 className="font-raleway tracking-[1px] text-[14px] font-[300] text-center max-w-3xl leading-[180%]">

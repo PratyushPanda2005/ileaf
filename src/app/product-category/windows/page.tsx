@@ -12,7 +12,7 @@ const Windows = () => {
   return (
     <>
     <ProductHero
-    bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/04/Hero-Windows.webp'
+    bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1751663555/window-hero_wuhjmx.webp'
     />
      <div className='bg-black text-white flex flex-col justify-center items-center px-20 pt-20'>
       <h1 className='font-raleway tracking-[1px] font-[300] text-[14px] text-center max-w-3xl leading-[180%]'>{windows.description}</h1>

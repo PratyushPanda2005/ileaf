@@ -45,8 +45,22 @@
   100% { background-position: center 30%; }
 }
 
+@keyframes bgBounceMobile {
+  0% { background-position: left 30%; }
+  25% { background-position: right 30%; }
+  50% { background-position: left 30%; }
+  75% { background-position: right 30%; }
+  100% { background-position: left 30%; }
+}
+
 .animate-bg-bounce {
   animation: bgBounce 5s ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .animate-bg-bounce {
+    animation: bgBounceMobile 5s ease-in-out;
+  }
 }
 
 .btn-1 {

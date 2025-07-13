@@ -11,7 +11,7 @@ const WPCDoors = () => {
   return (
    <>
    <ProductHero
-   bgImage='https://www.ileafdoors.com/wp-content/uploads/2025/05/Hero-WPC-doors.webp'
+   bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1751663560/WPC-hero_qe1gul.webp'
    />
          <div className="bg-black text-white flex flex-col justify-center items-center px-20 pt-20">
         <h1 className="font-raleway tracking-[1px] text-[14px] font-[300] text-center max-w-3xl leading-[180%]">
