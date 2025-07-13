@@ -3,10 +3,10 @@ import React, { useEffect, useRef } from "react";
 import ProductHero from "../components/productsHero";
 import ProductCategory from "../components/product-category";
 import ProductGrid from "./components/product-grid";
-import Button from "../components/button";
 import { ChevronUp } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import EnquiryMob from "../components/enquiry-mob";
 gsap.registerPlugin(ScrollTrigger)
 
 const ProductsPage = () => {
@@ -69,9 +69,7 @@ const ProductsPage = () => {
         </div>
       </section>
       <ProductGrid />
-      <div className="lg:hidden bg-[#707070] p-10 flex justify-center items-center">
-        <Button routeLink="/" title="Enquiry" border={1} borderColor="black" />
-      </div>
+      <EnquiryMob/>
     </>
   );
 };

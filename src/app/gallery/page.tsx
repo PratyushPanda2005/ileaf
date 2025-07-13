@@ -49,7 +49,7 @@ const Gallery = () => {
   const list = [
     {
       id: 0,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319619/Most-Asked-Doubts-Part-1_f2krgt.mp4",
       poster: most_asked_doubts_1,
     },
     {

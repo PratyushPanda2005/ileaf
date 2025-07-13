@@ -26,7 +26,7 @@ async function DoorDetailsPage({ params }: { params: Params }) {
   return (
     <>
       <ProductHero
-      bgImage="https://www.ileafdoors.com/wp-content/uploads/2025/04/Hero-Luxury-doors-scaled.webp"
+      bgImage="https://res.cloudinary.com/db4zbyipc/image/upload/v1751663573/luxury-hero_fzgufs.webp"
       />
     <section className="min-h-screen bg-black">
       <ProductCategory />

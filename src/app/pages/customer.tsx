@@ -6,6 +6,7 @@ import MaskImageMob from "../../../public/assets/bg/mask-image-mob.webp";
 import Play_Button from "../../../public/play_button.svg";
 import Button from "../components/button";
 import { most_asked_doubts_1, most_asked_doubts_2, most_asked_doubts_3, most_asked_doubts_4 } from "../config";
+import EnquiryMob from "../components/enquiry-mob";
 
 const marginClasses = [
   "translate-x-[0px]",
@@ -55,22 +56,22 @@ const Customer = () => {
   const list = [
     {
       id: 0,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319619/Most-Asked-Doubts-Part-1_f2krgt.mp4",
       poster: most_asked_doubts_1,
     },
     {
       id: 1,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Most-Asked-Doubts-Part-1.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319624/Most-Asked-Doubts-Part-2_dmxo99.mp4",
       poster: most_asked_doubts_2,
     },
     {
       id: 2,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/I-Leaf-5-Things-Before-Buying-Kashi-18-3-25.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319628/Steel-Doors-For-Your-Home_ebnelz.mp4",
       poster: most_asked_doubts_3,
     },
     {
       id: 3,
-      src: "https://ileafdoors.com/wp-content/uploads/2025/05/Steel-Doors-For-Your-Home.mp4",
+      src: "https://res.cloudinary.com/db4zbyipc/video/upload/v1752319618/I-Leaf-Elavate-Your-Home-07-4-25-Kashi-2_jtewka.mp4",
       poster: most_asked_doubts_4,
     },
   ];
@@ -185,13 +186,7 @@ const Customer = () => {
           />
         </div>
       </section>
-        <div  className="w-full flex justify-center sm:hidden items-center p-10 bg-[#707070]">
-     <button 
-      className="uppercase p-3 px-6 lg:px-8 transform border -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[300]"
-    >
-      <span className="inline-block transform skew-x-[20deg]">Enquiry</span>
-    </button>
-     </div>
+     <EnquiryMob/>
 
       {/* Video Popup */}
       {selectedVideo && (
