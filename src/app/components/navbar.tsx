@@ -7,6 +7,7 @@ import Link from "next/link";
 import Parallelogram from "./parallelogram";
 import { usePathname } from "next/navigation";
 import CloseButton from "@/../public/assets/logos/close-button.svg"
+// import emailjs from "@emailjs/browser";
 
 // Updated types for location data structure
 interface City {
@@ -72,7 +73,7 @@ const Navbar = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLFormElement>(null);
 
   const pathname = usePathname()
 
@@ -92,6 +93,7 @@ const Navbar = () => {
     { label: "Testimonial", url: "/testimonial" },
     { label: "Contact", url: "/contact" },
   ];
+  
 
   useEffect(() => {
     const fetchLocationData = async () => {
@@ -117,6 +119,24 @@ const Navbar = () => {
 
     fetchLocationData();
   }, []);
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .sendForm("service_0x9aq1k", "template_k87qffc", "#form", {
+  //       publicKey: "wSK_5FZDpXfDtPAdG",
+  //     })
+  //     .then(
+  //       () => {
+  //         console.log("SUCCESS!");
+  //       },
+  //       (error) => {
+  //         console.log("FAILED...", error.text);
+  //       }
+  //     );
+  // };
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -362,7 +382,7 @@ const Navbar = () => {
                 Enquiry
               </span>
               {isDropdownOpen && (
-                <div
+                <form id="form"
                   ref={dropdownRef}
                   className="absolute right-0 mt-6 bg-white text-black shadow-lg z-50 w-[380px] h-[520px] overflow-y-auto"
                 >
@@ -377,6 +397,7 @@ const Navbar = () => {
                     <div className="flex flex-col gap-4 w-full">
                       <div className="relative">
                         <input
+                        name="user_name"
                           type="text"
                           id="floating_outlined1"
                           className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
@@ -395,6 +416,7 @@ const Navbar = () => {
                           id="floating_outlined2"
                           className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
                           placeholder=" "
+                          name="user_email"
                         />
                         <label
                           htmlFor="floating_outlined2"
@@ -405,6 +427,7 @@ const Navbar = () => {
                       </div>
                       <div className="relative">
                         <input
+                        name="mobile_number" 
                           type="number"
                           id="floating_outlined3"
                           className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
@@ -419,6 +442,7 @@ const Navbar = () => {
                       </div>
                       <div className="relative">
                         <input
+                        name="whatsapp_number" 
                           type="text"
                           id="floating_outlined4"
                           className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
@@ -492,16 +516,16 @@ const Navbar = () => {
                       )}
 
                       <select
-                        id="source"
-                        name="source"
+                        id="how"
+                        name="how"
                         className="p-2 border border-amber-300 text-base font-[300]"
                       >
                         <option value="">How did you find us?</option>
-                        <option value="google">Google</option>
-                        <option value="facebook">Facebook</option>
-                        <option value="instagram">Instagram</option>
-                        <option value="friend">Friend/Family</option>
-                        <option value="other">Other</option>
+                        <option value="Google">Google</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Friend">Friend/Family</option>
+                        <option value="Other">Other</option>
                       </select>
                       <h2 className="normal-case text-base font-[300] mt-2">
                         Select a product
@@ -510,9 +534,9 @@ const Navbar = () => {
                         <div className="flex gap-1 text-base font-[300] normal-case">
                           <input
                             type="checkbox"
-                            id="luxury-doors"
-                            name="product"
-                            value="luxury-doors"
+                            id="luxury"
+                            name="luxury"
+                            value="Luxury Doors"
                           />
                           <label htmlFor="luxury-doors">Luxury Doors</label>
                         </div>
@@ -563,11 +587,11 @@ const Navbar = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
+                    <button  className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
                       <span className="inline-block transform skew-x-[20deg]">Submit</span>
                     </button>
                   </div>
-                </div>
+                </form>
               )}
             </li>
             {rightRoutes.slice(2,3).map((route) => (
