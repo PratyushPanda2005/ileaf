@@ -6,8 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Parallelogram from "./parallelogram";
 import { usePathname } from "next/navigation";
-import CloseButton from "@/../public/assets/logos/close-button.svg"
-// import emailjs from "@emailjs/browser";
+import CloseButton from "@/../public/assets/logos/close-button.svg";
+import emailjs from "@emailjs/browser";
 
 // Updated types for location data structure
 interface City {
@@ -62,20 +62,20 @@ const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
+
   // Location selection states
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [selectedState, setSelectedState] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
-  
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+
   // Location data states - changed to Country array
   const [locationData, setLocationData] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   const dropdownRef = useRef<HTMLFormElement>(null);
 
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const isActive = (href: string) => {
     return pathname === href;
@@ -93,25 +93,26 @@ const Navbar = () => {
     { label: "Testimonial", url: "/testimonial" },
     { label: "Contact", url: "/contact" },
   ];
-  
 
   useEffect(() => {
     const fetchLocationData = async () => {
       try {
         setLoading(true);
         setError(null);
-        
-        const response = await fetch('/json/countries+states+cities.json');
-        
+
+        const response = await fetch("/json/countries+states+cities.json");
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data: Country[] = await response.json();
         setLocationData(data);
       } catch (err) {
-        console.error('Error fetching location data:', err);
-        setError(err instanceof Error ? err.message : 'Failed to fetch location data');
+        console.error("Error fetching location data:", err);
+        setError(
+          err instanceof Error ? err.message : "Failed to fetch location data"
+        );
       } finally {
         setLoading(false);
       }
@@ -120,23 +121,34 @@ const Navbar = () => {
     fetchLocationData();
   }, []);
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  //   emailjs
-  //     .sendForm("service_0x9aq1k", "template_k87qffc", "#form", {
-  //       publicKey: "wSK_5FZDpXfDtPAdG",
-  //     })
-  //     .then(
-  //       () => {
-  //         console.log("SUCCESS!");
-  //       },
-  //       (error) => {
-  //         console.log("FAILED...", error.text);
-  //       }
-  //     );
-  // };
+    // Check if the form ref is not null
+    if (!dropdownRef.current) {
+      console.error("Form reference is null");
+      return;
+    }
 
+    emailjs
+      .sendForm("service_0x9aq1k", "template_k87qffc", dropdownRef.current, {
+        publicKey: "wSK_5FZDpXfDtPAdG",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          // Optional: Reset form or show success message
+          if (dropdownRef.current) {
+            dropdownRef.current.reset();
+          }
+          setIsDropdownOpen(false);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          // Optional: Show error message to user
+        }
+      );
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -148,20 +160,20 @@ const Navbar = () => {
   };
 
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const countryId = e.target.value;
-    setSelectedCountry(countryId);
-    setSelectedState(''); // Reset state when country changes
-    setSelectedCity(''); // Reset city when country changes
+    const countryName = e.target.value;
+    setSelectedCountry(countryName);
+    setSelectedState(""); // Reset state when country changes
+    setSelectedCity(""); // Reset city when country changes
   };
 
   const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const stateId = e.target.value;
-    setSelectedState(stateId);
-    setSelectedCity(''); // Reset city when state changes
+    const stateName = e.target.value;
+    setSelectedState(stateName);
+    setSelectedCity(""); // Reset city when state changes
   };
 
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCity(e.target.value);
+    setSelectedCity(e.target.value); // This will now store city name
   };
 
   const getCountries = () => {
@@ -170,14 +182,14 @@ const Navbar = () => {
 
   const getStates = () => {
     if (!selectedCountry) return [];
-    const country = locationData.find(c => c.id === parseInt(selectedCountry));
+    const country = locationData.find((c) => c.name === selectedCountry);
     return country?.states || [];
   };
 
   const getCities = () => {
     if (!selectedState) return [];
     const states = getStates();
-    const state = states.find(s => s.id === parseInt(selectedState));
+    const state = states.find((s) => s.name === selectedState);
     return state?.cities || [];
   };
 
@@ -314,13 +326,53 @@ const Navbar = () => {
         </div>
         <ul className="flex flex-col gap-2 uppercase text-sm italic p-6 text-[#FFBF00] text-center">
           <li className="pb-2">
-            <Link onClick={() => setIsMenuOpen(false)} href="/product-category/luxury" >Luxury Doors</Link>
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/product-category/luxury"
+            >
+              Luxury Doors
+            </Link>
           </li>
-          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/gidoors" >Gi Doors</Link></li>
-          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/gldoors" >GL Doors</Link></li>
-          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/windows" >windows</Link></li>
-          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/fibredoors" >Fibre doors</Link></li>
-          <li className="pb-2"><Link onClick={() => setIsMenuOpen(false)} href="/product-category/wpcdoors" >wpc Doors</Link></li>
+          <li className="pb-2">
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/product-category/gidoors"
+            >
+              Gi Doors
+            </Link>
+          </li>
+          <li className="pb-2">
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/product-category/gldoors"
+            >
+              GL Doors
+            </Link>
+          </li>
+          <li className="pb-2">
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/product-category/windows"
+            >
+              windows
+            </Link>
+          </li>
+          <li className="pb-2">
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/product-category/fibredoors"
+            >
+              Fibre doors
+            </Link>
+          </li>
+          <li className="pb-2">
+            <Link
+              onClick={() => setIsMenuOpen(false)}
+              href="/product-category/wpcdoors"
+            >
+              wpc Doors
+            </Link>
+          </li>
         </ul>
         <div className="flex-1 flex flex-col gap-10 justify-center items-center">
           <button className="uppercase p-3 px-6 lg:p-4 lg:px-8 transform -skew-x-12 text-sm lg:text-base border border-[#707070] text-amber-400">
@@ -361,7 +413,7 @@ const Navbar = () => {
 
         <div className="mt-7">
           <ul className="flex lg:gap-6 xl:gap-10 uppercase text-xs font-raleway font-[500] tracking-[0.1em]">
-            {rightRoutes.slice(0,2).map((route) => (
+            {rightRoutes.slice(0, 2).map((route) => (
               <li key={route.label}>
                 <Link
                   href={route.url}
@@ -382,12 +434,19 @@ const Navbar = () => {
                 Enquiry
               </span>
               {isDropdownOpen && (
-                <form id="form"
+                <form
+                  id="form"
+                  onSubmit={sendEmail}
                   ref={dropdownRef}
                   className="absolute right-0 mt-6 bg-white text-black shadow-lg z-50 w-[380px] h-[520px] overflow-y-auto"
                 >
                   <div className="flex flex-col items-center justify-start gap-6 w-full p-8 relative">
-                    <Image onClick={toggleDropdown} src={CloseButton} alt="Close Button"  className="absolute top-3 right-3 cursor-pointer" />
+                    <Image
+                      onClick={toggleDropdown}
+                      src={CloseButton}
+                      alt="Close Button"
+                      className="absolute top-3 right-3 cursor-pointer"
+                    />
                     <div className="text-center">
                       <h1 className="text-base font-raleway text-amber-400 font-bold">
                         Enquiry Form
@@ -397,7 +456,7 @@ const Navbar = () => {
                     <div className="flex flex-col gap-4 w-full">
                       <div className="relative">
                         <input
-                        name="user_name"
+                          name="user_name"
                           type="text"
                           id="floating_outlined1"
                           className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
@@ -427,7 +486,7 @@ const Navbar = () => {
                       </div>
                       <div className="relative">
                         <input
-                        name="mobile_number" 
+                          name="mobile_number"
                           type="number"
                           id="floating_outlined3"
                           className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
@@ -442,7 +501,7 @@ const Navbar = () => {
                       </div>
                       <div className="relative">
                         <input
-                        name="whatsapp_number" 
+                          name="whatsapp_number"
                           type="text"
                           id="floating_outlined4"
                           className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent border-1 border-amber-300 appearance-none  focus:outline-none focus:ring-0 focus:border-amber-600 peer"
@@ -455,7 +514,7 @@ const Navbar = () => {
                           Whatsapp No.
                         </label>
                       </div>
-                      
+
                       {/* Country Dropdown */}
                       <select
                         id="country"
@@ -466,10 +525,14 @@ const Navbar = () => {
                         className="p-2 border border-amber-300 text-base font-[300] focus:outline-none focus:ring-0 focus:border-amber-600 disabled:bg-gray-100 disabled:cursor-not-allowed"
                       >
                         <option value="">
-                          {loading ? "Loading countries..." : error ? "Error loading countries" : "Select Country"}
+                          {loading
+                            ? "Loading countries..."
+                            : error
+                            ? "Error loading countries"
+                            : "Select Country"}
                         </option>
                         {getCountries().map((country) => (
-                          <option key={country.id} value={country.id}>
+                          <option key={country.id} value={country.name}>
                             {country.name}
                           </option>
                         ))}
@@ -486,7 +549,7 @@ const Navbar = () => {
                       >
                         <option value="">Select State</option>
                         {getStates().map((state) => (
-                          <option key={state.id} value={state.id}>
+                          <option key={state.id} value={state.name}>
                             {state.name}
                           </option>
                         ))}
@@ -503,16 +566,14 @@ const Navbar = () => {
                       >
                         <option value="">Select City</option>
                         {getCities().map((city) => (
-                          <option key={city.id} value={city.id}>
+                          <option key={city.id} value={city.name}>
                             {city.name}
                           </option>
                         ))}
                       </select>
 
                       {error && (
-                        <div className="text-red-500 text-sm">
-                          {error}
-                        </div>
+                        <div className="text-red-500 text-sm">{error}</div>
                       )}
 
                       <select
@@ -587,14 +648,16 @@ const Navbar = () => {
                         </div>
                       </div>
                     </div>
-                    <button  className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
-                      <span className="inline-block transform skew-x-[20deg]">Submit</span>
+                    <button className="uppercase p-3 px-6 lg:px-8 transform  -skew-x-[20deg] text-sm  font-raleway tracking-[2px] font-[500] bg-amber-400">
+                      <span className="inline-block transform skew-x-[20deg]">
+                        Submit
+                      </span>
                     </button>
                   </div>
                 </form>
               )}
             </li>
-            {rightRoutes.slice(2,3).map((route) => (
+            {rightRoutes.slice(2, 3).map((route) => (
               <li key={route.label}>
                 <Link
                   href={route.url}
