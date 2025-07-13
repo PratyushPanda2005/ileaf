@@ -7,6 +7,7 @@ import { ViewTransitions } from "next-view-transitions";
 import Image from "next/image";
 import wtspLogo from "../../public/assets/logos/whatsapp.svg";
 import MobileMenu from "../../public/assets/logos/home.svg";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,9 @@ export default function RootLayout({
             className="fixed bottom-6 right-6 size-8"
           />
           <div className="flex lg:hidden fixed bottom-6 left-6 w-full">
+            <Link href="/">
           <Image src={MobileMenu} alt="" className="size-8" />
+            </Link>
           </div>
           <Footer />
         </ViewTransitions>

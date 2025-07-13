@@ -230,20 +230,20 @@ const Navbar = () => {
         setIsDropdownOpen(false);
       }
     };
+    
     if (isDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+      // Prevent body scroll when modal is open on mobile
+      document.body.style.overflow = 'hidden';
     } else {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside as EventListener
-      );
+      document.removeEventListener("mousedown", handleClickOutside as EventListener);
+      // Restore body scroll
+      document.body.style.overflow = 'unset';
     }
-
+  
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside as EventListener
-      );
+      document.removeEventListener("mousedown", handleClickOutside as EventListener);
+      document.body.style.overflow = 'unset';
     };
   }, [isDropdownOpen]);
 
