@@ -22,7 +22,6 @@
     --font-raleway: 'Raleway';
 }
 
-
 @layer utilities {
   .font-style {
     @apply font-blafhyglibs tracking-[4px] lg:tracking-[7px];
@@ -45,22 +44,9 @@
   100% { background-position: center 30%; }
 }
 
-@keyframes bgMobBounce {
-  0% { background-position: 0% center; }
-  50% { background-position: 100% center; }
-  100% { background-position: 0% center; }
-}
-
-
 .animate-bg-bounce {
   animation: bgBounce 5s ease-in-out;
 }
-
-.animate-bg-mob-bounce {
-  animation: bgMobBounce 3s;
-  will-change: background-position;
-}
-
 
 .btn-1 {
   position: relative;

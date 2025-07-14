@@ -1,18 +1,35 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
-  const bgRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    
-    if (bgRef.current) {
-      gsap.to(bgRef.current, {
-        backgroundPosition: "center 80%", 
+    if (imageRef.current) {
+      
+      gsap.fromTo(imageRef.current, 
+        { y: "-15%" },
+        {
+          y: "0%",
+          duration: 1.25,
+          ease: "power2.inOut",
+          yoyo: true,
+          repeat: 3,
+          repeatDelay: 0
+        }
+      );
+
+     
+      gsap.to(imageRef.current, {
+        y: "-15%",
         ease: "none",
         scrollTrigger: {
-          trigger: bgRef.current,
+          trigger: imageRef.current,
           start: "top top", 
           end: "bottom top", 
           scrub: 1, 
@@ -25,19 +42,30 @@ const Hero = () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
+
   return (
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full">
-      <div className="relative h-[60vh] sm:h-screen w-full">
-        <div ref={bgRef}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-bg-mob-bounce will-change: transform"
+      <div className="relative h-[60vh] sm:h-screen w-full overflow-hidden">
+        <div 
+          ref={imageRef}
+          className="absolute inset-0 w-full h-[120%] will-change-transform"
           style={{
-            backgroundImage: 'url("https://res.cloudinary.com/db4zbyipc/image/upload/v1752411438/home-hero_1_1_zlk7mp.webp")',
-            backgroundPosition: '0% 30%', 
-            willChange: 'background-position'
-            
+            transform: 'translateY(-10%)', // Initial position to allow upward movement
+            willChange: 'transform'
           }}
-        ></div>
-        <div className="hidden lg:flex lg:flex-col absolute top-[20%] left-[5.5%] text-amber-400 font-raleway uppercase text-xs tracking-[0.1em]">
+        >
+          <Image
+            src="https://res.cloudinary.com/db4zbyipc/image/upload/v1752411438/home-hero_1_1_zlk7mp.webp"
+            alt="Hero background"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+            sizes="100vw"
+          />
+        </div>
+
+        <div className="hidden lg:flex lg:flex-col absolute top-[20%] left-[5.5%] text-amber-400 font-raleway uppercase text-xs tracking-[0.1em] z-20">
           <h1>Download <br/> Brochure</h1>
           <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mt-4" />
         </div>
