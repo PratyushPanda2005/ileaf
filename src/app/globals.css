@@ -47,9 +47,7 @@
 
 @keyframes bgMobBounce {
   0% { background-position: 0% center; }
-  25% { background-position: 50% center; }
   50% { background-position: 100% center; }
-  75% { background-position: 50% center; }
   100% { background-position: 0% center; }
 }
 
