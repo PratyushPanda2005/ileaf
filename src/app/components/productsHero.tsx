@@ -49,18 +49,18 @@ const ProductHero = ({
         )
     }
 
-    if (!isMobile && imageRef.current) {
-      gsap.to(imageRef.current, {
-        transform: "translateY(20%)", 
-        ease: "none",
-        scrollTrigger: {
-          trigger: bgRef.current,
-          start: "top top", 
-          end: "bottom top", 
-          scrub: 1, 
-          markers: false
+    if(!isMobile) {
+      gsap.fromTo(imageRef.current, 
+        { y: "-15%" },
+        {
+          y: "0%",
+          duration: 1.25,
+          ease: "power2.inOut",
+          yoyo: true,
+          repeat: 3,
+          repeatDelay: 0
         }
-      });
+      );
     }
     
     return () => {
@@ -71,14 +71,14 @@ const ProductHero = ({
   return (
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
       <div className="relative h-[calc(60vh-64px)] sm:h-screen w-full">
-        <div ref={bgRef} className="absolute inset-0 overflow-hidden">
+        <div ref={bgRef} className="absolute inset-0 overflow-hidden ">
           <Image
             ref={imageRef}
             src={bgImage}
             alt="Product Hero Background"
             width={500}
             height={500}
-            className="w-full bg-cover h-full object-cover"
+            className="w-full bg-cover object-cover h-full lg:h-[120%]"
             style={{
               objectPosition: `${position} 30%`,
               willChange: 'transform'
