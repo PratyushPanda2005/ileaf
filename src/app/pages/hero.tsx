@@ -11,20 +11,46 @@ const Hero = () => {
 
   useEffect(() => {
     if (imageRef.current) {
-      
-      gsap.fromTo(imageRef.current, 
-        { y: "-15%" },
-        {
-          y: "0%",
-          duration: 1.25,
-          ease: "power2.inOut",
-          yoyo: true,
-          repeat: 3,
-          repeatDelay: 0
-        }
-      );
+      const isMobile = window.innerWidth < 768;
 
-     
+      if(isMobile) {
+        // Create a timeline for mobile animation
+        const mobileTimeline = gsap.timeline();
+        
+        mobileTimeline
+          .fromTo(imageRef.current, 
+            { x: "-50%" },
+            {
+              x: "0%",
+              duration: 1.25,
+              ease: "power2.inOut",
+              yoyo: true,
+              repeat: 3,
+              repeatDelay: 0
+            }
+          )
+          // Add smooth transition back to center after animation completes
+          .to(imageRef.current, {
+            x: "-25%", // Center position for mobile (since width is 200%)
+            duration: 1.25,
+            ease: "power2.out"
+          });
+      }
+
+      if(!isMobile) {
+        gsap.fromTo(imageRef.current, 
+          { y: "-15%" },
+          {
+            y: "0%",
+            duration: 1.25,
+            ease: "power2.inOut",
+            yoyo: true,
+            repeat: 3,
+            repeatDelay: 0
+          }
+        );
+      }
+      
       gsap.to(imageRef.current, {
         y: "-15%",
         ease: "none",
@@ -48,9 +74,9 @@ const Hero = () => {
       <div className="relative h-[60vh] sm:h-screen w-full overflow-hidden">
         <div 
           ref={imageRef}
-          className="absolute inset-0 w-full h-[120%] will-change-transform"
+          className="absolute inset-0 max-sm:w-[200%] w-full h-[120%] will-change-transform"
           style={{
-            transform: 'translateY(-10%)', // Initial position to allow upward movement
+            transform: 'translateY(-10%)',
             willChange: 'transform'
           }}
         >
