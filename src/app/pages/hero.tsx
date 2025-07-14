@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
@@ -14,27 +13,25 @@ const Hero = () => {
       const isMobile = window.innerWidth < 768;
 
       if(isMobile) {
-        // Create a timeline for mobile animation
-        const mobileTimeline = gsap.timeline();
+        const mobileTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top top", 
+            end: "bottom 30%", 
+            scrub: true, 
+          }
+        });
         
         mobileTimeline
           .fromTo(imageRef.current, 
-            { x: "-50%" },
+            { x: "-30%" },
             {
               x: "0%",
               duration: 1.25,
               ease: "power2.inOut",
-              yoyo: true,
-              repeat: 3,
-              repeatDelay: 0
             }
           )
-          // Add smooth transition back to center after animation completes
-          .to(imageRef.current, {
-            x: "-25%", // Center position for mobile (since width is 200%)
-            duration: 1.25,
-            ease: "power2.out"
-          });
+        
       }
 
       if(!isMobile) {
