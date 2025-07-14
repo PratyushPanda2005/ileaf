@@ -29,11 +29,12 @@ const Hero = () => {
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full">
       <div className="relative h-[60vh] sm:h-screen w-full">
         <div ref={bgRef}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-bg-mob-bounce sm:animate-bg-bounce"
+          className="absolute inset-0 bg-cover bg-no-repeat animate-bg-mob-bounce sm:animate-bg-bounce will-change: transform"
           style={{
             backgroundImage: 'url("https://res.cloudinary.com/db4zbyipc/image/upload/v1752411438/home-hero_1_1_zlk7mp.webp")',
-            backgroundPosition: 'center 30%', 
+            backgroundPosition: '0% 30%', 
             willChange: 'background-position'
+            
           }}
         ></div>
         <div className="hidden lg:flex lg:flex-col absolute top-[20%] left-[5.5%] text-amber-400 font-raleway uppercase text-xs tracking-[0.1em]">
