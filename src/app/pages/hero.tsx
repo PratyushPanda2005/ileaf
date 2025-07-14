@@ -18,7 +18,7 @@ const Hero = () => {
             trigger: imageRef.current,
             start: "top top", 
             end: "bottom 30%", 
-            scrub: true, 
+            scrub: 1, 
           }
         });
         
