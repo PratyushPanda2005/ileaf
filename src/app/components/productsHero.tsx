@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -21,21 +22,44 @@ const ProductHero = ({
 }) => {
 
   const bgRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  
   useEffect(() => {
     
     const isMobile = window.innerWidth < 640;
 
-    
-    if (!isMobile) {
-      gsap.to(bgRef.current, {
-        backgroundPosition: "center 80%", 
+    if(isMobile) {
+      const mobileTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: "top top", 
+          end: "bottom 30%", 
+          scrub: 1, 
+        }
+      });
+      
+      mobileTimeline
+        .fromTo(imageRef.current, 
+          { x: "0%" },
+          {
+            x: "-10%",
+            duration: 1.25,
+            ease: "power2.inOut",
+          }
+        )
+    }
+
+
+    if (!isMobile && imageRef.current) {
+      gsap.to(imageRef.current, {
+        transform: "translateY(20%)", 
         ease: "none",
         scrollTrigger: {
           trigger: bgRef.current,
           start: "top top", 
           end: "bottom top", 
           scrub: 1, 
-          markers: false 
+          markers: false
         }
       });
     }
@@ -44,18 +68,24 @@ const ProductHero = ({
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
+
   return (
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
-      <div className="relative h-[calc(60vh-64px)] sm:h-screen w-full">
-        <div ref={bgRef}
-          className="absolute inset-0 bg-cover  bg-no-repeat"
-          style={{
-            backgroundImage:
-              `url(${bgImage})`,
-              backgroundPosition: `${position} 30%`, 
-            willChange: 'background-position'
-          }}
-        >
+      <div className="relative h-[calc(60vh-64px)] w-[120%] sm:h-screen sm:w-full">
+        <div ref={bgRef} className="absolute inset-0 overflow-hidden">
+          <Image
+            ref={imageRef}
+            src={bgImage}
+            alt="Product Hero Background"
+            fill
+            className="object-cover"
+            style={{
+              objectPosition: `${position} 30%`,
+              willChange: 'transform'
+            }}
+            priority
+            sizes="100vw"
+          />
         </div>
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center">
