@@ -58,6 +58,7 @@
 
 .animate-bg-mob-bounce {
   animation: bgMobBounce 3s;
+  will-change: background-position;
 }
 
 
