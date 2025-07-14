@@ -45,9 +45,21 @@
   100% { background-position: center 30%; }
 }
 
+@keyframes bgMobBounce {
+  0% { background-position: 0% center; }
+  25% { background-position: 50% center; }
+  50% { background-position: 100% center; }
+  75% { background-position: 50% center; }
+  100% { background-position: 0% center; }
+}
+
 
 .animate-bg-bounce {
   animation: bgBounce 5s ease-in-out;
+}
+
+.animate-bg-mob-bounce {
+  animation: bgMobBounce 5s ease-in-out;
 }
 
 
