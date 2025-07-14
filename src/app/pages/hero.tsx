@@ -1,12 +1,15 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
   const bgRef = useRef<HTMLDivElement>(null);
+  const [isAnimated, setIsAnimated] = useState(false);
+
   useEffect(() => {
-    
     if (bgRef.current) {
       gsap.to(bgRef.current, {
         backgroundPosition: "center 80%", 
@@ -25,17 +28,46 @@ const Hero = () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
+
+  const handleBackgroundClick = () => {
+    setIsAnimated(!isAnimated);
+  };
+
   return (
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full">
+      <style jsx>{`
+        @keyframes bgPositionToRight {
+          from { background-position: 0% 30%; }
+          to { background-position: 100% 30%; }
+        }
+        
+        @keyframes bgPositionToLeft {
+          from { background-position: 100% 30%; }
+          to { background-position: 0% 30%; }
+        }
+        
+        .bg-animate-right {
+          animation: bgPositionToRight 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        .bg-animate-left {
+          animation: bgPositionToLeft 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+      `}</style>
       <div className="relative h-[60vh] sm:h-screen w-full">
-        <div ref={bgRef}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-bg-bounce"
+        <div 
+          ref={bgRef}
+          onClick={handleBackgroundClick}
+          className={`absolute inset-0 bg-cover bg-no-repeat animate-bg-bounce cursor-pointer ${
+            isAnimated ? 'bg-animate-left' : 'bg-animate-right'
+          }`}
           style={{
             backgroundImage: 'url("https://res.cloudinary.com/db4zbyipc/image/upload/v1752411438/home-hero_1_1_zlk7mp.webp")',
-            backgroundPosition: 'center 30%', 
+            backgroundPosition: '0% 30%', 
             willChange: 'background-position'
           }}
         ></div>
+        
         <div className="hidden lg:flex lg:flex-col absolute top-[20%] left-[5.5%] text-amber-400 font-raleway uppercase text-xs tracking-[0.1em]">
           <h1>Download <br/> Brochure</h1>
           <div className="w-3.5 h-1.5 bg-amber-300 transform skew-x-[-200deg] mt-4" />
