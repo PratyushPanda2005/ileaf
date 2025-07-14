@@ -32,7 +32,7 @@ const Hero = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-bg-mob-bounce will-change: transform"
           style={{
             backgroundImage: 'url("https://res.cloudinary.com/db4zbyipc/image/upload/v1752411438/home-hero_1_1_zlk7mp.webp")',
-            backgroundPosition: 'center 30%', 
+            backgroundPosition: '0% 30%', 
             willChange: 'background-position'
             
           }}
