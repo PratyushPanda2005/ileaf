@@ -25,8 +25,8 @@ const ProductHero = ({
   const imageRef = useRef<HTMLImageElement>(null);
   
   useEffect(() => {
-    
     const isMobile = window.innerWidth < 640;
+
 
     if(isMobile) {
       const mobileTimeline = gsap.timeline({
@@ -40,15 +40,14 @@ const ProductHero = ({
       
       mobileTimeline
         .fromTo(imageRef.current, 
-          { x: "0%" },
+          { objectPosition: position },
           {
-            x: "-10%",
+            objectPosition:  "50%",
             duration: 1.25,
             ease: "power2.inOut",
           }
         )
     }
-
 
     if (!isMobile && imageRef.current) {
       gsap.to(imageRef.current, {
@@ -71,14 +70,15 @@ const ProductHero = ({
 
   return (
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
-      <div className="relative h-[calc(60vh-64px)] w-[120%] sm:h-screen sm:w-full">
+      <div className="relative h-[calc(60vh-64px)] sm:h-screen w-full">
         <div ref={bgRef} className="absolute inset-0 overflow-hidden">
           <Image
             ref={imageRef}
             src={bgImage}
             alt="Product Hero Background"
-            fill
-            className="object-cover"
+            width={500}
+            height={500}
+            className="w-full bg-cover h-full object-cover"
             style={{
               objectPosition: `${position} 30%`,
               willChange: 'transform'
