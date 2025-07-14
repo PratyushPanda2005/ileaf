@@ -1,5 +1,6 @@
+'use client'
 import Link from "next/link";
-import React from "react";
+import React, { MouseEvent } from "react";
 
 interface BtnProps {
   title: string;
@@ -10,12 +11,30 @@ interface BtnProps {
   borderColor?: string;
   routeLink: string;
   className?: string;
+  onNavigation?: (e: MouseEvent<HTMLAnchorElement>, url: string) => void;
 }
 
-const Button = ({ title,bgHoverColor, bgColor, border, textColor, borderColor, routeLink, className }: BtnProps) => {
+const Button = ({ 
+  title, 
+  bgHoverColor, 
+  bgColor, 
+  border, 
+  textColor, 
+  borderColor, 
+  routeLink, 
+  className, 
+  onNavigation 
+}: BtnProps) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (onNavigation) {
+      onNavigation(e, routeLink);
+    }
+  };
+
   return (
     <Link 
       href={routeLink}
+      onClick={handleClick}
       style={{ 
         backgroundColor: bgColor, 
         color: textColor, 

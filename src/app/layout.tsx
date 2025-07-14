@@ -8,6 +8,7 @@ import Image from "next/image";
 import wtspLogo from "../../public/assets/logos/whatsapp.svg";
 import MobileMenu from "../../public/assets/logos/home.svg";
 import Link from "next/link";
+import LenisProvider from "./LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ViewTransitions>
+          <LenisProvider>
           <Navbar />
           {children}
           <Image
@@ -48,6 +50,7 @@ export default function RootLayout({
             </Link>
           </div>
           <Footer />
+          </LenisProvider>
         </ViewTransitions>
       </body>
     </html>

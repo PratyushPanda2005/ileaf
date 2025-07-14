@@ -26,11 +26,11 @@ const WhyUs = () => {
               alt="Security"
             />
 
-            <div className="absolute top-1/2 -translate-y-[50%] right-[15vw] flex flex-col items-center justify-center">
+            <div className="absolute top-1/2 -translate-y-[50%] right-[5%] sm:right-[15%] flex flex-col items-center justify-center">
               <h1 className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-center leading-[150%]">
                 Our doors
               </h1>
-              <h1 className="font-style  md:text-2xl lg:text-4xl xl:text-5xl text-center leading-[150%]">
+              <h1 className="font-style md:text-2xl lg:text-4xl xl:text-5xl text-center leading-[150%]">
                 Ensure your <br /> security.
               </h1>
             </div>
@@ -52,7 +52,7 @@ const WhyUs = () => {
             </div>
             <div className="absolute top-1/2 -translate-y-[50%] right-[10%] flex flex-col items-center justify-center">
               <div className="text-black md:text-3xl lg:text-4xl xl:text-5xl font-style italic text-left flex flex-col gap-3">
-                <h1>Fire Resistant.</h1>
+                <h1>Fireproof.</h1>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ const WhyUs = () => {
               alt="Security"
             />
 
-            <div className="absolute top-1/2 -translate-y-[50%] left-[20vw] flex flex-col items-center justify-center lg:gap-3">
+            <div className="absolute top-1/2 -translate-y-[50%] left-[10%] sm:left-[20%] flex flex-col items-center justify-center lg:gap-3">
               <h1 className="text-black md:text-xl lg:text-2xl xl:text-3xl font-style italic text-center md:mb-4">
                 Our doors are
               </h1>
@@ -106,7 +106,7 @@ const WhyUs = () => {
               alt="Security"
             />
 
-            <div className="absolute top-1/2 -translate-y-[50%]  left-[15%] flex flex-col items-center justify-center">
+            <div className="absolute top-1/2 -translate-y-[50%] left-[10%] sm:left-[15%] flex flex-col items-center justify-center">
               <div className="text-black  font-style italic  flex flex-col">
                 <h1 className="md:text-xl lg:text-2xl text-center xl:text-3xl">
                   Our doors are

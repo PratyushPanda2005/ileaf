@@ -3,6 +3,7 @@ import Button from "@/app/components/button";
 import { wpcDoorsData } from "@/app/config/products/wpcdoors/wpcdoors";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 interface ProductGridCardProps {
   heading?: string;
@@ -18,7 +19,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   routeLink,
 }) => {
   return (
-    <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 bg-[#707070] relative overflow-hidden">
+    <motion.div initial={{opacity: 0, y: 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 bg-[#707070] relative overflow-hidden">
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -38,6 +39,17 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           {heading}
         </h1>
       </div>
+    </motion.div>
+  );
+};
+
+const SimpleLoader = () => {
+  return (
+    <div className="flex justify-center items-center py-20">
+      <div className="relative">
+        <div className="w-12 h-12 border-4 border-[#707070] border-t-[#FFBF00] rounded-full animate-spin"></div>
+        <div className="absolute inset-0 w-12 h-12 border-4 border-transparent border-t-[#FFBF00] rounded-full animate-spin animation-delay-150"></div>
+      </div>
     </div>
   );
 };
@@ -47,6 +59,7 @@ const CardGrid = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const itemsPerPage = 12;
 
   const totalPages = Math.ceil(wpcDoors.length / itemsPerPage);
@@ -55,7 +68,15 @@ const CardGrid = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = wpcDoors.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+    if (pageNumber === currentPage) return;
+
+    setIsLoading(true);
+    setTimeout(() => {
+      setCurrentPage(pageNumber);
+      setIsLoading(false);
+    }, 2000);
+  };
 
   const itemsToShow = isMobile && !showAll ? 1 : wpcDoors.length;
 
@@ -77,6 +98,9 @@ const CardGrid = () => {
         {Math.min(indexOfLastItem, wpcDoors.length)} of {wpcDoors.length} results
       </h1>
 
+      {isLoading ? (
+        <SimpleLoader />
+      ) : (
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-3.5">
         {currentItems.slice(0, itemsToShow).map((variant) => (
           <ProductGridCard
@@ -88,6 +112,7 @@ const CardGrid = () => {
           />
         ))}
       </div>
+      )}
 
         
       {isMobile && (

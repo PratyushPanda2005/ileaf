@@ -34,7 +34,7 @@ const CardsSection = () => {
             <Image
               src={QualityLogo}
               alt="Lion Logo"
-              className="w-[160px] h-auto"
+              className="w-[160px] h-auto mb-8"
             />
           </div>
           <Parallelogram />
@@ -47,7 +47,7 @@ const CardsSection = () => {
             <Image
               src={CustomerServiceLogo}
               alt="Lion Logo"
-              className="w-[160px] h-auto"
+              className="w-[160px] h-auto mb-8"
             />
           </div>
           <Parallelogram />

@@ -3,6 +3,7 @@ import Button from "@/app/components/button";
 import { fibreDoorData } from "@/app/config/products/fibredoors/fibredoors";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 interface ProductGridCardProps {
   heading?: string;
@@ -18,7 +19,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   routeLink,
 }) => {
   return (
-    <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 bg-[#707070] relative overflow-hidden">
+    <motion.div initial={{opacity: 0, y: 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 bg-[#707070] relative overflow-hidden">
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -38,6 +39,17 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           {heading}
         </h1>
       </div>
+    </motion.div>
+  );
+};
+
+const SimpleLoader = () => {
+  return (
+    <div className="flex justify-center items-center py-20">
+      <div className="relative">
+        <div className="w-12 h-12 border-4 border-[#707070] border-t-[#FFBF00] rounded-full animate-spin"></div>
+        <div className="absolute inset-0 w-12 h-12 border-4 border-transparent border-t-[#FFBF00] rounded-full animate-spin animation-delay-150"></div>
+      </div>
     </div>
   );
 };
@@ -47,6 +59,7 @@ const CardGrid = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const itemsPerPage = 12;
 
   const totalPages = Math.ceil(fibreDoors.length / itemsPerPage);
@@ -55,7 +68,15 @@ const CardGrid = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = fibreDoors.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+    if (pageNumber === currentPage) return;
+    
+    setIsLoading(true);
+    setTimeout(() => {
+      setCurrentPage(pageNumber);
+      setIsLoading(false);
+    }, 2000);
+  };
 
   const itemsToShow = isMobile && !showAll ? 1 : fibreDoors.length;
 
@@ -82,7 +103,7 @@ const CardGrid = () => {
           <nav className="flex items-center gap-2 ">
             <button
               onClick={() => paginate(Math.max(1, currentPage - 1))}
-              disabled={currentPage === 1}
+              disabled={currentPage === 1 || isLoading}
               className="px-3 py-1 text-[#FFBF00] disabled:opacity-50"
             >
               &lt;
@@ -93,7 +114,8 @@ const CardGrid = () => {
                 <button
                   key={number}
                   onClick={() => paginate(number)}
-                  className={`px-3 py-1 transform font-raleway -skew-x-[20deg] ${
+                  disabled={isLoading}
+                  className={`px-3 py-1 transform font-raleway -skew-x-[20deg] disabled:opacity-50 ${
                     currentPage === number
                       ? "bg-[#FFBF00] text-black"
                       : "text-[#FFBF00] hover:bg-[#FFBF00] hover:text-black"
@@ -106,7 +128,7 @@ const CardGrid = () => {
 
             <button
               onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-              disabled={currentPage === totalPages}
+              disabled={currentPage === totalPages || isLoading}
               className="px-3 py-1 text-[#FFBF00] disabled:opacity-50"
             >
               &gt;
@@ -115,17 +137,21 @@ const CardGrid = () => {
         </div>
       )}
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-3.5">
-        {currentItems.slice(0, itemsToShow).map((variant) => (
-          <ProductGridCard
-            key={variant.id}
-            heading={variant.id}
-            routeLink={`/product-category/fibredoors/${variant.number}`}
-            imageSrc={variant.image}
-            imageAlt={`${variant.id} fibre door`}
-          />
-        ))}
-      </div>
+      {isLoading ? (
+        <SimpleLoader />
+      ) : (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-row-2 gap-3.5">
+          {currentItems.slice(0, itemsToShow).map((variant) => (
+            <ProductGridCard
+              key={variant.id}
+              heading={variant.id}
+              routeLink={`/product-category/fibredoors/${variant.number}`}
+              imageSrc={variant.image}
+              imageAlt={`${variant.id} fibre door`}
+            />
+          ))}
+        </div>
+      )}
 
       {isMobile && (
         <div className="flex justify-center mt-20">
@@ -148,7 +174,7 @@ const CardGrid = () => {
           <nav className="flex items-center gap-2 ">
             <button
               onClick={() => paginate(Math.max(1, currentPage - 1))}
-              disabled={currentPage === 1}
+              disabled={currentPage === 1 || isLoading}
               className="px-3 py-1 text-[#FFBF00] disabled:opacity-50"
             >
               &lt;
@@ -159,7 +185,8 @@ const CardGrid = () => {
                 <button
                   key={number}
                   onClick={() => paginate(number)}
-                  className={`px-3 py-1 transform font-raleway -skew-x-[20deg] ${
+                  disabled={isLoading}
+                  className={`px-3 py-1 transform font-raleway -skew-x-[20deg] disabled:opacity-50 ${
                     currentPage === number
                       ? "bg-[#FFBF00] text-black"
                       : "text-[#FFBF00] hover:bg-[#FFBF00] hover:text-black"
@@ -172,7 +199,7 @@ const CardGrid = () => {
 
             <button
               onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-              disabled={currentPage === totalPages}
+              disabled={currentPage === totalPages || isLoading}
               className="px-3 py-1 text-[#FFBF00] disabled:opacity-50"
             >
               &gt;

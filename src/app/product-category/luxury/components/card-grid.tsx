@@ -3,7 +3,7 @@ import Button from "@/app/components/button";
 import { luxuryDoorsData } from "@/app/config/products/luxury/luxury";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-
+import { motion } from "motion/react";
 interface ProductGridCardProps {
   heading?: string;
   imageSrc: string;
@@ -18,7 +18,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
   routeLink,
 }) => {
   return (
-    <div className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 bg-[#707070] relative overflow-hidden">
+    <motion.div initial={{opacity: 0, y: 40}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1.3}} className="flex flex-col justify-between items-center col-span-1 row-span-1 gap-6 pt-10 bg-[#707070] relative overflow-hidden">
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -38,7 +38,7 @@ const ProductGridCard: React.FC<ProductGridCardProps> = ({
           {heading}
         </h1>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
