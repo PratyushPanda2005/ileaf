@@ -9,6 +9,7 @@ const AboutUs = () => {
   return (
     <div>
       <ProductHero
+      position='100%'
       bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752403214/about-hero-1-scaled_iikyso.webp'
       />
       <Parallax

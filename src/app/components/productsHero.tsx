@@ -9,19 +9,24 @@ const ProductHero = ({
   headingTwo,
   headingThree,
   headingFour,
-  bgImage
+  bgImage,
+  position = "center"
 }: {
   headingOne?: string;
   headingTwo?: string;
   headingThree?: string;
   headingFour?: string;
   bgImage: string;
+  position?: string;
 }) => {
 
   const bgRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     
-    if (bgRef.current) {
+    const isMobile = window.innerWidth < 640;
+
+    
+    if (!isMobile) {
       gsap.to(bgRef.current, {
         backgroundPosition: "center 80%", 
         ease: "none",
@@ -43,11 +48,11 @@ const ProductHero = ({
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
       <div className="relative h-[calc(60vh-64px)] sm:h-screen w-full">
         <div ref={bgRef}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-bg-bounce"
+          className="absolute inset-0 bg-cover  bg-no-repeat"
           style={{
             backgroundImage:
               `url(${bgImage})`,
-              backgroundPosition: 'center 30%', 
+              backgroundPosition: `${position} 30%`, 
             willChange: 'background-position'
           }}
         >

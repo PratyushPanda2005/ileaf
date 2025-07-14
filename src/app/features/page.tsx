@@ -7,6 +7,7 @@ const FeaturesPage = () => {
   return (
     <>
     <ProductHero
+    position='0%'
     bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752412625/feature-hero_1_i9zptd.webp'
     />
     <Parallax

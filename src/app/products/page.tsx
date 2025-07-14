@@ -40,6 +40,7 @@ const ProductsPage = () => {
         headingTwo="unmatched"
         headingThree="Strength"
         headingFour="And Style"
+        position="0%"
       />
       <ProductCategory />
 
