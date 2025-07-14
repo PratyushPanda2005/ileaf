@@ -16,8 +16,7 @@ export default function Home() {
      title="Live safe and sound"
      bgImage="https://res.cloudinary.com/db4zbyipc/image/upload/v1752411530/home-hero_2_s4pvhn.webp"
      />
-     <TextReveal
-     />
+     <TextReveal/>
      <ProductCategory/>
      <ProductRange/>
      <CardsSection/>
