@@ -31,7 +31,6 @@ const Hero = () => {
               ease: "power2.inOut",
             }
           )
-        
       }
 
       if(!isMobile) {

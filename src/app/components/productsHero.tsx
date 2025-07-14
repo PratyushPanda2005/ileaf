@@ -41,7 +41,7 @@ const ProductHero = ({
   }, []);
   return (
     <div className="h-[calc(60vh-64px)] sm:min-h-screen relative top-0 left-0 w-full overflow-x-hidden z-[-1]">
-      <div className="relative h-[60vh] sm:h-screen w-full">
+      <div className="relative h-[calc(60vh-64px)] sm:h-screen w-full">
         <div ref={bgRef}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-bg-bounce"
           style={{
