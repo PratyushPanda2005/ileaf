@@ -47,8 +47,8 @@
 
 @keyframes bgMobBounce {
   0% { background-position: 0% center; }
-  100% { background-position: 100% center; }
-  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
 }
 
 
@@ -57,7 +57,7 @@
 }
 
 .animate-bg-mob-bounce {
-  animation: bgMobBounce 1s ease-in-out;
+  animation: bgMobBounce 3s;
 }
 
 
