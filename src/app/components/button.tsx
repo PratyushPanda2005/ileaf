@@ -1,4 +1,5 @@
 'use client'
+import { useTransitionRouter } from "next-view-transitions";
 import Link from "next/link";
 import React, { MouseEvent } from "react";
 
@@ -25,14 +26,29 @@ const Button = ({
   className, 
   onNavigation 
 }: BtnProps) => {
+  const router = useTransitionRouter();
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // Call the custom onNavigation handler if provided
     if (onNavigation) {
       onNavigation(e, routeLink);
     }
+    
+    // Perform the navigation with transition
+    handleNavigation(e, routeLink);
   };
+
+  const handleNavigation = (e: MouseEvent<HTMLAnchorElement>, url: string) => {
+    router.push(url, {
+      onTransitionReady: pageAnimation,
+    });
+  };
+
 
   return (
     <Link 
+      
       href={routeLink}
       onClick={handleClick}
       style={{ 
@@ -46,6 +62,46 @@ const Button = ({
     >
       <span className="inline-block transform skew-x-[20deg]">{title}</span>
     </Link>
+  );
+};
+
+const pageAnimation = () => {
+  document.documentElement.animate(
+    [
+      {
+        opacity: 1,
+        scale: 1,
+        transform: "translateY(0)",
+      },
+      {
+        opacity: 0.5,
+        scale: 1,
+        transform: "translateY(-100px)",
+      },
+    ],
+    {
+      duration: 1000,
+      easing: "cubic-bezier(0.76, 0, 0.24, 1)",
+      fill: "forwards",
+      pseudoElement: "::view-transition-old(root)",
+    }
+  );
+
+  document.documentElement.animate(
+    [
+      {
+        transform: "translateY(100%)",
+      },
+      {
+        transform: "translateY(0)",
+      },
+    ],
+    {
+      duration: 1000,
+      easing: "cubic-bezier(0.76, 0, 0.24, 1)",
+      fill: "forwards",
+      pseudoElement: "::view-transition-new(root)",
+    }
   );
 };
 
