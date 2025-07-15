@@ -14,6 +14,7 @@ const GLDoors = () => {
         headingOne="Long Lasting"
         headingTwo="Robust"
         headingThree="Security"
+        position="0%"
         bgImage="https://res.cloudinary.com/db4zbyipc/image/upload/v1752404316/Gl-hero_1_dnlhtc.webp"
       />
       <div className="bg-black text-white flex flex-col justify-center items-center px-20 pt-20">

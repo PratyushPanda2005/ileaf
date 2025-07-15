@@ -11,6 +11,7 @@ const WPCDoors = () => {
   return (
    <>
    <ProductHero
+   position='100%'
    bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1751663560/WPC-hero_qe1gul.webp'
    />
          <div className="bg-black text-white flex flex-col justify-center items-center px-20 pt-20">

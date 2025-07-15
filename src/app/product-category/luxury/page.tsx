@@ -16,6 +16,7 @@ const LuxuryDoors = () => {
     headingTwo='Strength.'
     headingThree='Unmatched'
     headingFour='Beauty.'
+    position='0%'
     bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1751663573/luxury-hero_fzgufs.webp'
     />
     <div className='bg-black text-white flex flex-col justify-center items-center px-16 lg:px-20 pt-20'>

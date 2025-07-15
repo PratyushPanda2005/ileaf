@@ -13,6 +13,7 @@ const GiDoors = () => {
     headingOne='Elevate'
     headingTwo='Safety And'
     headingThree='Elegance'
+    position='0%'
     bgImage='https://res.cloudinary.com/db4zbyipc/image/upload/v1752412886/gi-door-hero_edetpe.webp'
     />
      <div className="bg-black text-white flex flex-col justify-center items-center px-20 pt-20">
